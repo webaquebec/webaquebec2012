@@ -1,0 +1,277 @@
+// HELPERS
+//---------------------------------------------------
+
+@function to-argb($color, $opacity: nil) {
+
+  $nAlpha: if($opacity == nil, round(alpha($color) * 255), round($opacity * 255));
+  $cRed: round(red($color));
+  $cGreen: round(green($color));
+  $cBlue: round(blue($color));
+
+  $sArgb: #{''};
+  $nHex: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f;
+
+  @each $channel in $nAlpha, $cRed, $cGreen, $cBlue {
+
+    $a: floor($channel / 16);
+    $b: $channel - $a * 16;
+
+    $a: nth($nHex, ($a + 1));
+
+    $b: nth($nHex, ($b + 1));
+
+    $channel: $a#{''}$b;
+
+    $sArgb: $sArgb + $channel;
+
+  }
+
+  @return $sArgb;
+}
+
+// MIXINS
+//---------------------------------------------------
+
+@mixin opacity($opacity) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$opacity * 100)";
+  filter: alpha(opacity= $opacity * 100);
+  -moz-opacity: $opacity;
+  opacity: $opacity;
+}
+
+@mixin transition($data) {
+  transition: $data;
+  -webkit-transition: $data;
+  -moz-transition: $data;
+}
+
+@mixin box-shadow($props) {
+  -moz-box-shadow: $props;
+  -webkit-box-shadow: $props;
+  box-shadow: $props;
+};
+
+@mixin box-gradient($baseColor, $toColor, $noFilter: nil) {
+
+  @if alpha($baseColor) == 1 {
+    @if alpha($toColor) == 1 {
+      background-color: $baseColor;
+    }
+  }
+
+  background-image: -webkit-gradient(linear, left top, left bottom, from($baseColor), to($toColor));
+  background-image: -webkit-linear-gradient(top, $baseColor, $toColor);
+  background-image: -moz-linear-gradient(top, $baseColor, $toColor);
+  background-image: -ms-linear-gradient(top, $baseColor, $toColor);
+  background-image: -o-linear-gradient(top, $baseColor, $toColor);
+  background-image: linear-gradient(top, $baseColor, $toColor);
+
+  @if $noFilter == nil {
+    $base: to-argb($baseColor, alpha($baseColor));
+    $to: to-argb($toColor, alpha($toColor));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='##{$base}', EndColorStr='##{$to}');
+    zoom: 1;
+  }
+}
+
+@mixin box-gradient-horizontal($baseColor, $toColor, $noFilter: nil) {
+
+  @if alpha($baseColor) == 1 {
+    @if alpha($toColor) == 1 {
+      background-color: $baseColor;
+    }
+  }
+
+  background-image: -webkit-gradient(linear, left top, right top, from($baseColor), to($toColor));
+  background-image: -webkit-linear-gradient(left, $baseColor, $toColor);
+  background-image: -moz-linear-gradient(left, $baseColor, $toColor);
+  background-image: -ms-linear-gradient(left, $baseColor, $toColor);
+  background-image: -o-linear-gradient(left, $baseColor, $toColor);
+  background-image: linear-gradient(left, $baseColor, $toColor);
+
+  @if $noFilter == nil {
+    $base: to-argb($baseColor, alpha($baseColor));
+    $to: to-argb($toColor, alpha($toColor));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='##{$base}', EndColorStr='##{$to}', GradientType=1);
+    zoom: 1;
+  }
+}
+
+@mixin box-rgba($color, $opacity: nil, $noFilter: nil) {
+  $alpha: if($opacity == nil, alpha($color), $opacity);
+  background-color: $color;
+  background-color: rgba($color, $alpha);
+
+  @if $noFilter == nil {
+    background-color: transparent\9;
+    $argb: to-argb($color, $alpha);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=##{$argb},endColorstr=##{$argb});
+    zoom: 1;
+  }
+}
+
+@mixin border-radius($radius) {
+  @if unitless($radius) {
+    $radius: $radius + px;
+  }
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+@mixin border-radius-all($radius_top_left, $radius_top_right, $radius_bottom_right, $radius_bottom_left) {
+  @if unitless($radius_top_left) {
+    $radius_top_left: $radius_top_left + px;
+  }
+
+  @if unitless($radius_top_right) {
+    $radius_top_right: $radius_top_right + px;
+  }
+
+  @if unitless($radius_bottom_left) {
+    $radius_bottom_left: $radius_bottom_left + px;
+  }
+
+  @if unitless($radius_bottom_right) {
+    $radius_bottom_right: $radius_bottom_right + px;
+  }
+
+  border-radius: $radius_top_left $radius_top_right $radius_bottom_right $radius_bottom_left;
+  -moz-border-radius: $radius_top_left $radius_top_right $radius_bottom_right $radius_bottom_left;
+  -webkit-border-top-right-radius: $radius_top_left;
+  -webkit-border-bottom-right-radius: $radius_bottom_right;
+  -webkit-border-bottom-left-radius: $radius_bottom_left;
+  -webkit-border-top-left-radius: $radius_top_left;
+}
+
+@mixin border-radius-top($radius) {
+  @if unitless($radius) {
+    $radius: $radius + px;
+  }
+
+  border-radius: $radius $radius 0 0;
+  -moz-border-radius: $radius $radius 0 0;
+  -webkit-border-top-right-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+}
+
+@mixin border-radius-bottom($radius) {
+  @if unitless($radius) {
+    $radius: $radius + px;
+  }
+
+  border-radius: 0 0 $radius $radius;
+  -moz-border-radius: 0 0 $radius $radius;
+  -webkit-border-bottom-right-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+}
+
+@mixin border-radius-left($radius) {
+  @if unitless($radius) {
+    $radius: $radius + px;
+  }
+
+  border-radius: $radius 0 0 $radius;
+  -moz-border-radius: $radius 0 0 $radius;
+  -webkit-border-top-left-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+}
+
+@mixin border-radius-right($radius) {
+  @if unitless($radius) {
+    $radius: $radius + px;
+  }
+
+  border-radius: 0 $radius $radius 0;
+  -moz-border-radius: 0 $radius $radius 0;
+  -webkit-border-top-right-radius: $radius;
+  -webkit-border-bottom-right-radius: $radius;
+}
+
+@mixin border-radius-top-left($radius) {
+  @if unitless($radius) {
+    $radius: $radius + px;
+  }
+  -webkit-border-top-left-radius: $radius;
+  -moz-border-radius-topleft: $radius;
+  border-top-left-radius: $radius;
+
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+@mixin border-radius-top-right($radius) {
+  @if unitless($radius) {
+    $radius: $radius + px;
+  }
+  -webkit-border-top-right-radius: $radius;
+  -moz-border-radius-topright: $radius;
+  border-top-right-radius: $radius;
+
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+@mixin border-radius-bottom-left($radius) {
+  @if unitless($radius) {
+    $radius: $radius + px;
+  }
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  border-bottom-left-radius: $radius;
+
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+@mixin border-radius-bottom-right($radius) {
+  @if unitless($radius) {
+    $radius: $radius + px;
+  }
+  -webkit-border-bottom-right-radius: $radius;
+  -moz-border-radius-bottomright: $radius;
+  border-bottom-right-radius: $radius;
+
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+@mixin rounded($radius, $side: '')
+{
+	-moz-border#{$side}-radius: $radius;
+	-webkit-border-radius#{$side}: $radius;
+	border#{$side}-radius: $radius;
+}
+
+@mixin shadow($settings)
+{
+	-moz-box-shadow: #{$settings};
+	-webkit-box-shadow: #{$settings};
+	box-shadow: #{$settings};
+}
+
+@mixin vgradient($start, $end, $img: '', $bgcolor: transparent)
+{
+	background: $bgcolor url($img) 0 0 repeat-x;
+	background: -moz-linear-gradient(top, $start 0%, $end 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$start), color-stop(100%,$end));
+	background: -webkit-linear-gradient(top, $start 0%,$end 100%);
+	background: -o-linear-gradient(top, $start 0%,$end 100%);
+	background: -ms-linear-gradient(top, $start 0%,$end 100%);
+	background: linear-gradient(top, $start 0%,$end 100%);
+}
+
+// NON-SEMANTIC HELPER CLASSES
+//---------------------------------------------------
+// ir => image replacement
+@mixin ir { display: block; border: 0; text-indent: -9999px; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+@mixin shy { position: absolute; left: -9999px; }
+@mixin clearfix { *zoom: 1; &:after { clear: both; } &:before, &:after { content: ""; display: table; } }
