@@ -1,0 +1,22 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, img, ins, kbd, q, samp,
+small, sub, sup, var, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  color: #fff;
+}
+
+sup, sub { height: 0; line-height: 1; vertical-align: baseline; _vertical-align: bottom; position: relative; font-size: 75%; }
+sup { bottom: 1ex; }
+sub { top: .5ex; }
+button { width: auto; overflow: visible; }
