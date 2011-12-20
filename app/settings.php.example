@@ -1,0 +1,9 @@
+<?php
+
+$settings = array();
+
+$settings['Slim'] = array(
+    'log.enable' => true,
+    'log.path' => './logs',
+    'log.level' => 4
+);
