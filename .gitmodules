@@ -1,0 +1,12 @@
+[submodule "externs/slim"]
+	path = externs/slim
+	url = git://github.com/raphael-riel/Slim.git
+[submodule "externs/slim-extras"]
+	path = externs/slim-extras
+	url = git://github.com/raphael-riel/Slim-Extras.git
+[submodule "externs/twig"]
+	path = externs/twig
+	url = git://github.com/raphael-riel/Twig.git
+[submodule "externs/php-markdown"]
+	path = externs/php-markdown
+	url = git://github.com/wolfie/php-markdown.git
