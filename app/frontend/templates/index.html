@@ -1,0 +1,20 @@
+{% extends "blocks/base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <style type="text/css">
+        ul{
+        	list-style-type: square;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+	<ul>
+	{% for i in 0..10 %}
+	    <li>{{ i }}</li>
+	{% endfor %}
+	</ul>
+{% endblock %}
