@@ -1,6 +1,6 @@
 <?php
 
-#Constants
+//Constants
 define("PROJECT_ROOT", realpath(__DIR__."/../../../"));
 define("PATH_PUBLIC", PROJECT_ROOT."/app/frontend/");
 define("SLIM_PATH", PROJECT_ROOT."/libraries/slim/");
@@ -9,12 +9,12 @@ define("SLIMEXTRAS_PATH", PROJECT_ROOT."/libraries/slim-extras/");
 define("TWIG_PATH", PROJECT_ROOT."/libraries/twig/Twig/");
 define("CACHE_PATH", PROJECT_ROOT.'/cache/');
 
-#Requirements.
+//Requirements.
 require SLIM_PATH.'/Slim.php';
 require SLIMEXTRAS_PATH.'/Views/TwigView.php';
 require MARKDOWN_PATH."/markdown.php";
 
-#Initialize
+//Initialize
 $app = init_slim();
 init_twig($app);
 
