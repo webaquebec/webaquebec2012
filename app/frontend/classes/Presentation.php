@@ -87,6 +87,10 @@ class Presentation{
         }
     }
 
+    public function getTitleSlug(){
+        return Helpers::generateSlug($this->getConferenceName());
+    }
+
     public function setConferenceGoals($conference_goals){
         $this->conference_goals = $conference_goals;
     }
