@@ -1,20 +1,136 @@
 {% extends "blocks/base.html" %}
 
-{% block title %}Index{% endblock %}
-
-{% block head %}
-    {{ parent() }}
-    <style type="text/css">
-        ul{
-        	list-style-type: square;
-        }
-    </style>
-{% endblock %}
-
 {% block content %}
-	<ul>
-	{% for i in 0..10 %}
-	    <li>{{ i }}</li>
-	{% endfor %}
-	</ul>
+
+          <div class="page-content-block clearfix">
+            <div class="left-side main">
+              <div id="vox-pop" class="white-box">
+                <div class="thumb"><a class="btn-vox-pop" href="http://vimeo.com/29752446">Écoutez<strong>le Vox Pop</strong></a> <img src="/assets/img/vox-pop-preview.jpg" alt="Apercu du Vox Pop" /></div>
+
+                <div class="content">
+                  <h3>Le Web made in Québec</h3>
+
+                  <p>Pour les gens de Québec comme ailleurs, le web est devenu partie intégrante de nos vies. C’est un outil de travail, une industrie florissante, une mine de renseignements et un mode de vie.</p>
+                </div>
+
+                <ul class="social-bar list-custom list-hori clearfix">
+                  <li><span>Suivez-nous</span></li>
+
+                  <li><a class="btn-facebook" href="https://www.facebook.com/webaquebec" title="Suivez-nous sur Facebook">Facebook</a></li>
+
+                  <li><a class="btn-twitter" href="https://twitter.com/webaquebec" title="Suivex-nous sur Twitter">Twitter</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="right-side main">
+              <div id="important-numbers">
+                <ul id="numbers-viewport" class="list-custom list-hori clearfix">
+                  <li>
+                    <span class="number">3</span>
+
+                    <h2>soirées thématiques</h2>
+                  </li>
+
+                  <li>
+                    <span class="number">500</span>
+
+                    <h2>participants</h2>
+                  </li>
+
+                  <li>
+                    <span class="number">30</span>
+
+                    <h2>conférenciers du<br />
+                    Québec</h2>
+                  </li>
+                </ul>
+              </div>
+
+              <div id="conferenciers">
+                <ul class="list-custom list-hori clearfix">
+                  <li><a href="/programmation/" target="_blank"><span>Isabelle Grenier</span> <img src="/assets/img/conferenciers/147x160/isabelle-grenier.jpg" alt="Isabelle Grenier" /></a></li>
+
+                  <li><a href="/programmation/" target="_blank"><span>Denis Boudreault</span> <img src="/assets/img/conferenciers/147x160/denis-boudreault.jpg" alt="Denis Boudreault" /></a></li>
+
+                  <li><a href="/programmation/" target="_blank"><span>Rémi Prévost</span> <img src="/assets/img/conferenciers/147x160/remi-prevost.jpg" alt="Rémi Prévost" /></a></li>
+
+                  <li><a href="/programmation/" target="_blank"><span>Peter Morville</span> <img src="/assets/img/conferenciers/147x160/peter-morville_star.jpg" alt="Peter Morville" /></a></li>
+                </ul>
+
+                <div class="btn-more-wrapper">
+                  <a href="/programmation/" style="clear: both;">Consulter la programmation</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sep-shadow"></div>
+
+          <div class="page-content-block clearfix">
+            <div class="left-side main">
+              <div id="news-box">
+                <h3 class="box-header">Dernières nouvelles</h3>
+
+                <ul class="list-custom">
+                  <li>
+                    <h4>Qu’est-ce que le Web à Québec, pour vous?</h4>
+
+                    <p>Les membres du WAQ se prononcent sur Twitter. Participez à la conversation! <a href="http://twitter.com/search/%23WAQ2012" target="_blank">#WAQ2012</a><a class="read-more" href="http://twitter.com/search/%23WAQ2012" target="_blank">Lire plus</a></p>
+                  </li>
+
+                  <li>
+                    <h4>Les inscriptions au Iron Web sont ouvertes</h4>
+
+                    <p>Posez votre candidature aujourd’hui pour vivre une expérience inoubliable!<a class="read-more" href="/iron-web/">Lire plus</a></p>
+                  </li>
+
+                  <li>
+                    <h4>Devenez commanditaire du WAQ 2012</h4>
+
+                    <p>Près de 25 opportunités de commandites sont offertes. Une belle occasion de vous associer au Web à Québec. Nous sommes aussi à la recherche de commanditaires de services (nourriture, mobilier, etc.) ainsi que de partenaires médias.<a class="read-more" href="/contact/">Lire plus</a></p>
+                  </li>
+                </ul>
+              </div>
+
+              <div id="newsletter-box">
+                <h3>Recevez les dernières nouvelles<span></span></h3>
+
+                <form name="newsletter" id="newsletter" method="post" action="http://webaquebec.createsend.com/t/r/s/akkjhl/" class="clearfix">
+                  <input id="email" type="text" name="cm-akkjhl-akkjhl" placeholder="Votre courriel" /> <button id="btn-submit-nl" class="btn">M’abonner</button>
+                </form>
+              </div>
+            </div>
+
+            <div class="right-side main">
+              <div class="left-side rs-content-box iron-web">
+                <h3 class="box-header">Iron Web</h3>
+
+                <div class="white-thumb">
+                  <a class="btn-vox-pop" href="http://vimeo.com/29847338">Retour sur le <strong>Iron Web 2011</strong></a>
+                </div>
+
+                <p>Le Iron Web est une compétition de 48 heures, diffusée en direct, par et pour les passionnés du Web qui désirent participer au projet le plus court mais le plus intense de leur vie.</p>
+
+                <div class="btn-more-wrapper">
+                  <a href="/iron-web/" title="Tout sur la compétition Iron Web">Tout sur la compétition</a>
+                </div>
+              </div>
+
+              <div class="right-side rs-content-box">
+                <h3 class="box-header">Commanditaires principaux</h3>
+
+                <div id="commanditaires-principaux" class="white-thumb commanditaires-principaux">
+                  <a href="http://www.libeo.com/" target="_blank"><img src="/assets/img/partenaires/225x100/libeo.png" alt="Libéo" /></a> <a href="http://www.vetiq.org/" target="_blank"><img src="/assets/img/partenaires/225x100/vetiq.png" alt="Vétiq" /></a> <a href="http://www.korem.com/" target="_blank"><img src="/assets/img/partenaires/225x100/korem.png" alt="Korem" /></a> <a href="http://www.ixmedia.com/" target="_blank"><img src="/assets/img/partenaires/225x100/ixmedia.png" alt="iXmédia" /></a>
+                </div>
+
+                <p>Sans la participation de ses nombreux commanditaires, le WAQ ne pourrait offrir un tel niveau de qualité à un coût si peu élevé. Merci à tous nos partenaires.</p>
+
+                <div class="btn-more-wrapper">
+                  <a href="/partenaires/" title="Tout sur nos fantastiques partenaires">Tout sur les partenaires</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
 {% endblock %}
