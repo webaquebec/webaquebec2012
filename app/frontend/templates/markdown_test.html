@@ -6,34 +6,32 @@
 {% endblock %}
 
 {% block content %}
-	{% filter markdown %}
-	
-		# Simple text:
-		_test_ of **MY** own.
+{% filter markdown %}
+# Simple text:
+_test_ of **MY** own.
 
-		# List, bullets:
-		* apple
-		* banana
-		* orange
-		* grape
+# List, bullets:
+* apple
+* banana
+* orange
+* grape
 
-		# List, numbered:
-		1. apple
-		1. banana
-		2. orange
-		11. grape
+# List, numbered:
+1. apple
+1. banana
+2. orange
+11. grape
 
 
-		# Citation:
-		> I said one day that bla blabla blalba.
+# Citation:
+> I said one day that bla blabla blalba.
 
-		That's some text with a footnote.[^1]
-		[^1]: And that's the footnote.
+That's some text with a footnote.[^1]
+[^1]: And that's the footnote.
 
-		# Table:
-		|name|value|
-		|------|-----:|
-		|row1|data|
-
-	{% endfilter %}
+# Table:
+|name|value|
+|------|-----:|
+|row1|data|
+{% endfilter %}
 {% endblock %}
