@@ -25,8 +25,8 @@ class ApplicationDatabase {
      * @return int
      */
     static public function getQueriesCount(){
-        $count = self::$db->getQueriesMade();
-        return $count;
+        $count = self::getDBConnection()->getQueriesMade();
+        return (int)$count;
     }
 
 }
