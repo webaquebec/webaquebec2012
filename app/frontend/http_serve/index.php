@@ -5,6 +5,7 @@ const ROUTE_INDEX = 'index';
 const ROUTE_CONTACT = 'contact';
 const ROUTE_PARTENAIRES = 'partenaires';
 const ROUTE_A_PROPOS = 'a-propos';
+const ROUTE_INSCRIPTION = 'inscription';
 
 define("PROJECT_ROOT", realpath(__DIR__."/../../../"));
 define("PATH_PUBLIC", PROJECT_ROOT."/app/frontend/");
@@ -51,6 +52,12 @@ $app->get('/contact/', function() use ($app){
     $app->render('contact.html');
 
 })->name(ROUTE_CONTACT);
+
+$app->get('/inscription/', function() use ($app){
+    /** @var Slim $app */
+    $app->render('inscription.html');
+
+})->name(ROUTE_INSCRIPTION);
 
 
 $app->notFound(function () use ($app) {
