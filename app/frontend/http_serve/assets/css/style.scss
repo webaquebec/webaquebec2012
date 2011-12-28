@@ -129,12 +129,16 @@ header .wrapper{position: relative; padding: 36px 0 0 0;}
   .lieu{display: block; color: $main-gray; font-family: MisoRegular; font-size: 120%; text-shadow: 1px 1px 0 $main-light-blue;}
   .lieu * { color: $main-gray; }
   .dates{display: block; font-family: MisoRegular; font-size: 160%; @extend .whitetext-shadow-up;}
-  .btn-inscription{display: block; height: 34px; width: 114px; position: relative; margin-top: 5px;
-    img{position: absolute; top: 0; left: 0; @include transition(opacity 0.5s ease-in-out);}
-    img.btn-insc-normal{z-index: 2;}
-    img.btn-insc-normal:hover{opacity: 0;}
+  .btn-inscription{
+    display: inline-block;
+    height: 34px;
+    width: 114px;
+    margin-top: 5px;
+    background: url(../img/btn-insc.png) no-repeat left top;
   }
-  //.btn-inscription:hover{background-position: 0 -34px;}
+  .btn-inscription:hover{
+    background-position: 0px -38px;
+  }
 
 }
 
@@ -594,10 +598,29 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
   .content{padding: 10px;
     p{font-size: 90%;}
   }
-  .social-bar{font-family: MisoRegular; padding-left: 10px;
-    li{margin-right: 15px;}
-    span{display: block; font-size: 120%; @extend .to-caps; color: $main-blue-10; border-right: 2px dotted $main-light-gray; padding-right: 15px;}
-    a{background: $main-blue-10 url(../img/sprite.png) no-repeat; padding: 3px 7px 3px 20px; font-size: 90%; @extend .to-caps; @include border-radius(3px);}
+  .social-bar-title{
+    float: left;
+    margin-right: 15px;
+    padding: 0 15px 0 10px;
+    border-right: 2px dotted $main-light-gray;
+    font-family: MisoRegular;
+    font-size: 120%;
+    color: $main-blue-10;
+    @extend .to-caps;
+  }
+  .social-bar{
+    font-family: MisoRegular;
+
+    li{
+      margin-right: 15px;
+    }
+    a{
+      background: $main-blue-10 url(../img/sprite.png) no-repeat;
+      padding: 3px 7px 3px 20px;
+      font-size: 90%;
+      @include border-radius(3px);
+      @extend .to-caps;
+    }
     a:hover{background-color: $main-blue-5;}
     .btn-facebook{background-position: 5px 4px; padding-left: 18px;}
     .btn-twitter{background-position: 5px -14px; padding-left: 25px;}
@@ -661,7 +684,7 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
 #conferenciers{
   ul{ @include border-radius(5px); @include box-shadow(0 3px 4px rgba(#000, 0.2)); width: 588px; float: right; margin-bottom: 10px;
     li{display: block; height: 160px; width: 147px; position: relative; float: right;
-      span{@include opacity(0);display: block; position: absolute; width: 120px; top: 10px; left: 10px; z-index: 3; @include transition(all 0.2s ease-in-out);}
+      span{@include opacity(0); font:{family: MisoLight; size: 120%;} display: block; position: absolute; width: 120px; bottom: 10px; left: 10px; z-index: 3; @include transition(all 0.2s ease-in-out);}
       img{@include opacity(1);display: block; position: absolute; left: 0; top: 0; z-index: 2; @include transition(all 0.2s ease-in-out);}
     }
 

@@ -62,7 +62,7 @@ button {
     content: "";
     display: table; }
 
-.to-caps, .btn-vox-pop, nav.top-right ul li, nav.menu-princ ul li a, h3.box-header, .btn-more-wrapper a, #btn-candidature .date-limite, #vox-pop .social-bar span, #vox-pop .social-bar a, #newsletter-box h3, #newsletter-box form button.btn, #numbers-viewport li h2 {
+.to-caps, .btn-vox-pop, nav.top-right ul li, nav.menu-princ ul li a, h3.box-header, .btn-more-wrapper a, #btn-candidature .date-limite, #vox-pop .social-bar-title, #vox-pop .social-bar a, #newsletter-box h3, #newsletter-box form button.btn, #numbers-viewport li h2 {
   text-transform: uppercase; }
 
 .to-italic {
@@ -302,22 +302,13 @@ header .wrapper {
     font-family: MisoRegular;
     font-size: 160%; }
   .event-details .btn-inscription {
-    display: block;
+    display: inline-block;
     height: 34px;
     width: 114px;
-    position: relative;
-    margin-top: 5px; }
-    .event-details .btn-inscription img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: opacity 0.5s ease-in-out;
-      -webkit-transition: opacity 0.5s ease-in-out;
-      -moz-transition: opacity 0.5s ease-in-out; }
-    .event-details .btn-inscription img.btn-insc-normal {
-      z-index: 2; }
-    .event-details .btn-inscription img.btn-insc-normal:hover {
-      opacity: 0; }
+    margin-top: 5px;
+    background: url(../img/btn-insc.png) no-repeat left top; }
+  .event-details .btn-inscription:hover {
+    background-position: 0px -38px; }
 
 nav.top-right {
   position: absolute;
@@ -709,17 +700,18 @@ h3.box-header {
   padding: 10px; }
   #vox-pop .content p {
     font-size: 90%; }
-#vox-pop .social-bar {
+#vox-pop .social-bar-title {
+  float: left;
+  margin-right: 15px;
+  padding: 0 15px 0 10px;
+  border-right: 2px dotted #e1e1e1;
   font-family: MisoRegular;
-  padding-left: 10px; }
+  font-size: 120%;
+  color: #006d96; }
+#vox-pop .social-bar {
+  font-family: MisoRegular; }
   #vox-pop .social-bar li {
     margin-right: 15px; }
-  #vox-pop .social-bar span {
-    display: block;
-    font-size: 120%;
-    color: #006d96;
-    border-right: 2px dotted #e1e1e1;
-    padding-right: 15px; }
   #vox-pop .social-bar a {
     background: #006d96 url(../img/sprite.png) no-repeat;
     padding: 3px 7px 3px 20px;
