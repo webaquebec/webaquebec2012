@@ -129,12 +129,16 @@ header .wrapper{position: relative; padding: 36px 0 0 0;}
   .lieu{display: block; color: $main-gray; font-family: MisoRegular; font-size: 120%; text-shadow: 1px 1px 0 $main-light-blue;}
   .lieu * { color: $main-gray; }
   .dates{display: block; font-family: MisoRegular; font-size: 160%; @extend .whitetext-shadow-up;}
-  .btn-inscription{display: block; height: 34px; width: 114px; position: relative; margin-top: 5px;
-    img{position: absolute; top: 0; left: 0; @include transition(opacity 0.5s ease-in-out);}
-    img.btn-insc-normal{z-index: 2;}
-    img.btn-insc-normal:hover{opacity: 0;}
+  .btn-inscription{
+    display: inline-block;
+    height: 34px;
+    width: 114px;
+    margin-top: 5px;
+    background: url(../img/btn-insc.png) no-repeat left top;
   }
-  //.btn-inscription:hover{background-position: 0 -34px;}
+  .btn-inscription:hover{
+    background-position: 0px -38px;
+  }
 
 }
 
