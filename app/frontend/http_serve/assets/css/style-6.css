@@ -62,7 +62,7 @@ button {
     content: "";
     display: table; }
 
-.to-caps, .btn-vox-pop, nav.top-right ul li, nav.menu-princ ul li a, h3.box-header, .btn-more-wrapper a, #btn-candidature .date-limite, #vox-pop .social-bar-title, #vox-pop .social-bar a, #newsletter-box h3, #newsletter-box form button.btn, #numbers-viewport li h2 {
+.to-caps, .btn-vox-pop, nav.top-right ul li, nav.menu-princ ul li a, h3.box-header, .btn-more-wrapper a, #btn-candidature .date-limite, #vox-pop .social-bar-title, #vox-pop .social-bar a, #newsletter-box h3, #newsletter-box form button.btn, #numbers-viewport li em {
   text-transform: uppercase; }
 
 .to-italic {
@@ -857,12 +857,20 @@ h3.box-header {
     width: 186px;
     height: 60px;
     padding-top: 130px;
-    position: relative; }
+    position: relative;
+    text-align: center;
+    /*span:hover{
+      font-size: 750%;
+      text-align: center;text-shadow: 0 4px 5px rgba(#000, 0.20);
+      height: 137px;
+      padding-top: 0;
+      cursor: pointer;
+      color: #fff;
+    }*/ }
     #numbers-viewport li span {
       display: block;
       font-family: MisoBold;
       font-size: 700%;
-      text-align: center;
       text-shadow: 0 2px 3px rgba(0, 0, 0, 0.35);
       height: 120px;
       width: 186px;
@@ -874,9 +882,8 @@ h3.box-header {
       position: absolute;
       top: 0;
       left: 0; }
-    #numbers-viewport li h2 {
-      font-size: 140%;
-      text-align: center; }
+    #numbers-viewport li em {
+      font: 140% MisoLight; }
   #numbers-viewport li:hover span {
     font-size: 750%;
     text-align: center;
