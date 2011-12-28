@@ -28,7 +28,8 @@ SimpleAutoLoader::addPath(SHARED_PATH."/classes/");
 
 //Initialize
 parse_configuration();
-$app = init_slim();
+init_slim();
+$app = Slim::getInstance();
 init_twig($app);
 
 //      FAKE         ************
@@ -113,8 +114,7 @@ function init_slim(){
     $slim_config = array(
         'templates.path' => PATH_PUBLIC."/templates/"
     );
-    $app = new Slim($slim_config);
-    return $app;
+    new Slim($slim_config);
 }
 
 function init_twig(Slim $app){
