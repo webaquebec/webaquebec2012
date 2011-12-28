@@ -598,10 +598,29 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
   .content{padding: 10px;
     p{font-size: 90%;}
   }
-  .social-bar{font-family: MisoRegular; padding-left: 10px;
-    li{margin-right: 15px;}
-    span{display: block; font-size: 120%; @extend .to-caps; color: $main-blue-10; border-right: 2px dotted $main-light-gray; padding-right: 15px;}
-    a{background: $main-blue-10 url(../img/sprite.png) no-repeat; padding: 3px 7px 3px 20px; font-size: 90%; @extend .to-caps; @include border-radius(3px);}
+  .social-bar-title{
+    float: left;
+    margin-right: 15px;
+    padding: 0 15px 0 10px;
+    border-right: 2px dotted $main-light-gray;
+    font-family: MisoRegular;
+    font-size: 120%;
+    color: $main-blue-10;
+    @extend .to-caps;
+  }
+  .social-bar{
+    font-family: MisoRegular;
+
+    li{
+      margin-right: 15px;
+    }
+    a{
+      background: $main-blue-10 url(../img/sprite.png) no-repeat;
+      padding: 3px 7px 3px 20px;
+      font-size: 90%;
+      @include border-radius(3px);
+      @extend .to-caps;
+    }
     a:hover{background-color: $main-blue-5;}
     .btn-facebook{background-position: 5px 4px; padding-left: 18px;}
     .btn-twitter{background-position: 5px -14px; padding-left: 25px;}
