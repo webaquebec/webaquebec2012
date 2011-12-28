@@ -648,7 +648,7 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
 #conferenciers{
   ul{ @include border-radius(5px); @include box-shadow(0 3px 4px rgba(#000, 0.2)); width: 588px; float: right; margin-bottom: 10px;
     li{display: block; height: 160px; width: 147px; position: relative; float: right;
-      span{@include opacity(0);display: block; position: absolute; width: 120px; top: 10px; left: 10px; z-index: 3; @include transition(all 0.2s ease-in-out);}
+      span{@include opacity(0); font:{family: MisoLight; size: 120%;} display: block; position: absolute; width: 120px; bottom: 10px; left: 10px; z-index: 3; @include transition(all 0.2s ease-in-out);}
       img{@include opacity(1);display: block; position: absolute; left: 0; top: 0; z-index: 2; @include transition(all 0.2s ease-in-out);}
     }
 
