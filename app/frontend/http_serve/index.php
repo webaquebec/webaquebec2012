@@ -20,6 +20,7 @@ require SLIM_PATH.'/Slim.php';
 require SLIMEXTRAS_PATH.'/Views/TwigView.php';
 require MARKDOWN_PATH."/markdown.php";
 require SHARED_PATH."/classes/SimpleAutoLoader.php";
+SimpleAutoLoader::addPath(PATH_PUBLIC."/classes/");
 SimpleAutoLoader::addPath(SHARED_PATH."/classes/");
 
 //Initialize
@@ -31,6 +32,12 @@ init_twig($app);
 $app->get('/md', function () use ($app) {
     /** @var Slim $app */
     $app->render('markdown_test.html');
+});
+//      FAKE         ************
+$app->get('/programmation-raph', function () use ($app) {
+    /** @var Slim $app */
+    $list = Presentation::getAll();
+    print_r($list);
 });
 
 $app->get('/', function () use ($app) {
