@@ -31,12 +31,6 @@ $app->get('/md', function () use ($app) {
     /** @var Slim $app */
     $app->render('markdown_test.html');
 });
-//      FAKE         ************
-$app->get('/programmation-raph', function () use ($app) {
-    /** @var Slim $app */
-    $list = Presentation::getAll();
-    print_r($list);
-});
 
 $app->get('/', function () use ($app) {
     /** @var Slim $app */
@@ -67,6 +61,22 @@ $app->get('/inscription/', function() use ($app){
 
 })->name(Routes::INSCRIPTION);
 
+$app->get('/programmation/', function () use ($app) {
+    /** @var Slim $app */
+    $list = Presentation::getAll();
+    $app->render('programmation-list-raph.html', array(
+        'list' => $list,
+        'route_single' => Routes::PROGRAMMATION_SINGLE,
+    ));
+
+})->name(Routes::PROGRAMMATION);
+
+$app->get('/programmation/:id/?:name?/?', function ($id, $name = NULL) use ($app) {
+    /** @var Slim $app */
+    $item = Presentation::getById($id);
+    print_r(array($id, $name, $item));
+
+})->name(Routes::PROGRAMMATION_SINGLE);
 
 $app->notFound(function () use ($app) {
     /** @var Slim $app */
@@ -120,7 +130,8 @@ function init_twig(Slim $app){
     $twig_view = new TwigView();
     $app->view($twig_view);
 
-    $twig_view->getEnvironment()->addFilter('markdown', new Twig_Filter_Function("MarkdownHandler::handle", array('is_safe' => array('html'))));
+    $twig_view->getEnvironment()->addFilter('markdown', new Twig_Filter_Function("TwigFilters::handle_markdown", array('is_safe' => array('html'))));
+    $twig_view->getEnvironment()->addFunction('route', new Twig_Function_Function("TwigFilters::route"));
 
 }
 
@@ -128,8 +139,14 @@ function parse_configuration(){
     Config::readConfigFile(SHARED_PATH."/conf.php");
 }
 
-class MarkdownHandler{
-    public static function handle($code){
+class TwigFilters{
+
+    public static function handle_markdown($code){
         return Markdown($code);
     }
+
+    public static function route($route_name, $params = array()){
+        return Slim::getInstance()->urlFor($route_name, $params);
+    }
+
 }

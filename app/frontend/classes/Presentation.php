@@ -2,20 +2,23 @@
 
 class Presentation{
 
+    private static $select_fields = "  uid,
+                                       ordering,
+                                       presenter_name_first,
+                                       presenter_name_last,
+                                       presenter_resume,
+                                       conference_name,
+                                       conference_resume,
+                                       conference_goals,
+                                       tags,
+                                       website,
+                                       twitter_handle";
+
     public static function getAll(){
+        $fields=  self::$select_fields;
         $sql = "
 
-        SELECT uid,
-               ordering,
-               presenter_name_first,
-               presenter_name_last,
-               presenter_resume,
-               conference_name,
-               conference_resume,
-               conference_goals,
-               tags,
-               website,
-               twitter_handle
+        SELECT  {$fields}
 
           FROM presentation
       ORDER BY ordering ASC
@@ -35,6 +38,31 @@ class Presentation{
         }
 
         return $presentations;
+    }
+
+    public static function getById($id){
+        $fields=  self::$select_fields;
+        $sql = "
+
+        SELECT  {$fields}
+
+          FROM presentation
+         WHERE uid = %d
+
+          ;
+
+        ";
+        $rs = ApplicationDatabase::getDBConnection()->query($sql, array($id));
+
+        $row = $rs->assocOne();
+        if(empty($row)){
+            return FALSE;
+        }
+
+        $p = new Presentation();
+        $p->feedFromRow($row);
+
+        return $p;
     }
 
     private $uid;
@@ -72,6 +100,7 @@ class Presentation{
     }
 
     public function getConferenceName(){
+        error_log("getConferenceName : " . $this->conference_name);
         return $this->conference_name;
     }
 
@@ -145,5 +174,13 @@ class Presentation{
 
     public function getWebsite(){
         return $this->website;
+    }
+
+    function __call($name, $arguments){
+        throw new Exception("Bad function name : $name.");
+    }
+
+    public function __get($name){
+        throw new Exception("Bad property name : $name.");
     }
 }

@@ -7,5 +7,7 @@ class Routes{
     const PARTENAIRES = 'partenaires';
     const A_PROPOS = 'a-propos';
     const INSCRIPTION = 'inscription';
+    const PROGRAMMATION = 'programmation';
+    const PROGRAMMATION_SINGLE = 'programmation_SINGLE';
 
 }

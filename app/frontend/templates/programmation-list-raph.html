@@ -1,0 +1,28 @@
+{% extends "blocks/base.html" %}
+
+{% block title %}Testing list presentations{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+        Prog:
+    <ul>
+    {% for row in list %}
+
+        <li>
+
+            {{ row.uid }}
+            {{ row.tags }}
+
+            {% set route_params = {'id': row.uid, 'name': 'test'} %}
+            <a href="{{ route(route_single, route_params) }}">{{ row.conferenceName }}</a>
+            
+
+        </li>
+
+    {% endfor %}
+    </ul>
+
+{% endblock %}
