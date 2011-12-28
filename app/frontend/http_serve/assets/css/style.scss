@@ -28,9 +28,12 @@ $main-xlight-gray: #f5f5f5;
 .list-hori {margin: 0 0 1.25em;}
 .list-hori li{float: left; display: block;}
 .ow{
-  width: 100%;
   min-width: 960px;
-  background: transparent url("../img/back-hollow-top-right.png") no-repeat center top;
+  background: $main-blue url("../img/back-flare.jpg") no-repeat center top;
+}
+.ow-stripes{
+  min-width: 960px;
+  background: url(../img/back-main.png) left top;
 }
 .wrapper{width: 960px; margin: 0 auto;}
 .light-white-gradient{@include box-gradient(#fff, #e9e9e9);}
@@ -96,7 +99,7 @@ $main-xlight-gray: #f5f5f5;
 //#########################################################
 //   General     ##########################################
 
-body{background: $main-blue url(../img/back-main.png); font-family: Arial, sans-serif;}
+body{background: $main-blue; font-family: Arial, sans-serif;}
 
 a{color: $link-color; text-decoration: none; outline: none;}
 
@@ -108,15 +111,21 @@ p{line-height: 1.4;}
 //#########################################################
 //   Header     ###########################################
 
-header{height: 180px;}
-header .wrapper{position: relative; padding: 50px 0 0 0;}
+header{height: 164px;}
+header .wrapper{position: relative; padding: 36px 0 0 0;}
 
 .logo-princ{width: 254px; height: 87px; background: url(../img/logo-princ.png) no-repeat; float: left;}
 .logo-princ span{display: block;}
 .logo-accronym{height: 97px;}
 .logo-full-text{font-size: 100%; font-family: MisoLight; letter-spacing: 0.1em;}
 
-.event-details{float: left; margin-left: 30px;
+.event-details{
+  float: left;
+  width: 200px;
+  margin: 0 286px 0 24px;
+  position: relative;
+  top: -3px;
+
   .lieu{display: block; color: $main-gray; font-family: MisoRegular; font-size: 120%; text-shadow: 1px 1px 0 $main-light-blue;}
   .lieu * { color: $main-gray; }
   .dates{display: block; font-family: MisoRegular; font-size: 160%; @extend .whitetext-shadow-up;}
@@ -134,7 +143,11 @@ nav.top-right{position: absolute; top: 10px; right: 0;
   ul li a:link:hover{text-decoration: underline;}
 }
 
-nav.menu-princ{float: right;
+nav.menu-princ{
+  float: left;
+  width: 195px;
+  padding-top: 8px;
+
   ul li{ margin-bottom: 3px;
     a{background: $main-blue-10; @include border-radius(5px); display: block; padding: 3px 10px; @extend .to-caps; font-size: 130%; font-family: MisoRegular; text-shadow: 0 -1px $main-blue-20; @include transition(all 0.2s ease-in-out);}
     a:hover{background: $main-blue-5;}
