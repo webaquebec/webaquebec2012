@@ -9,6 +9,7 @@ const ROUTE_INSCRIPTION = 'inscription';
 
 define("PROJECT_ROOT", realpath(__DIR__."/../../../"));
 define("PATH_PUBLIC", PROJECT_ROOT."/app/frontend/");
+define("SHARED_PATH", PROJECT_ROOT."/app/shared/");
 define("SLIM_PATH", PROJECT_ROOT."/libraries/slim/");
 define("MARKDOWN_PATH", PROJECT_ROOT."/libraries/php-markdown/");
 define("SLIMEXTRAS_PATH", PROJECT_ROOT."/libraries/slim-extras/");
@@ -19,8 +20,11 @@ define("CACHE_PATH", PROJECT_ROOT.'/cache/');
 require SLIM_PATH.'/Slim.php';
 require SLIMEXTRAS_PATH.'/Views/TwigView.php';
 require MARKDOWN_PATH."/markdown.php";
+require SHARED_PATH."/classes/SimpleAutoLoader.php";
+SimpleAutoLoader::addPath(SHARED_PATH."/classes/");
 
 //Initialize
+parse_configuration();
 $app = init_slim();
 init_twig($app);
 
@@ -98,13 +102,19 @@ function init_slim(){
 
 function init_twig(Slim $app){
     TwigView::$twigDirectory = rtrim(TWIG_PATH, "/"); //Slim requires a path without trailling slash.
-    TwigView::$twigOptions['cache'] = CACHE_PATH.'/twig_cache_public/';
+    if(Config::get('cache') !== FALSE){
+        TwigView::$twigOptions['cache'] = CACHE_PATH.'/twig_cache_public/';
+    }
 
     $twig_view = new TwigView();
     $app->view($twig_view);
 
     $twig_view->getEnvironment()->addFilter('markdown', new Twig_Filter_Function("MarkdownHandler::handle", array('is_safe' => array('html'))));
 
+}
+
+function parse_configuration(){
+    Config::readConfigFile(SHARED_PATH."/conf.php");
 }
 
 class MarkdownHandler{
