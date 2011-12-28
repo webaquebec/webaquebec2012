@@ -100,7 +100,6 @@ class Presentation{
     }
 
     public function getConferenceName(){
-        error_log("getConferenceName : " . $this->conference_name);
         return $this->conference_name;
     }
 
