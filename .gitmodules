@@ -9,4 +9,4 @@
 	url = git://github.com/raphael-riel/Twig.git
 [submodule "externs/php-markdown"]
 	path = externs/php-markdown
-	url = git://github.com/wolfie/php-markdown.git
+	url = git://github.com/raphael-riel/php-markdown.git
