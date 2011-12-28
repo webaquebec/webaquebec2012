@@ -17,14 +17,18 @@
     <div id="page">
       <header>
         <div class="wrapper clearfix">
-          <a href="/"><span class="logo-princ"><span class="logo-accronym t-indent">WAQ</span> <span class="logo-full-text to-caps">Le Web à Québec</span></span></a>
+          <h1 class="logo"><a href="/" class="no-focus no-focus-click"><span class="logo-princ"><span class="logo-accronym t-indent">WAQ</span> <span class="logo-full-text to-caps">Le Web à Québec</span></span></a></h1>
 
           <div class="event-details">
             <span class="lieu">Espace 400<sup>e</sup> Bell. Québec</span> <time class="dates" datetime="2012-02-22">22-24 février 2012</time> <a class="btn-inscription t-indent" href="/inscription/">Inscription <img class="btn-insc-normal" src="/assets/img/btn-insc.png" alt="Inscription" /> <img class="btn-insc-hover" src="/assets/img/btn-insc-hover.png" alt="Inscription" /></a>
           </div>
 
-          <nav class="top-right">
+          <nav class="top-right" role="navigation">
+			<h2 class="assistive-text">Menu secondaire</h2>
             <ul class="list-custom list-hori">
+				<li class="link-hidden">
+					<a href="#" class="no-focus-click">Passer au contenu</a>
+			    </li>
               <li><a href="/a-propos/">À propos</a></li>
 
               <li><a href="/partenaires/">Partenaires</a></li>
@@ -33,7 +37,8 @@
             </ul>
           </nav>
 
-          <nav class="menu-princ">
+          <nav class="menu-princ" role="navigation">
+			<h2 class="assistive-text">Menu principal</h2>
             <ul class="list-custom">
               <li><a href="/programmation/">Programmation</a></li>
 
