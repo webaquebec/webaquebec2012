@@ -10,4 +10,5 @@ $config = array(
         'database' => 'dbname',
     ),
     'cache' => TRUE,
+    'debug' => FALSE,
 );

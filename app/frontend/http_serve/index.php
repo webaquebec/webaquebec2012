@@ -1,5 +1,7 @@
 <?php
 
+$render_start = microtime(true);
+
 //Constants
 const ROUTE_INDEX = 'index';
 const ROUTE_CONTACT = 'contact';
@@ -85,7 +87,15 @@ $app->view()->setData('menu', array(
 
 
 $app->run();
-
+$render_end = microtime(true);
+if(Config::get('debug') === TRUE){
+    $render_time = $render_end - $render_start;
+    $memory_used = Helpers::byteFormat(memory_get_peak_usage(true));
+    $queries = ApplicationDatabase::getQueriesCount();
+    echo "<!-- Render Time : $render_time -->\n";
+    echo "<!-- Memory Used : $memory_used -->\n";
+    echo "<!-- Queries : $queries -->\n";
+}
 
 
 
