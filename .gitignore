@@ -1,3 +1,5 @@
 .DS_Store
 /app/settings.php
 /cache
+/app/shared/conf.php
+/app/shared/conf_*.php
