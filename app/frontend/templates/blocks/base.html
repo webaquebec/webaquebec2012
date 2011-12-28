@@ -7,6 +7,15 @@
         {% endblock %}
     </head>
     <body>
+
+        <div id="menu_primary">
+            <ul>
+            {% for item in menu.secondary %}
+                <li><a href="{{item.url}}">{{item.name}}</a></li>
+            {% endfor %}
+            </ul>
+        </div>
+
         <div id="content">{% block content %}{% endblock %}</div>
         <div id="footer">
             {% block footer %}

@@ -1,6 +1,11 @@
 <?php
 
 //Constants
+const ROUTE_INDEX = 'index';
+const ROUTE_CONTACT = 'contact';
+const ROUTE_PARTENAIRES = 'partenaires';
+const ROUTE_A_PROPOS = 'a-propos';
+
 define("PROJECT_ROOT", realpath(__DIR__."/../../../"));
 define("PATH_PUBLIC", PROJECT_ROOT."/app/frontend/");
 define("SLIM_PATH", PROJECT_ROOT."/libraries/slim/");
@@ -18,15 +23,55 @@ require MARKDOWN_PATH."/markdown.php";
 $app = init_slim();
 init_twig($app);
 
-$app->get('/', function () use ($app) {
-    /** @var Slim $app */
-    $app->render('index.html');
-});
-
+//      FAKE         ************
 $app->get('/md', function () use ($app) {
     /** @var Slim $app */
     $app->render('markdown_test.html');
 });
+
+$app->get('/', function () use ($app) {
+    /** @var Slim $app */
+    $app->render('index.html');
+})->name(ROUTE_INDEX);
+
+$app->get('/a-propos/', function() use ($app){
+    /** @var Slim $app */
+    $app->render('a-propos.html');
+
+})->name(ROUTE_A_PROPOS);
+
+$app->get('/partenaires/', function() use ($app){
+    /** @var Slim $app */
+    $app->render('partenaires.html');
+
+})->name(ROUTE_PARTENAIRES);
+
+$app->get('/contact/', function() use ($app){
+    /** @var Slim $app */
+    $app->render('contact.html');
+
+})->name(ROUTE_CONTACT);
+
+
+$app->notFound(function () use ($app) {
+    /** @var Slim $app */
+    $app->render('errors/404.html');
+});
+
+
+$app->view()->setData('menu', array(
+    'primary' => array(
+
+    ),
+    'secondary' => array(
+        array('name' => ROUTE_CONTACT, 'url' => $app->urlFor(ROUTE_CONTACT)),
+        array('name' => ROUTE_PARTENAIRES, 'url' => $app->urlFor(ROUTE_PARTENAIRES)),
+        array('name' => ROUTE_A_PROPOS, 'url' => $app->urlFor(ROUTE_A_PROPOS)),
+    ),
+));
+
+
+
 
 $app->run();
 
