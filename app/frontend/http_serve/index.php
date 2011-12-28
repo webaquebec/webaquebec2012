@@ -3,12 +3,6 @@
 $render_start = microtime(true);
 
 //Constants
-const ROUTE_INDEX = 'index';
-const ROUTE_CONTACT = 'contact';
-const ROUTE_PARTENAIRES = 'partenaires';
-const ROUTE_A_PROPOS = 'a-propos';
-const ROUTE_INSCRIPTION = 'inscription';
-
 define("PROJECT_ROOT", realpath(__DIR__."/../../../"));
 define("PATH_PUBLIC", PROJECT_ROOT."/app/frontend/");
 define("SHARED_PATH", PROJECT_ROOT."/app/shared/");
@@ -47,31 +41,31 @@ $app->get('/programmation-raph', function () use ($app) {
 $app->get('/', function () use ($app) {
     /** @var Slim $app */
     $app->render('index.html');
-})->name(ROUTE_INDEX);
+})->name(Routes::INDEX);
 
 $app->get('/a-propos/', function() use ($app){
     /** @var Slim $app */
     $app->render('a-propos.html');
 
-})->name(ROUTE_A_PROPOS);
+})->name(Routes::A_PROPOS);
 
 $app->get('/partenaires/', function() use ($app){
     /** @var Slim $app */
     $app->render('partenaires.html');
 
-})->name(ROUTE_PARTENAIRES);
+})->name(Routes::PARTENAIRES);
 
 $app->get('/contact/', function() use ($app){
     /** @var Slim $app */
     $app->render('contact.html');
 
-})->name(ROUTE_CONTACT);
+})->name(Routes::CONTACT);
 
 $app->get('/inscription/', function() use ($app){
     /** @var Slim $app */
     $app->render('inscription.html');
 
-})->name(ROUTE_INSCRIPTION);
+})->name(Routes::INSCRIPTION);
 
 
 $app->notFound(function () use ($app) {
@@ -85,9 +79,9 @@ $app->view()->setData('menu', array(
 
     ),
     'secondary' => array(
-        array('name' => ROUTE_CONTACT, 'url' => $app->urlFor(ROUTE_CONTACT)),
-        array('name' => ROUTE_PARTENAIRES, 'url' => $app->urlFor(ROUTE_PARTENAIRES)),
-        array('name' => ROUTE_A_PROPOS, 'url' => $app->urlFor(ROUTE_A_PROPOS)),
+        array('name' => Routes::CONTACT, 'url' => $app->urlFor(Routes::CONTACT)),
+        array('name' => Routes::PARTENAIRES, 'url' => $app->urlFor(Routes::PARTENAIRES)),
+        array('name' => Routes::A_PROPOS, 'url' => $app->urlFor(Routes::A_PROPOS)),
     ),
 ));
 
