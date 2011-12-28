@@ -16,6 +16,8 @@ class ApplicationDatabase {
                 $db["database"],
                 $db["user"],
                 $db["password"]);
+
+            self::$db->query("SET NAMES UTF8;");
         }
 
         return self::$db;
