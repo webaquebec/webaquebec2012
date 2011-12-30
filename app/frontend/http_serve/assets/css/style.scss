@@ -670,11 +670,45 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
   #btn-suivant:hover span{background-position: 5px -101px;}
 }
 
-#numbers-viewport{ position: relative; margin: 0 0 30px 25px; width: 561px;
-  li{display: block; width: 186px; height: 60px; padding-top: 130px; position: relative;
-    span{display: block; font-family: MisoBold; font-size: 700%; text-align: center; text-shadow: 0 2px 3px rgba(#000, 0.35); height: 120px; width: 186px; padding-top: 7px; color: #ebebeb; @include transition(all 0.1s ease-in-out); position: absolute; top: 0; left: 0;}
-    //span:hover{font-size: 750%; text-align: center;text-shadow: 0 4px 5px rgba(#000, 0.20); height: 137px; padding-top: 0; cursor: pointer; color: #fff;}
-    h2{font-size: 140%; @extend .to-caps; text-align: center;}
+#numbers-viewport{
+  position: relative;
+  margin: 0 0 30px 25px;
+  width: 561px;
+
+  li{
+    display: block;
+    width: 186px;
+    height: 60px;
+    padding-top: 130px;
+    position: relative;
+    text-align: center;
+
+    span{
+      display: block;
+      font-family: MisoBold;
+      font-size: 700%;
+      text-shadow: 0 2px 3px rgba(#000, 0.35);
+      height: 120px;
+      width: 186px;
+      padding-top: 7px;
+      color: #ebebeb;
+      @include transition(all 0.1s ease-in-out);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    /*span:hover{
+      font-size: 750%;
+      text-align: center;text-shadow: 0 4px 5px rgba(#000, 0.20);
+      height: 137px;
+      padding-top: 0;
+      cursor: pointer;
+      color: #fff;
+    }*/
+    em{
+      font: 140% MisoLight;
+      @extend .to-caps;
+    }
   }
   li:hover{
     span{font-size: 750%; text-align: center; text-shadow: 0px 6px 5px rgba(#000, 0.20); height: 127px; padding-top: 0; color: #fff;}

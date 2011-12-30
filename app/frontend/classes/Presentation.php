@@ -4,8 +4,10 @@ class Presentation{
 
     private static $select_fields = "  uid,
                                        ordering,
+                                       starred,
                                        presenter_name_first,
                                        presenter_name_last,
+                                       presenter_image,
                                        presenter_resume,
                                        conference_name,
                                        conference_resume,
@@ -67,9 +69,11 @@ class Presentation{
 
     private $uid;
     private $ordering;
+    private $starred;
     private $presenter_name_first;
     private $presenter_name_last;
     private $presenter_resume;
+    private $presenter_image;
     private $conference_name;
     private $conference_resume;
     private $conference_goals;
@@ -185,5 +189,21 @@ class Presentation{
 
     public function __get($name){
         throw new Exception("Bad property name : $name.");
+    }
+
+    public function setPresenterImage($presenter_image){
+        $this->presenter_image = $presenter_image;
+    }
+
+    public function getPresenterImage(){
+        return $this->presenter_image;
+    }
+
+    public function setStarred($starred){
+        $this->starred = $starred;
+    }
+
+    public function getStarred(){
+        return $this->starred;
     }
 }
