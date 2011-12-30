@@ -43,6 +43,13 @@
   transition: $data;
   -webkit-transition: $data;
   -moz-transition: $data;
+  -ms-transition: $data;
+}
+
+@mixin transform($data) {
+    -webkit-transform: $data;
+    -moz-transform: $data;
+    -ms-transform: $data;
 }
 
 @mixin box-shadow($props) {
