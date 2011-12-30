@@ -854,12 +854,26 @@ a.no-focus:focus, a.no-focus-click:focus{
 	background: #000;
 	color: #fff;
 	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
+	@include border-radius( 10px) ;
 	display: block;
 }
 
 a.link-hidden:focus{
 	background: #fff;
 	color: #000;
+}
+
+#news-box a, .white-box a, footer a {
+    display: inline-block;
+} 
+
+#page-content a:focus, nav.menu-princ a:hover, nav.menu-princ a:focus { 
+    @include transition (all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550));
+    @include transform( scale(1.1)) ;
+}
+
+footer a:focus {
+    @include transition (all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550));
+    @include transform( scale(2)) ;
+    background: black;
 }
