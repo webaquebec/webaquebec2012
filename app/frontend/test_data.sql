@@ -1,4 +1,33 @@
-INSERT INTO `presentation` 
+/**
+RECOVERED FROM STATIC CONTENT
+*/
+
+INSERT INTO presentation (starred, presenter_name, conference_name, presenter_image) VALUES
+
+('1', 'Peter Morville', 'Ubiquitous Information Architecture: A Framework for Cross-Channel Strategy', 'peter-morville.jpg'),
+('0', 'Charles-Alain Roy', 'Les fonctionnalités avancées de Google Analytics à travers des exemples concrets', 'charles-alain-roy.jpg'),
+('0', 'Denis Boudreau', 'SEO, Web mobile et accessibilité : Trinité du développement Web inclusif', 'denis-boudreault.jpg'),
+('0', 'Stéphane Hamel', 'Web analytics : êtes-vous sur la bonne voie ?', 'stephane-hamel.jpg'),
+('0', 'François Gaumond', 'Savoir engager un véritable dialogue multicanal', 'francois-gaumond.jpg'),
+('0', 'Catherine Morissette', 'Le web et les vides juridiques: difficultés d’application', 'catherine-morissette.jpg'),
+('0', 'Rémy Savard', 'Nouveaux APIs (HTML5/CSS3/JS)', 'remy-savard.jpg'),
+('0', 'Daniel Lafrenière', 'On veut pas le sawère, on veut le wère !', 'daniel-lafreniere.jpg'),
+('0', 'Nicolas Roberge', 'Les ingrédients du Web ubiquitaire', 'nicolas-roberge.jpg'),
+('0', 'Isabelle Grenier', 'Le Festival d’été de Québec et les médias sociaux : informer et divertir des milliers d’amis', 'isabelle-grenier.jpg'),
+('0', 'Jacques Warren', 'Les médias sociaux sont si peu sociaux', 'jacques-warren.jpg'),
+('0', 'Mario Asselin', 'OpenGouv / OpenData : le mode résistance n’a plus sa place!', 'mario-asselin.jpg'),
+('0', 'Michaël Carpentier', 'Être accessible c’est bien, être compris c\'est mieux : écrire pour le Web', 'michael-carpentier.jpg'),
+('0', 'Rémi Prévost', 'Introduction à Ruby', 'remi-prevost.jpg'),
+('0', 'Carl-Frédéric de Celles, Sébastien Provencher, Kim Auclair,  Albert Dang Vu', '***Panel :*** Entreprendre le Web, à Québec, aujourd\'hui.', 'panel-entrepreneuriat.jpg');
+
+
+
+/**
+TEST DATA
+*/
+
+
+INSERT INTO `presentation`
 (`ordering`,
 `starred`,
 `presenter_name`,
