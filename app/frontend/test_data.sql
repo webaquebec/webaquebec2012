@@ -1,8 +1,7 @@
 INSERT INTO `presentation` 
 (`ordering`,
 `starred`,
-`presenter_name_first`,
-`presenter_name_last`,
+`presenter_name`,
 `presenter_image`,
 `presenter_resume`,
 `conference_name`,
@@ -18,8 +17,7 @@ VALUES
 (
 NULL, 
 TRUE,
-'Madame',
-'ABC',
+'Madame ABC',
 'isabelle-grenier.jpg',
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper posuere ligula in elementum. Cras ornare odio vitae arcu tincidunt tempus. Donec eget elementum dui. In hac habitasse platea dictumst. Nam convallis urna non est tempor auctor. Maecenas congue tristique lorem, ut bibendum leo euismod vitae. Etiam rhoncus consectetur vulputate. Aliquam mattis fermentum aliquet. Aenean tristique, augue vitae fermentum semper, justo elit ornare nisi, pretium porttitor nisi felis a elit. Vivamus id mi arcu, sed volutpat dui.
 
@@ -49,8 +47,7 @@ Duis pharetra laoreet velit non ultrices. Etiam tempus tellus in tellus eleifend
 (
 NULL, 
 FALSE,
-'Madame',
-'ABC',
+'Madame ABC',
 'remi-prevost.jpg',
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper posuere ligula in elementum. Cras ornare odio vitae arcu tincidunt tempus. Donec eget elementum dui. In hac habitasse platea dictumst. Nam convallis urna non est tempor auctor. Maecenas congue tristique lorem, ut bibendum leo euismod vitae. Etiam rhoncus consectetur vulputate. Aliquam mattis fermentum aliquet. Aenean tristique, augue vitae fermentum semper, justo elit ornare nisi, pretium porttitor nisi felis a elit. Vivamus id mi arcu, sed volutpat dui.
 
@@ -77,8 +74,7 @@ Duis pharetra laoreet velit non ultrices. Etiam tempus tellus in tellus eleifend
 (
 NULL, 
 TRUE,
-'Monsieur',
-'XYZ',
+'Monsieur XYZ',
 'kim-auclair.jpg',
 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper posuere ligula in elementum. Cras ornare odio vitae arcu tincidunt tempus. Donec eget elementum dui. In hac habitasse platea dictumst. Nam convallis urna non est tempor auctor. Maecenas congue tristique lorem, ut bibendum leo euismod vitae. Etiam rhoncus consectetur vulputate. Aliquam mattis fermentum aliquet. Aenean tristique, augue vitae fermentum semper, justo elit ornare nisi, pretium porttitor nisi felis a elit. Vivamus id mi arcu, sed volutpat dui.
 

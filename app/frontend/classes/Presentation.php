@@ -5,8 +5,7 @@ class Presentation{
     private static $select_fields = "  uid,
                                        ordering,
                                        starred,
-                                       presenter_name_first,
-                                       presenter_name_last,
+                                       presenter_name,
                                        presenter_image,
                                        presenter_resume,
                                        conference_name,
@@ -70,8 +69,7 @@ class Presentation{
     private $uid;
     private $ordering;
     private $starred;
-    private $presenter_name_first;
-    private $presenter_name_last;
+    private $presenter_name;
     private $presenter_resume;
     private $presenter_image;
     private $conference_name;
@@ -125,22 +123,6 @@ class Presentation{
 
     public function getOrdering(){
         return $this->ordering;
-    }
-
-    public function setPresenterNameFirst($presenter_name_first){
-        $this->presenter_name_first = $presenter_name_first;
-    }
-
-    public function getPresenterNameFirst(){
-        return $this->presenter_name_first;
-    }
-
-    public function setPresenterNameLast($presenter_name_last){
-        $this->presenter_name_last = $presenter_name_last;
-    }
-
-    public function getPresenterNameLast(){
-        return $this->presenter_name_last;
     }
 
     public function setPresenterResume($presenter_resume){
@@ -205,5 +187,13 @@ class Presentation{
 
     public function getStarred(){
         return $this->starred;
+    }
+
+    public function getPresenterName(){
+        return $this->presenter_name;
+    }
+
+    public function setPresenterName($presenter_name){
+        $this->presenter_name = $presenter_name;
     }
 }
