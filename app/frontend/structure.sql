@@ -1,5 +1,5 @@
 CREATE TABLE presentation (
-    uid int(11) NOT NULL AUTO_INCREMENT,
+    id int(11) NOT NULL AUTO_INCREMENT,
     ordering int(11),
     starred boolean DEFAULT 0,
     presenter_name varchar(255) NOT NULL,
