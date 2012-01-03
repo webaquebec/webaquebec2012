@@ -1,11 +1,29 @@
 {% extends "blocks/base.html" %}
 
-{% block title %}contact{% endblock %}
-
-{% block head %}
-    {{ parent() }}
-{% endblock %}
+{% block title %}Contact | {{ parent() }}{% endblock %}
 
 {% block content %}
-	<h1>contact</h1>
+
+<div class="ros-wrapper">
+  <div class="page-content-block clearfix">
+
+    <div class="left-side main">
+      {% include 'blocks/news_box.html' %}
+      {% include 'blocks/newsletter_box.html' %}
+    </div>
+
+    <article class="right-side main">
+      <h1>Contact</h1>
+      <div class="full-width rs-content-box">
+        <p>
+          Pour tous renseignements supplémentaires, écrivez-nous : <strong><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#105;&#110;&#102;&#111;&#64;&#119;&#101;&#98;&#97;&#113;&#117;&#101;&#98;&#101;&#99;&#46;&#111;&#114;&#103;">&#105;&#110;&#102;&#111;&#64;&#119;&#101;&#98;&#97;&#113;&#117;&#101;&#98;&#101;&#99;&#46;&#111;&#114;&#103;</a></strong>
+          <br />Ou par téléphone au <strong>418-647-3877</strong>
+        </p>
+      </div>
+    </article>
+
+  </div>
+
+</div>
+
 {% endblock %}
