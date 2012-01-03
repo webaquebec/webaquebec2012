@@ -2,32 +2,14 @@
 
 $render_start = microtime(true);
 
-//Constants
-define("PROJECT_ROOT", realpath(__DIR__."/../../../"));
-define("PATH_PUBLIC", PROJECT_ROOT."/app/frontend/");
-define("SHARED_PATH", PROJECT_ROOT."/app/shared/");
-define("SLIM_PATH", PROJECT_ROOT."/libraries/slim/");
-define("MARKDOWN_PATH", PROJECT_ROOT."/libraries/php-markdown/");
-define("SLIMEXTRAS_PATH", PROJECT_ROOT."/libraries/slim-extras/");
-define("TWIG_PATH", PROJECT_ROOT."/libraries/twig/Twig/");
-define("CACHE_PATH", PROJECT_ROOT.'/cache/');
+include __DIR__."/../../shared/bootstrap.inc.php";
 
 //Requirements.
-require SLIM_PATH.'/Slim.php';
-require SLIMEXTRAS_PATH.'/Views/TwigView.php';
-require MARKDOWN_PATH."/markdown.php";
-require SHARED_PATH."/classes/SimpleAutoLoader.php";
-require PROJECT_ROOT."/libraries/idiorm/idiorm.php";
-require PROJECT_ROOT."/libraries/paris/paris.php";
 SimpleAutoLoader::addPath(PATH_PUBLIC."/classes/");
-SimpleAutoLoader::addPath(SHARED_PATH."/classes/");
 
 //Initialize
-parse_configuration();
-init_orm();
-init_slim();
-$app = Slim::getInstance();
-init_twig($app);
+global $app;
+bootstrap(PATH_PUBLIC."/templates/");
 
 //      FAKE         ************
 $app->get('/md', function () use ($app) {
@@ -122,63 +104,4 @@ if(Config::get('debug') === TRUE){
     echo "<!-- Render Time : $render_time -->\n";
     echo "<!-- Memory Used : $memory_used -->\n";
     echo "<!-- Queries : $queries -->\n";
-}
-
-
-
-
-
-
-function init_orm(){
-    $db = Config::get("db");
-
-    $db_host = $db["host"];
-    $db_port = $db["port"];
-    $db_name = $db["database"];
-
-    ORM::configure("mysql:host=$db_host;port=$db_port;dbname=$db_name;charset=utf8");
-    ORM::configure('username', $db["user"]);
-    ORM::configure('password', $db["password"]);
-
-    if(Config::get('debug') === TRUE){
-        ORM::configure('logging', TRUE);
-    }
-
-}
-
-function init_slim(){
-    $slim_config = array(
-        'templates.path' => PATH_PUBLIC."/templates/"
-    );
-    new Slim($slim_config);
-}
-
-function init_twig(Slim $app){
-    TwigView::$twigDirectory = rtrim(TWIG_PATH, "/"); //Slim requires a path without trailling slash.
-    if(Config::get('cache') !== FALSE){
-        TwigView::$twigOptions['cache'] = CACHE_PATH.'/twig_cache_public/';
-    }
-
-    $twig_view = new TwigView();
-    $app->view($twig_view);
-
-    $twig_view->getEnvironment()->addFilter('markdown', new Twig_Filter_Function("TwigFilters::handle_markdown", array('is_safe' => array('html'))));
-    $twig_view->getEnvironment()->addFunction('route', new Twig_Function_Function("TwigFilters::route"));
-
-}
-
-function parse_configuration(){
-    Config::readConfigFile(SHARED_PATH."/conf.php");
-}
-
-class TwigFilters{
-
-    public static function handle_markdown($code){
-        return Markdown($code);
-    }
-
-    public static function route($route_name, $params = array()){
-        return Slim::getInstance()->urlFor($route_name, $params);
-    }
-
 }
