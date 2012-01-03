@@ -15,7 +15,7 @@
 
             {{ row.uid }}
             {{ row.tags }}
-            <a href="{{ route(route_single, {'id': row.uid, 'name': row.titleSlug}) }}">{{ row.conference_name }}</a>
+            <a href="{{ route(route_single, {'id': row.id, 'name': row.titleSlug}) }}">{{ row.conference_name }}</a>
             
 
         </li>
