@@ -10,5 +10,6 @@ class Routes{
     const PROGRAMMATION = 'programmation';
     const PROGRAMMATION_SINGLE = 'programmation_SINGLE';
     const INFORMATIONS_PRATIQUES = 'informations-pratiques';
+    const IRON_WEB = 'iron-web';
 
 }
