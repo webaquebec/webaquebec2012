@@ -17,11 +17,14 @@ require SLIM_PATH.'/Slim.php';
 require SLIMEXTRAS_PATH.'/Views/TwigView.php';
 require MARKDOWN_PATH."/markdown.php";
 require SHARED_PATH."/classes/SimpleAutoLoader.php";
+require PROJECT_ROOT."/libraries/idiorm/idiorm.php";
+require PROJECT_ROOT."/libraries/paris/paris.php";
 SimpleAutoLoader::addPath(PATH_PUBLIC."/classes/");
 SimpleAutoLoader::addPath(SHARED_PATH."/classes/");
 
 //Initialize
 parse_configuration();
+init_orm();
 init_slim();
 $app = Slim::getInstance();
 init_twig($app);
@@ -103,7 +106,7 @@ $render_end = microtime(true);
 if(Config::get('debug') === TRUE){
     $render_time = $render_end - $render_start;
     $memory_used = Helpers::byteFormat(memory_get_peak_usage(true));
-    $queries = ApplicationDatabase::getQueriesCount();
+    $queries = count(ORM::get_query_log());
     echo "<!-- Render Time : $render_time -->\n";
     echo "<!-- Memory Used : $memory_used -->\n";
     echo "<!-- Queries : $queries -->\n";
@@ -113,6 +116,23 @@ if(Config::get('debug') === TRUE){
 
 
 
+
+function init_orm(){
+    $db = Config::get("db");
+
+    $db_host = $db["host"];
+    $db_port = $db["port"];
+    $db_name = $db["database"];
+
+    ORM::configure("mysql:host=$db_host;port=$db_port;dbname=$db_name;charset=utf8");
+    ORM::configure('username', $db["user"]);
+    ORM::configure('password', $db["password"]);
+
+    if(Config::get('debug') === TRUE){
+        ORM::configure('logging', TRUE);
+    }
+
+}
 
 function init_slim(){
     $slim_config = array(

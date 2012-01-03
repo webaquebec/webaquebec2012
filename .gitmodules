@@ -10,3 +10,9 @@
 [submodule "externs/php-markdown"]
 	path = externs/php-markdown
 	url = git://github.com/raphael-riel/php-markdown.git
+[submodule "externs/paris"]
+	path = externs/paris
+	url = git://github.com/raphael-riel/paris.git
+[submodule "externs/idiorm"]
+	path = externs/idiorm
+	url = git://github.com/raphael-riel/idiorm.git
