@@ -9,5 +9,6 @@ class Routes{
     const INSCRIPTION = 'inscription';
     const PROGRAMMATION = 'programmation';
     const PROGRAMMATION_SINGLE = 'programmation_SINGLE';
+    const INFORMATIONS_PRATIQUES = 'informations-pratiques';
 
 }

@@ -58,6 +58,12 @@ $app->get('/contact/', function() use ($app){
 
 })->name(Routes::CONTACT);
 
+$app->get('/informations-pratiques/', function() use ($app){
+    /** @var Slim $app */
+    $app->render('informations-pratiques.html');
+
+})->name(Routes::INFORMATIONS_PRATIQUES);
+
 $app->get('/inscription/', function() use ($app){
     /** @var Slim $app */
     $app->render('inscription.html');
