@@ -1,0 +1,30 @@
+{% extends "/blocks/base.html" %}
+
+{% block content %}
+
+<a href="{{ route('admin_index') }}">Retour</a>
+<h1>Programmation</h1>
+<p><a href="{{ route('programmation_new') }}">Nouveau</a></p>
+<p>{{ flash.programmation }}</p>
+
+<table>
+    <tr>
+        <th>Titre</th>
+        <th>Actions</th>
+    </tr>
+    {% for row in list %}
+
+    <tr>
+
+        <td>{{ row.conference_name }}</td>
+        <td>
+            <a href="{{ route('programmation_edit', {'id': row.id}) }}">Editer</a>
+            <a onclick="return confirm('Really?');" href="{{ route('programmation_delete', {'id': row.id}) }}">Supprimer</a>
+        </td>
+
+
+    </tr>
+
+    {% endfor %}
+</table>
+{% endblock %}

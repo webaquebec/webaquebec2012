@@ -1,0 +1,50 @@
+{% extends "/blocks/base.html" %}
+{% import "/form_fields.twig" as forms %}
+
+{% block content %}
+
+<a href="{{ route('programmation_list') }}">Retour</a>
+<h1>
+    {% if mode == 'new' %}
+        Nouveau
+    {% else %}
+        Editer
+    {% endif %}
+</h1>
+
+<p class="flash">{{ flash.programmation }}</p>
+
+{% if mode == 'new' %}
+<form action="{{ route('programmation_create') }}" method="post">
+{% else %}
+<form action="{{ route('programmation_update', {'id': item.id}) }}" method="post">
+{% endif %}
+
+    <dl>
+        <dt>ordering</dt>
+        <dd>{{ forms.input('ordering', item.ordering) }}</dd>
+        <dt>starred</dt>
+        <dd>{{ forms.input('starred', item.starred) }}</dd>
+        <dt>presenter_name</dt>
+        <dd>{{ forms.input('presenter_name', item.presenter_name) }}</dd>
+        <dt>presenter_image</dt>
+        <dd>{{ forms.input('presenter_image', item.presenter_image) }}</dd>
+        <dt>presenter_resume</dt>
+        <dd>{{ forms.input('presenter_resume', item.presenter_resume) }}</dd>
+        <dt>conference_name</dt>
+        <dd>{{ forms.input('conference_name', item.conference_name) }}</dd>
+        <dt>conference_resume</dt>
+        <dd>{{ forms.input('conference_resume', item.conference_resume) }}</dd>
+        <dt>conference_goals</dt>
+        <dd>{{ forms.input('conference_goals', item.conference_goals) }}</dd>
+        <dt>tags</dt>
+        <dd>{{ forms.input('tags', item.tags) }}</dd>
+        <dt>website</dt>
+        <dd>{{ forms.input('website', item.website) }}</dd>
+        <dt>twitter_handle</dt>
+        <dd>{{ forms.input('twitter_handle', item.twitter_handle) }}</dd>
+    </dl>
+    {{ forms.submit() }}
+</form>
+
+{% endblock %}
