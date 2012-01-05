@@ -15,12 +15,7 @@
 
 <p class="flash">{{ flash.programmation }}</p>
 
-{% if mode == 'new' %}
-    {% set route_used = route('programmation_create') %}
-{% else %}
-    {% set route_used = route('programmation_update', {'id': item.id}) %}
-{% endif %}
-    <form action="{{ route_used }}" method="post">
+<form action="{{ post_target }}" method="post">
 
     <dl>
         <dt>ordering</dt>

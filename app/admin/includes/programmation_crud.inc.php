@@ -5,6 +5,7 @@ $app->get('/programmation/edit/:id', function ($id) use ($app) {
     $app->render('programmation/new_or_edit.twig',
         array(
             'mode'=>'edit',
+            'post_target'=>$app->urlFor(AdminRoutes::PROGRAMMATION_UPDATE, array('id'=>$id)),
             'item'=>Presentation::getById($id),
         )
     );
@@ -15,6 +16,7 @@ $app->get('/programmation/new/', function () use ($app) {
     $app->render('programmation/new_or_edit.twig',
         array(
             'mode'=>'new',
+            'post_target'=>$app->urlFor(AdminRoutes::PROGRAMMATION_CREATE, array()),
             'item' => Presentation::create()
         )
     );
