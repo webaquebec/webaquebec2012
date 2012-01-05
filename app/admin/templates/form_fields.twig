@@ -2,6 +2,10 @@
     <input type="{{ type|default('text') }}" name="{{ name }}" value="{{ value|e }}" size="{{ size|default(45) }}"/>
 {% endmacro %}
 
+{% macro textarea(name, value, cols, rows) %}
+    <textarea name="{{ name }}" rows="{{ rows|default(6) }}" cols="{{ cols|default(45) }}">{{ value|e }}</textarea>
+{% endmacro %}
+
 {% macro submit() %}
 <input type="submit"/>
 {% endmacro %}

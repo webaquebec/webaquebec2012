@@ -15,34 +15,46 @@
 <p class="flash">{{ flash.programmation }}</p>
 
 {% if mode == 'new' %}
-<form action="{{ route('programmation_create') }}" method="post">
+    {% set route_used = route('programmation_create') %}
 {% else %}
-<form action="{{ route('programmation_update', {'id': item.id}) }}" method="post">
+    {% set route_used = route('programmation_update', {'id': item.id}) %}
 {% endif %}
+    <form action="{{ route_used }}" method="post">
 
     <dl>
         <dt>ordering</dt>
         <dd>{{ forms.input('ordering', item.ordering) }}</dd>
+
         <dt>starred</dt>
         <dd>{{ forms.input('starred', item.starred) }}</dd>
+
         <dt>presenter_name</dt>
         <dd>{{ forms.input('presenter_name', item.presenter_name) }}</dd>
+
         <dt>presenter_image</dt>
         <dd>{{ forms.input('presenter_image', item.presenter_image) }}</dd>
+
         <dt>presenter_resume</dt>
-        <dd>{{ forms.input('presenter_resume', item.presenter_resume) }}</dd>
+        <dd>{{ forms.textarea('presenter_resume', item.presenter_resume) }}</dd>
+
         <dt>conference_name</dt>
         <dd>{{ forms.input('conference_name', item.conference_name) }}</dd>
+
         <dt>conference_resume</dt>
-        <dd>{{ forms.input('conference_resume', item.conference_resume) }}</dd>
+        <dd>{{ forms.textarea('conference_resume', item.conference_resume) }}</dd>
+
         <dt>conference_goals</dt>
-        <dd>{{ forms.input('conference_goals', item.conference_goals) }}</dd>
+        <dd>{{ forms.textarea('conference_goals', item.conference_goals) }}</dd>
+
         <dt>tags</dt>
         <dd>{{ forms.input('tags', item.tags) }}</dd>
+
         <dt>website</dt>
         <dd>{{ forms.input('website', item.website) }}</dd>
+
         <dt>twitter_handle</dt>
         <dd>{{ forms.input('twitter_handle', item.twitter_handle) }}</dd>
+
     </dl>
     {{ forms.submit() }}
 </form>
