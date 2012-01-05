@@ -27,7 +27,7 @@
         <dd>{{ forms.input('ordering', item.ordering) }}</dd>
 
         <dt>starred</dt>
-        <dd>{{ forms.input('starred', item.starred) }}</dd>
+        <dd>{{ forms.checkbox('starred', '1', '0', item.starred) }} Starred</dd>
 
         <dt>presenter_name</dt>
         <dd>{{ forms.input('presenter_name', item.presenter_name) }}</dd>
