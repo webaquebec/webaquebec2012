@@ -6,6 +6,11 @@ class Presentation extends Model{
         return Model::factory(__CLASS__)->order_by_asc('ordering')->find_many();
     }
 
+    /**
+     * @static
+     * @param $id
+     * @return bool|Presentation
+     */
     public static function getById($id){
         return Model::factory(__CLASS__)->find_one($id);
     }
