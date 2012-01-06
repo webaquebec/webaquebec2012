@@ -61,7 +61,7 @@ $app->get('/inscription/', function() use ($app){
 $app->get('/programmation/', function () use ($app) {
     /** @var Slim $app */
     $list = Presentation::getAll();
-    $app->render('programmation-list-raph.html', array(
+    $app->render('programmation-liste.twig', array(
         'list' => $list,
         'route_single' => Routes::PROGRAMMATION_SINGLE,
     ));

@@ -1,25 +1,18 @@
 {% extends "blocks/base.html" %}
 
-{% block title %}Testing list presentations{% endblock %}
+{% block title %}Liste des présentations{% endblock %}
 
 {% block head %}
     {{ parent() }}
 {% endblock %}
 
 {% block content %}
-        Prog:
+    <h1>Liste des présentations</h1>
     <ul>
     {% for row in list %}
-
         <li>
-
-            {{ row.uid }}
-            {{ row.tags }}
             <a href="{{ route(route_single, {'id': row.id, 'name': row.titleSlug}) }}">{{ row.conference_name }}</a>
-            
-
         </li>
-
     {% endfor %}
     </ul>
 
