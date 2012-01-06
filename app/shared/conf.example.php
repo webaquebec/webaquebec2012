@@ -5,6 +5,7 @@ $config = array(
     'auth' => array(
         'password_salt' => 'hash-hash-hash-hash-hash',
         'users' => array(
+            /* use domain.com/hash/password-to-hash in order to generate hashed password using the provided salt. */
             array(
                 'name' => 'user',
                 'hash' => 'hash',
