@@ -1,6 +1,6 @@
 <?php
 global $app;
-$app->get('/programmation/edit/:id', function ($id) use ($app) {
+$app->get('/programmation/edit/:id', Auth::validateDelegate(Auth::ROLE_WRITER), function ($id) use ($app) {
     /** @var Slim $app */
     $app->render('programmation/new_or_edit.twig',
         array(
@@ -11,7 +11,7 @@ $app->get('/programmation/edit/:id', function ($id) use ($app) {
     );
 })->name(AdminRoutes::PROGRAMMATION_EDIT);
 
-$app->get('/programmation/new/', function () use ($app) {
+$app->get('/programmation/new/', Auth::validateDelegate(Auth::ROLE_WRITER), function () use ($app) {
     /** @var Slim $app */
     $app->render('programmation/new_or_edit.twig',
         array(
@@ -22,7 +22,7 @@ $app->get('/programmation/new/', function () use ($app) {
     );
 })->name(AdminRoutes::PROGRAMMATION_NEW);
 
-$app->post('/programmation/create', function () use ($app) {
+$app->post('/programmation/create', Auth::validateDelegate(Auth::ROLE_WRITER), function () use ($app) {
     /** @var Slim $app */
     $p = Presentation::create();
     foreach($_POST as $k=>$v){
@@ -35,7 +35,7 @@ $app->post('/programmation/create', function () use ($app) {
     $app->redirect($app->urlFor(AdminRoutes::PROGRAMMATION_EDIT, array('id'=>$id)));
 })->name(AdminRoutes::PROGRAMMATION_CREATE);
 
-$app->post('/programmation/update/:id', function ($id) use ($app) {
+$app->post('/programmation/update/:id', Auth::validateDelegate(Auth::ROLE_WRITER), function ($id) use ($app) {
     /** @var Slim $app */
     $p = Presentation::getById($id);
     foreach($_POST as $k=>$v){
@@ -46,7 +46,7 @@ $app->post('/programmation/update/:id', function ($id) use ($app) {
     $app->redirect($app->urlFor(AdminRoutes::PROGRAMMATION_EDIT, array('id'=>$id)));
 })->name(AdminRoutes::PROGRAMMATION_UPDATE);
 
-$app->get('/programmation/delete/:id', function ($id) use ($app) {
+$app->get('/programmation/delete/:id', Auth::validateDelegate(Auth::ROLE_WRITER), function ($id) use ($app) {
     /** @var Slim $app */
     $p = Presentation::getById($id);
     $p->delete();
