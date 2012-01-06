@@ -71,7 +71,9 @@ $app->get('/programmation/', function () use ($app) {
 $app->get('/programmation/:id/?:name?/?', function ($id, $name = NULL) use ($app) {
     /** @var Slim $app */
     $item = Presentation::getById($id);
-    print_r(array($id, $name, $item));
+    $app->render('programmation-single.twig', array(
+       'item'=>$item,
+    ));
 
 })->name(Routes::PROGRAMMATION_SINGLE);
 
