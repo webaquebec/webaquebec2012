@@ -1,0 +1,17 @@
+{% macro input(name, value, type, size) %}
+    <input type="{{ type|default('text') }}" name="{{ name }}" value="{{ value|e }}" size="{{ size|default(45) }}"/>
+{% endmacro %}
+
+{% macro checkbox(name, value_checked, value_unchecked, checked) %}
+    {# Cheesy... #}
+    <input type="hidden" name="{{ name }}" value="{{ value_unchecked }}" />
+    <input type="checkbox" name="{{ name }}" value="{{ value_checked }}" {{ checked?"checked=\'checked\'":"" }} />
+{% endmacro %}
+
+{% macro textarea(name, value, cols, rows) %}
+    <textarea name="{{ name }}" rows="{{ rows|default(6) }}" cols="{{ cols|default(45) }}">{{ value|e }}</textarea>
+{% endmacro %}
+
+{% macro submit() %}
+<input type="submit"/>
+{% endmacro %}

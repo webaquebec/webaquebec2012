@@ -1,0 +1,58 @@
+{% import "/form_fields.twig" as forms %}
+
+{% extends "/blocks/base.twig" %}
+
+{% block content %}
+
+<a href="{{ route('programmation_list') }}">Retour</a>
+<h1>
+    {% if mode == 'new' %}
+        Nouveau
+    {% else %}
+        Editer
+    {% endif %}
+</h1>
+
+<p class="flash">{{ flash.programmation }}</p>
+
+<form action="{{ post_target }}" method="post">
+
+    <dl>
+        <dt>ordering</dt>
+        <dd>{{ forms.input('ordering', item.ordering) }}</dd>
+
+        <dt>starred</dt>
+        <dd>{{ forms.checkbox('starred', '1', '0', item.starred) }} Starred</dd>
+
+        <dt>presenter_name</dt>
+        <dd>{{ forms.input('presenter_name', item.presenter_name) }}</dd>
+
+        <dt>presenter_image</dt>
+        <dd>{{ forms.input('presenter_image', item.presenter_image) }}</dd>
+
+        <dt>presenter_resume</dt>
+        <dd>{{ forms.textarea('presenter_resume', item.presenter_resume) }}</dd>
+
+        <dt>conference_name</dt>
+        <dd>{{ forms.input('conference_name', item.conference_name) }}</dd>
+
+        <dt>conference_resume</dt>
+        <dd>{{ forms.textarea('conference_resume', item.conference_resume) }}</dd>
+
+        <dt>conference_goals</dt>
+        <dd>{{ forms.textarea('conference_goals', item.conference_goals) }}</dd>
+
+        <dt>tags</dt>
+        <dd>{{ forms.input('tags', item.tags) }}</dd>
+
+        <dt>website</dt>
+        <dd>{{ forms.input('website', item.website) }}</dd>
+
+        <dt>twitter_handle</dt>
+        <dd>{{ forms.input('twitter_handle', item.twitter_handle) }}</dd>
+
+    </dl>
+    {{ forms.submit() }}
+</form>
+
+{% endblock %}

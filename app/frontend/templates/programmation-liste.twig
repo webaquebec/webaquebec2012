@@ -1,0 +1,19 @@
+{% extends "blocks/base.html" %}
+
+{% block title %}Liste des présentations{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <h1>Liste des présentations</h1>
+    <ul>
+    {% for row in list %}
+        <li>
+            <a href="{{ route(route_single, {'id': row.id, 'name': row.titleSlug}) }}">{{ row.conference_name }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

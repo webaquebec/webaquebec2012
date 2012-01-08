@@ -2,29 +2,14 @@
 
 $render_start = microtime(true);
 
-//Constants
-define("PROJECT_ROOT", realpath(__DIR__."/../../../"));
-define("PATH_PUBLIC", PROJECT_ROOT."/app/frontend/");
-define("SHARED_PATH", PROJECT_ROOT."/app/shared/");
-define("SLIM_PATH", PROJECT_ROOT."/libraries/slim/");
-define("MARKDOWN_PATH", PROJECT_ROOT."/libraries/php-markdown/");
-define("SLIMEXTRAS_PATH", PROJECT_ROOT."/libraries/slim-extras/");
-define("TWIG_PATH", PROJECT_ROOT."/libraries/twig/Twig/");
-define("CACHE_PATH", PROJECT_ROOT.'/cache/');
+include __DIR__."/../../shared/bootstrap.inc.php";
 
 //Requirements.
-require SLIM_PATH.'/Slim.php';
-require SLIMEXTRAS_PATH.'/Views/TwigView.php';
-require MARKDOWN_PATH."/markdown.php";
-require SHARED_PATH."/classes/SimpleAutoLoader.php";
 SimpleAutoLoader::addPath(PATH_PUBLIC."/classes/");
-SimpleAutoLoader::addPath(SHARED_PATH."/classes/");
 
 //Initialize
-parse_configuration();
-init_slim();
-$app = Slim::getInstance();
-init_twig($app);
+global $app;
+bootstrap(PATH_PUBLIC."/templates/");
 
 //      FAKE         ************
 $app->get('/md', function () use ($app) {
@@ -55,6 +40,18 @@ $app->get('/contact/', function() use ($app){
 
 })->name(Routes::CONTACT);
 
+$app->get('/informations-pratiques/', function() use ($app){
+    /** @var Slim $app */
+    $app->render('informations-pratiques.html');
+
+})->name(Routes::INFORMATIONS_PRATIQUES);
+
+$app->get('/iron-web/', function() use ($app){
+    /** @var Slim $app */
+    $app->render('iron-web.html');
+
+})->name(Routes::IRON_WEB);
+
 $app->get('/inscription/', function() use ($app){
     /** @var Slim $app */
     $app->render('inscription.html');
@@ -64,7 +61,7 @@ $app->get('/inscription/', function() use ($app){
 $app->get('/programmation/', function () use ($app) {
     /** @var Slim $app */
     $list = Presentation::getAll();
-    $app->render('programmation-list-raph.html', array(
+    $app->render('programmation-liste.twig', array(
         'list' => $list,
         'route_single' => Routes::PROGRAMMATION_SINGLE,
     ));
@@ -74,7 +71,9 @@ $app->get('/programmation/', function () use ($app) {
 $app->get('/programmation/:id/?:name?/?', function ($id, $name = NULL) use ($app) {
     /** @var Slim $app */
     $item = Presentation::getById($id);
-    print_r(array($id, $name, $item));
+    $app->render('programmation-single.twig', array(
+       'item'=>$item,
+    ));
 
 })->name(Routes::PROGRAMMATION_SINGLE);
 
@@ -103,50 +102,8 @@ $render_end = microtime(true);
 if(Config::get('debug') === TRUE){
     $render_time = $render_end - $render_start;
     $memory_used = Helpers::byteFormat(memory_get_peak_usage(true));
-    $queries = ApplicationDatabase::getQueriesCount();
+    $queries = count(ORM::get_query_log());
     echo "<!-- Render Time : $render_time -->\n";
     echo "<!-- Memory Used : $memory_used -->\n";
     echo "<!-- Queries : $queries -->\n";
-}
-
-
-
-
-
-
-function init_slim(){
-    $slim_config = array(
-        'templates.path' => PATH_PUBLIC."/templates/"
-    );
-    new Slim($slim_config);
-}
-
-function init_twig(Slim $app){
-    TwigView::$twigDirectory = rtrim(TWIG_PATH, "/"); //Slim requires a path without trailling slash.
-    if(Config::get('cache') !== FALSE){
-        TwigView::$twigOptions['cache'] = CACHE_PATH.'/twig_cache_public/';
-    }
-
-    $twig_view = new TwigView();
-    $app->view($twig_view);
-
-    $twig_view->getEnvironment()->addFilter('markdown', new Twig_Filter_Function("TwigFilters::handle_markdown", array('is_safe' => array('html'))));
-    $twig_view->getEnvironment()->addFunction('route', new Twig_Function_Function("TwigFilters::route"));
-
-}
-
-function parse_configuration(){
-    Config::readConfigFile(SHARED_PATH."/conf.php");
-}
-
-class TwigFilters{
-
-    public static function handle_markdown($code){
-        return Markdown($code);
-    }
-
-    public static function route($route_name, $params = array()){
-        return Slim::getInstance()->urlFor($route_name, $params);
-    }
-
 }
