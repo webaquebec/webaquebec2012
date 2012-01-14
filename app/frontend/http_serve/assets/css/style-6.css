@@ -774,6 +774,9 @@ h3.box-header {
     width: 300px;
     background-position: -626px 0; }
 #iw-live-videos .swap {
+  -moz-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   background-image: url(/assets/img/ironweb/live/video-bg.png);
   background-position: 0 -45px;

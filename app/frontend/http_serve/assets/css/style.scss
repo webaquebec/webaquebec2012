@@ -710,6 +710,7 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
     }
   }
   .swap{
+    @include box-shadow(0 -2px 2px rgba(#000, 0.2));
     overflow:hidden;
     background-image:url(/assets/img/ironweb/live/video-bg.png);
     background-position: 0 -45px;
