@@ -95,6 +95,12 @@ button {
   width: 960px;
   margin: 0 auto; }
 
+.ironweb-live #page-content .wrapper {
+  width: 100%; }
+
+.ironweb-live #page-content .wrapper .wrapper {
+  width: 960px; }
+
 .light-white-gradient, #newsletter-box form button.btn {
   background-color: white;
   background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#e9e9e9));
@@ -445,6 +451,21 @@ h3.box-header {
     left: 113px;
     font-family: MisoLight;
     font-size: 90%; }
+
+#logo-iw-live {
+  position: relative;
+  margin-bottom: 10px; }
+  #logo-iw-live #iw-logo-icon {
+    height: 106px;
+    width: 107px;
+    background: url(../img/ironweb/live/logo-icon.png) no-repeat; }
+  #logo-iw-live #iw-logo-label {
+    height: 49px;
+    width: 231px;
+    background: url(../img/ironweb/live/logo-label.png) no-repeat; }
+
+.iw-live-content {
+  background: url(../img/ironweb/live/background.jpg) no-repeat center black; }
 
 #btn-candidature {
   display: block;
