@@ -262,6 +262,9 @@ p {
 header {
   height: 164px; }
 
+.ironweb-live header {
+  height: 110px; }
+
 header .wrapper {
   position: relative;
   padding: 36px 0 0 0; }
@@ -272,11 +275,19 @@ header .wrapper {
   background: url(../img/logo-princ.png) no-repeat;
   float: left; }
 
+.ironweb-live .logo-princ {
+  width: 126px;
+  height: 42px;
+  background: url(../img/images/logo-princ-mini.png) no-repeat; }
+
 .logo-princ span {
   display: block; }
 
 .logo-accronym {
   height: 97px; }
+
+.ironweb-live .logo-accronym {
+  height: 50px; }
 
 .logo-full-text {
   font-size: 100%;
@@ -309,6 +320,9 @@ header .wrapper {
     background: url(../img/btn-insc.png) no-repeat left top; }
   .event-details .btn-inscription:hover {
     background-position: 0px -38px; }
+
+.ironweb-live .event-details {
+  display: none; }
 
 nav.top-right {
   position: absolute;
@@ -347,6 +361,15 @@ nav.menu-princ {
     nav.menu-princ ul li a.disabled, nav.menu-princ ul li a.disabled:hover {
       opacity: 0.5;
       background: #058cbf; }
+
+.ironweb-live nav.menu-princ {
+  width: auto;
+  float: right; }
+  .ironweb-live nav.menu-princ ul li {
+    float: left;
+    margin-left: 15px; }
+    .ironweb-live nav.menu-princ ul li a {
+      width: 195px; }
 
 #commanditaires-principaux {
   position: relative;

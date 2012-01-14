@@ -111,12 +111,45 @@ p{line-height: 1.4;}
 //#########################################################
 //   Header     ###########################################
 
-header{height: 164px;}
-header .wrapper{position: relative; padding: 36px 0 0 0;}
+header {
+  height: 164px;
+}
 
-.logo-princ{width: 254px; height: 87px; background: url(../img/logo-princ.png) no-repeat; float: left;}
-.logo-princ span{display: block;}
-.logo-accronym{height: 97px;}
+.ironweb-live header {
+  height: 110px;
+}
+
+header .wrapper {
+  position: relative; 
+  padding: 36px 0 0 0;
+}
+
+.logo-princ {
+  width: 254px; 
+  height: 87px; 
+  background: url(../img/logo-princ.png) 
+  no-repeat; 
+  float: left;
+}
+
+.ironweb-live .logo-princ {
+  width: 126px; 
+  height: 42px;
+  background: url(../img/images/logo-princ-mini.png) no-repeat; 
+}
+
+.logo-princ span {
+  display: block;
+}
+
+.logo-accronym {
+  height: 97px;
+}
+
+.ironweb-live .logo-accronym {
+  height: 50px;
+}
+
 .logo-full-text{font-size: 100%; font-family: MisoLight; letter-spacing: 0.1em;}
 
 .event-details{
@@ -139,7 +172,10 @@ header .wrapper{position: relative; padding: 36px 0 0 0;}
   .btn-inscription:hover{
     background-position: 0px -38px;
   }
+}
 
+.ironweb-live .event-details {
+  display: none;
 }
 
 nav.top-right{position: absolute; top: 10px; right: 0;
@@ -152,13 +188,27 @@ nav.menu-princ{
   width: 195px;
   padding-top: 8px;
 
-  ul li{ margin-bottom: 3px;
-    a{background: $main-blue-10; @include border-radius(5px); display: block; padding: 3px 10px; @extend .to-caps; font-size: 130%; font-family: MisoRegular; text-shadow: 0 -1px $main-blue-20; @include transition(all 0.2s ease-in-out);}
+  ul li{ 
+    margin-bottom: 3px;
+    a{
+      background: $main-blue-10; 
+      @include border-radius(5px); 
+      display: block; padding: 3px 10px; @extend .to-caps; font-size: 130%; font-family: MisoRegular; text-shadow: 0 -1px $main-blue-20; @include transition(all 0.2s ease-in-out);}
     a:hover{background: $main-blue-5;}
     a.disabled, a.disabled:hover{ opacity: 0.5; background: $main-blue+5;}
   }
 }
-
+.ironweb-live nav.menu-princ {
+  width: auto;
+  float: right;
+  ul li {
+    float: left;
+    margin-left: 15px;
+    a {
+      width: 195px;
+    }
+  }
+}
 
 //#########################################################
 //   Home             #####################################
