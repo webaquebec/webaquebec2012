@@ -38,3 +38,15 @@ Spacing conventions :
 * Start function block { on same line, ex: function(){
   
 Refer to http://jslint.com/ for other questions.
+
+
+### Admin Users
+
+To create a user in the admin panel:
+
+* Enable the debug mode in config file
+* Go to domain.com/hash/password-to-hash (replace password-to-hash with the password you whant to hash). 
+Example : domain.com/hash/my-secret-password
+* Add the user to the users array in config.php
+
+ 
