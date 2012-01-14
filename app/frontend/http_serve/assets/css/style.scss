@@ -126,29 +126,32 @@ p{line-height: 1.4;}
 
 header {
   height: 164px;
-}
 
-.ironweb-live header {
-  height: 110px;
+  .ironweb-live &{
+    height: 84px;
+  }
 }
 
 header .wrapper {
   position: relative; 
   padding: 36px 0 0 0;
+
+  .ironweb-live &{
+    padding: 10px 0 0 0;
+  }
 }
 
 .logo-princ {
   width: 254px; 
   height: 87px; 
-  background: url(../img/logo-princ.png) 
-  no-repeat; 
+  background: url(../img/logo-princ.png) no-repeat; 
   float: left;
-}
 
-.ironweb-live .logo-princ {
-  width: 126px; 
-  height: 42px;
-  background: url(../img/ironweb/live/waq-logo.png) no-repeat; 
+  .ironweb-live &{
+    width: 126px; 
+    height: 42px;
+    background: url(../img/ironweb/live/waq-logo.png) no-repeat; 
+  }
 }
 
 .logo-princ span {
@@ -157,10 +160,10 @@ header .wrapper {
 
 .logo-accronym {
   height: 97px;
-}
 
-.ironweb-live .logo-accronym {
-  height: 50px;
+  .ironweb-live &{
+    height: 50px;
+  }
 }
 
 .logo-full-text{font-size: 100%; font-family: MisoLight; letter-spacing: 0.1em;}
@@ -171,6 +174,10 @@ header .wrapper {
   margin: 0 286px 0 24px;
   position: relative;
   top: -3px;
+
+  .ironweb-live &{
+    display: none;
+  }
 
   .lieu{display: block; color: $main-gray; font-family: MisoRegular; font-size: 120%; text-shadow: 1px 1px 0 $main-light-blue;}
   .lieu * { color: $main-gray; }
@@ -185,10 +192,6 @@ header .wrapper {
   .btn-inscription:hover{
     background-position: 0px -38px;
   }
-}
-
-.ironweb-live .event-details {
-  display: none;
 }
 
 nav.top-right{position: absolute; top: 10px; right: 0;
@@ -210,15 +213,18 @@ nav.menu-princ{
     a:hover{background: $main-blue-5;}
     a.disabled, a.disabled:hover{ opacity: 0.5; background: $main-blue+5;}
   }
-}
-.ironweb-live nav.menu-princ {
-  width: auto;
-  float: right;
-  ul li {
-    float: left;
-    margin-left: 15px;
-    a {
-      width: 195px;
+
+  .ironweb-live & {
+    width: auto;
+    position: absolute;
+    right: 0;
+    bottom: -24px;
+    ul li {
+      float: left;
+      margin-left: 10px;
+      a {
+        width: 195px;
+      }
     }
   }
 }
@@ -259,8 +265,17 @@ nav.menu-princ{
 //#########################################################
 //   Main Content     #####################################
 
-#page-content{background: url(../img/back-zebre.png) no-repeat top center; padding: 25px 0;}
-.page-content-block{margin-bottom: 20px;}
+#page-content{
+  background: url(../img/back-zebre.png) no-repeat top center;
+  padding: 25px 0;
+
+  .ironweb-live &{
+    padding:0;
+  }
+}
+.page-content-block{
+  margin-bottom: 20px;
+}
 
 h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; margin-bottom: 15px;}
 .ip-wrapper .right-side.main .box-header{padding-bottom: 5px; border-bottom: 1px dotted $main-light-blue;}

@@ -268,33 +268,32 @@ p {
 
 header {
   height: 164px; }
-
-.ironweb-live header {
-  height: 110px; }
+  .ironweb-live header {
+    height: 84px; }
 
 header .wrapper {
   position: relative;
   padding: 36px 0 0 0; }
+  .ironweb-live header .wrapper {
+    padding: 10px 0 0 0; }
 
 .logo-princ {
   width: 254px;
   height: 87px;
   background: url(../img/logo-princ.png) no-repeat;
   float: left; }
-
-.ironweb-live .logo-princ {
-  width: 126px;
-  height: 42px;
-  background: url(../img/ironweb/live/waq-logo.png) no-repeat; }
+  .ironweb-live .logo-princ {
+    width: 126px;
+    height: 42px;
+    background: url(../img/ironweb/live/waq-logo.png) no-repeat; }
 
 .logo-princ span {
   display: block; }
 
 .logo-accronym {
   height: 97px; }
-
-.ironweb-live .logo-accronym {
-  height: 50px; }
+  .ironweb-live .logo-accronym {
+    height: 50px; }
 
 .logo-full-text {
   font-size: 100%;
@@ -307,6 +306,8 @@ header .wrapper {
   margin: 0 286px 0 24px;
   position: relative;
   top: -3px; }
+  .ironweb-live .event-details {
+    display: none; }
   .event-details .lieu {
     display: block;
     color: #3a3a3a;
@@ -327,9 +328,6 @@ header .wrapper {
     background: url(../img/btn-insc.png) no-repeat left top; }
   .event-details .btn-inscription:hover {
     background-position: 0px -38px; }
-
-.ironweb-live .event-details {
-  display: none; }
 
 nav.top-right {
   position: absolute;
@@ -368,15 +366,16 @@ nav.menu-princ {
     nav.menu-princ ul li a.disabled, nav.menu-princ ul li a.disabled:hover {
       opacity: 0.5;
       background: #058cbf; }
-
-.ironweb-live nav.menu-princ {
-  width: auto;
-  float: right; }
-  .ironweb-live nav.menu-princ ul li {
-    float: left;
-    margin-left: 15px; }
-    .ironweb-live nav.menu-princ ul li a {
-      width: 195px; }
+  .ironweb-live nav.menu-princ {
+    width: auto;
+    position: absolute;
+    right: 0;
+    bottom: -24px; }
+    .ironweb-live nav.menu-princ ul li {
+      float: left;
+      margin-left: 10px; }
+      .ironweb-live nav.menu-princ ul li a {
+        width: 195px; }
 
 #commanditaires-principaux {
   position: relative;
@@ -404,6 +403,8 @@ nav.menu-princ {
 #page-content {
   background: url(../img/back-zebre.png) no-repeat top center;
   padding: 25px 0; }
+  .ironweb-live #page-content {
+    padding: 0; }
 
 .page-content-block {
   margin-bottom: 20px; }
