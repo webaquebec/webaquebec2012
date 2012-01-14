@@ -16,7 +16,7 @@
  	   <ul class="list-custom list-hori">
 	    {% for row in list %}
 	        <li>
-	            <a data-original-title="{{row.title}}" href="{{ route(route_single, {'id': row.id, 'name': row.titleSlug}) }}">{{ row.conference_name }}</a>
+	            <a data-original-title="{{row.title}}" href="{{ route(route_single, {'id': row.id, 'name': row.titleSlug}) }}"><img src="{{row.image}}" alt="{{row.presenter_name}}"></a>
 	        </li>
 	    {% endfor %}
 	 </ul>
