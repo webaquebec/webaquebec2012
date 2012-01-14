@@ -271,6 +271,7 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
   position:relative;
   float:left;
   width:570px;
+  height:365px;
   .fadein {
     position:relative; 
     width:570px;
@@ -330,65 +331,6 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
     font-size:11px;
     font-style:italic;
   }
-}
-
-#iw-temoignages 
-{
-  width:590px;
-  float:left;
-  ul
-  {
-    position:relative;
-    list-style-type:none;
-    display:block;
-    width:376px;
-    float:left;
-  }
-  li
-  {
-    background:none;
-    padding-left:0;
-    display:block;
-    position:relative;
-    overflow:hidden;
-    img
-    {
-      float:left;
-      display:block;
-      width:55px;
-    }
-    .bubble
-    {
-      position:absolute;
-      left:67px;
-      top:0;
-      width:302px;
-      z-index:-1;
-      background:#000000;
-      opacity:0.3;
-      height:62px;
-      @include border-radius(4px); 
-    }
-    .quote
-    {
-      height:63px;
-      background:url(../img/ironweb/bubble_arrow.png) no-repeat 0 20px;
-      margin-left:5px;
-      float:left;
-      width:302px;
-      .resume
-      {
-        padding:7px 0 0 18px;
-        font-size:13px;
-        margin-bottom:4px
-      }
-      .who
-      {
-        padding:0 0 0 18px;
-        font-size:11px;
-      }
-    }
-  }
   .video
   {
     float:left;
@@ -405,6 +347,73 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
       padiding:6px 6px 6px 50px;
       top:46px;
       left:28px;
+    }
+  }
+}
+
+#iw-participants 
+{
+  width:590px;
+  float:left;
+  ul
+  {
+    position:relative;
+    list-style-type:none;
+    display:block;
+    float:left;
+  }
+  li
+  {
+    background:none;
+    padding-left:0;
+    display:block;
+    position:relative;
+    overflow:hidden;
+    float:left;
+    z-index:2;
+    img
+    {
+      float:left;
+      display:block;
+      width:55px;
+    }
+    .participant
+    {
+      height:63px;
+      background:url(../img/ironweb/bubble_arrow.png) no-repeat 0 20px;
+      margin-left:5px;
+      float:left;
+      width:235px;
+      .bubble
+      {
+        position:absolute;
+        margin-left: 7px;
+        top:0;
+        width:218px;
+        z-index:-1;
+        background:#000000;
+        opacity:0.3;
+        height:62px;
+        @include border-radius(4px); 
+      }
+      .info
+      {
+        position: relative;
+        padding:7px 0 0 18px;
+        font-size:11px;
+        margin-bottom:4px;
+        .name
+        {
+            display:block;
+            font-weight:bold;
+            font-size:13px;
+        }
+      }
+      a
+      {
+        padding:0 0 0 18px;
+        font-size:11px;
+      }
     }
   }
 }

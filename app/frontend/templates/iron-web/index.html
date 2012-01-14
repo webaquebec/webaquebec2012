@@ -1,0 +1,140 @@
+{% extends "blocks/base.html" %}
+
+{% block title %}Iron Web | {{ parent() }}{% endblock %}
+
+{% block content %}
+
+<div class="ros-wrapper">
+  <div class="page-content-block clearfix">
+    <div id="iw-header" class="left-side main">
+      <div id="logo-iw">
+        <h1 class="t-indent">Iron Web</h1>
+        <span class="to-cap"></span>
+      </div>
+    
+      <div class="rs-content-box">
+        <p>Le Iron Web est une compétition “Web réalité” pour les passionnés du Web qui désirent participer au projet le plus court, mais le plus intense de leur vie. Confinés à l’Espace 400e Bell pendant 48 heures, les participants devront concevoir un site Web extraordinaire. Une réalisation qui épatera le jury et le public, mais surtout, qui permettra à Québec de rayonner comme joueur important du Web au Québec et même dans le monde entier!</p>
+      </div>
+      
+      <div class="clearfix"></div>
+    </div>      
+    <div id="iw-slideshow">
+      <div class="fadein">
+        <div class="slide">
+          <img src="/assets/img/ironweb/slide1.jpg">
+          <div class="title">Jour 1</div>
+          <div class="sub-title">Découvrez votre équipe</div>
+          <div class="caption">Les caméras tournent, formation des équipes, planification et exécution du projet.</div>
+        </div>
+        <div class="slide">
+          <img src="/assets/img/ironweb/slide2.jpg">
+          <div class="title">Jour 2</div>
+          <div class="sub-title">Concentration!</div>
+          <div class="caption">C'est le temps de tout donner, tirer le maximum et le meilleur de chacun.</div>
+        </div>
+        <div class="slide">
+          <img src="/assets/img/ironweb/slide3.jpg">
+          <div class="title">Jour 3</div>
+          <div class="sub-title">Présentez votre projet au public</div>
+          <div class="caption">Présentation des projets, vote du public, délibérations du jury, annonce des gagnants.</div>
+        </div>
+      </div>
+    </div>      
+    <div class="clearfix"></div>
+    <div class="sep-shadow"></div>
+    <div id="iw-avantages" class="rs-content-box">
+      <h3 class="box-header">Édition précédente</h3>
+      <div class="video">
+        {% include 'blocks/iron-web_voxpop.html' %}
+      </div>
+    </div>
+    <div id="iw-participants" class="rs-content-box">
+      <h3 class="box-header">Découvrez les participants 2012!</h3>
+      <p>Nous sommes fiers de vous présenter les participants à la 2e édition du Iron Web. 
+        Apprenez en plus sur ces courageux professionnels et étudiants du Web à Québec ayant survécu à notre rigoureux processus de sélection. 
+        Découvrez leur personnalité, leur visage et tentez de deviner quel heureux jumelage nous avons concocté!</p>
+      <ul>
+        <li>
+          <img src="/assets/img/ironweb/participants/plbabin.jpg" alt="Pierre-Luc Babin" />
+          <div class="participant">
+            <div class="bubble"></div>
+            <div class="info"><span class="name">Pierre-Luc Babin</span> <span class="title">Intégrateur et programmeur,</span> <span class="company">Duproprio</span></div>
+            <a target="_blank" href="http://twitter.com/plbabin">@plbabin</a>
+          </div>
+        </li>
+        <li>
+          <img src="/assets/img/ironweb/participants/d_blain.jpg" alt="Dominic Blain" />
+          <div class="participant">
+            <div class="bubble"></div>
+            <div class="info"><span class="name">Dominic Blain</span> <span class="title">Designer,</span> <span class="company">Cégep Sainte-Foy</span></div>
+            <a target="_blank" href="http://twitter.com/d_blain">@d_blain</a>
+          </div>
+        </li>
+        <li>
+          <img src="/assets/img/ironweb/participants/bouchardsyl.jpg" alt="Sylvain Bouchard" />
+          <div class="participant">
+            <div class="bubble"></div>
+            <div class="info"><span class="name">Sylvain Bouchard</span> <span class="title">Programmeur,</span> <span class="company">L3interactive</span></div>
+            <a target="_blank" href="http://twitter.com/bouchardsyl">@bouchardsyl</a>
+          </div>
+        </li>
+        <li>
+          <img src="/assets/img/ironweb/participants/jimmybourassa.jpg" alt="Jimmy Bourassa" />
+          <div class="participant">
+            <div class="bubble"></div>
+            <div class="info"><span class="name">Jimmy Bourassa</span> <span class="title">Programmeur,</span> <span class="company">Hookt Studios</span></div>
+            <a target="_blank" href="http://twitter.com/jimmybourassa">@jimmybourassa</a>
+          </div>
+        </li>
+        <li>
+          <img src="/assets/img/ironweb/participants/bourgetalexndre.jpg" alt="Alexandre Bourget" />
+          <div class="participant">
+            <div class="bubble"></div>
+            <div class="info"><span class="name">Alexandre Bourget</span> <span class="title">Programmeur,</span> <span class="company">Savoir-faire Linux inc</span></div>
+            <a target="_blank" href="http://twitter.com/bourgetalexndre">@bourgetalexndre</a>
+          </div>
+        </li>
+        <li>
+          <img src="/assets/img/ironweb/participants/louim.jpg" alt="Louis-Michel Couture" />
+          <div class="participant">
+            <div class="bubble"></div>
+            <div class="info"><span class="name">Louis-Michel Couture</span> <span class="title">Intégrateur,</span> <span class="company">Cégep Sainte-Foy</span></div>
+            <a target="_blank" href="http://twitter.com/louim">@louim</a>
+          </div>
+        </li>
+        <li>
+          <img src="/assets/img/ironweb/participants/fredDemers.jpg" alt="Frédéric Demers" />
+          <div class="participant">
+            <div class="bubble"></div>
+            <div class="info"><span class="name">Frédéric Demers</span> <span class="title">DA interactif</span></div>
+            <a target="_blank" href="http://twitter.com/fredDemers">@fredDemers</a>
+          </div>
+        </li>
+        <li>
+          <img src="/assets/img/ironweb/participants/pl_gagnon.jpg" alt="Pierre-Luc Gagnon" />
+          <div class="participant">
+            <div class="bubble"></div>
+            <div class="info"><span class="name">Pierre-Luc Gagnon</span> <span class="title">Programmeur,</span> <span class="title">Korem</span></div>
+            <a target="_blank" href="http://twitter.com/pl_gagnon">@pl_gagnon</a>
+          </div>
+        </li>
+        <li>
+          <img src="/assets/img/ironweb/participants/ssalman.jpg" alt="Stéphanie Salman" />
+            <div class="participant">
+            <div class="bubble"></div>
+            <div class="info"><span class="name">Stéphanie Salman</span> <span class="title">Chargée de projet,</span> <span class="company">Libéo</span></div>
+          </div>
+        </li>
+        <li>
+          <img src="/assets/img/ironweb/participants/gelendir.jpg" alt="Gregory Eric Sanderson" />
+          <div class="participant">
+            <div class="bubble"></div>
+            <div class="info"><span class="name">Gregory Eric Sanderson</span> <span class="title">Programmeur,</span> <span class="company">Libéo</span></div>
+            <a target="_blank" href="http://twitter.com/gelendir">@gelendir</a>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
