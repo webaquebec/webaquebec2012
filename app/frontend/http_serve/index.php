@@ -52,6 +52,12 @@ $app->get('/iron-web/', function() use ($app){
 
 })->name(Routes::IRON_WEB);
 
+$app->get('/iron-web/live', function() use ($app){
+    /** @var Slim $app */
+    $app->render('iron-web/live.html');
+
+})->name(Routes::IRON_WEB_LIVE);
+
 $app->get('/inscription/', function() use ($app){
     /** @var Slim $app */
     $app->render('inscription.html');

@@ -11,5 +11,6 @@ class Routes{
     const PROGRAMMATION_SINGLE = 'programmation_SINGLE';
     const INFORMATIONS_PRATIQUES = 'informations-pratiques';
     const IRON_WEB = 'iron-web';
+    const IRON_WEB_LIVE = 'iron-web_live';
 
 }
