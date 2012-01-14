@@ -48,7 +48,7 @@ $app->get('/informations-pratiques/', function() use ($app){
 
 $app->get('/iron-web/', function() use ($app){
     /** @var Slim $app */
-    $app->render('iron-web.html');
+    $app->render('iron-web/index.html');
 
 })->name(Routes::IRON_WEB);
 
