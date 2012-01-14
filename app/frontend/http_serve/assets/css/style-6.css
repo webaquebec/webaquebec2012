@@ -719,6 +719,72 @@ h3.box-header {
   font-weight: bold;
   margin-bottom: 12px; }
 
+#iw-live-videos h1, #iw-live-videos h2, #iw-live-videos p, #iw-live-videos div {
+  color: #212121; }
+#iw-live-videos h2 {
+  font-size: 24px; }
+#iw-live-videos .options {
+  display: block;
+  padding: 0 15px;
+  overflow: hidden; }
+  #iw-live-videos .options li {
+    -moz-border-top-left-radius: 4px;
+    -webkit-border-radius-top-left: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-top-right-radius: 4px;
+    -webkit-border-radius-top-right: 4px;
+    border-top-right-radius: 4px;
+    display: block;
+    cursor: pointer;
+    float: left;
+    width: 268px;
+    height: 45px;
+    margin: 0 15px;
+    background-image: url(/assets/img/ironweb/live/video-bg-inactive.png);
+    line-height: 45px;
+    color: #222020;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: verdana;
+    text-align: center;
+    text-transform: uppercase; }
+    #iw-live-videos .options li.active {
+      background-image: url(/assets/img/ironweb/live/video-bg.png); }
+    #iw-live-videos .options li .corner {
+      color: #222020;
+      background-repeat: no-repeat;
+      background-position: top left; }
+  #iw-live-videos .options .tab-1 {
+    width: 270px;
+    background-position: -30px 0; }
+    #iw-live-videos .options .tab-1 .corner {
+      -moz-border-top-left-radius: 4px;
+      -webkit-border-radius-top-left: 4px;
+      border-top-left-radius: 4px;
+      background-image: url(/assets/img/ironweb/live/tab-yellow-corner.png); }
+  #iw-live-videos .options .tab-2 {
+    width: 270px;
+    background-position: -328px 0; }
+    #iw-live-videos .options .tab-2 .corner {
+      -moz-border-top-left-radius: 4px;
+      -webkit-border-radius-top-left: 4px;
+      border-top-left-radius: 4px;
+      background-image: url(/assets/img/ironweb/live/tab-red-corner.png); }
+  #iw-live-videos .options .tab-3 {
+    width: 300px;
+    background-position: -626px 0; }
+#iw-live-videos .swap {
+  overflow: hidden;
+  background-image: url(/assets/img/ironweb/live/video-bg.png);
+  background-position: 0 -45px;
+  padding: 26px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px; }
+
 #vox-pop .thumb {
   position: relative;
   margin-bottom: 10px; }
