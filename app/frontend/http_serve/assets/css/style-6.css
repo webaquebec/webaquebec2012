@@ -96,7 +96,8 @@ button {
   margin: 0 auto; }
 
 .ironweb-live #page-content .wrapper {
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
 
 .ironweb-live #page-content .wrapper .wrapper {
   width: 960px; }
@@ -112,7 +113,7 @@ button {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffffff', EndColorStr='#ffe9e9e9');
   zoom: 1; }
 
-.whitetext-shadow-up, .event-details .dates, h3.box-header {
+.whitetext-shadow-up, .event-details .dates, h3.box-header, #iw-logo-live .info .dates {
   text-shadow: 0 -1px #005778; }
 
 .whitetext-shadow-down, #newsletter-box h3 {
@@ -452,17 +453,50 @@ h3.box-header {
     font-family: MisoLight;
     font-size: 90%; }
 
-#logo-iw-live {
+#iw-live-header {
+  overflow: hidden; }
+
+#iw-logo-live {
   position: relative;
-  margin-bottom: 10px; }
-  #logo-iw-live #iw-logo-icon {
-    height: 106px;
-    width: 107px;
-    background: url(../img/ironweb/live/logo-icon.png) no-repeat; }
-  #logo-iw-live #iw-logo-label {
-    height: 49px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  width: 470px;
+  float: left; }
+  #iw-logo-live .icon {
+    float: left; }
+  #iw-logo-live .info {
+    float: left;
     width: 231px;
-    background: url(../img/ironweb/live/logo-label.png) no-repeat; }
+    margin-left: 5px; }
+    #iw-logo-live .info time {
+      display: block; }
+    #iw-logo-live .info .lieu {
+      display: block;
+      font-family: MisoLight;
+      font-size: 120%; }
+    #iw-logo-live .info .dates {
+      display: block;
+      font-family: MisoRegular;
+      font-size: 160%; }
+
+#iw-desc-live {
+  margin-bottom: 30px;
+  overflow: hidden;
+  width: 440px; }
+  #iw-desc-live h1 {
+    font-family: MisoLight;
+    font-size: 200%;
+    text-transform: uppercase;
+    margin-bottom: 0; }
+    #iw-desc-live h1 span {
+      font-family: MisoRegular; }
+  #iw-desc-live p {
+    color: #acacac;
+    font-weight: normal;
+    font-size: 14px;
+    margin-bottom: 0; }
+  #iw-desc-live .more {
+    font-size: 13px; }
 
 .iw-live-content {
   padding: 40px 0 30px 0;

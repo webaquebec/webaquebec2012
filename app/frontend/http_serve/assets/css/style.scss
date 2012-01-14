@@ -42,6 +42,7 @@ $main-xlight-gray: #f5f5f5;
 
 .ironweb-live #page-content .wrapper {
   width: 100%;
+  overflow:hidden;
 }
 
 .ironweb-live #page-content .wrapper .wrapper {
@@ -304,18 +305,63 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
   }
 }
 
-#logo-iw-live{
+#iw-live-header{
+  overflow:hidden;
+}
+
+#iw-logo-live{
   position: relative;
+  overflow:hidden;
   margin-bottom:10px;
-  #iw-logo-icon {
-    height: 106px;
-    width: 107px;
-    background: url(../img/ironweb/live/logo-icon.png) no-repeat;
+  width:470px;
+  float:left;
+  .icon {
+    float:left;
   }
-  #iw-logo-label {
-    height: 49px;
-    width: 231px;
-    background: url(../img/ironweb/live/logo-label.png) no-repeat;
+  .info {
+    float:left;
+    width:231px;
+    margin-left:5px;
+    time
+    {
+      display:block;
+    }
+    .lieu{
+      display: block;
+      font-family: MisoLight;
+      font-size: 120%;
+    }
+    .dates{
+      display: block; 
+      font-family: MisoRegular; 
+      font-size: 160%; 
+      @extend .whitetext-shadow-up;
+    }
+  }
+}
+
+#iw-desc-live{
+  margin-bottom:30px;
+  overflow:hidden;
+  width:440px;
+
+  h1{
+      font-family: MisoLight;
+      font-size: 200%;
+      text-transform:uppercase;
+      margin-bottom:0;
+      span{
+        font-family: MisoRegular; 
+      }
+  }
+  p{
+    color:#acacac;
+    font-weight:normal;
+    font-size:14px;
+    margin-bottom:0;
+  }
+  .more{
+    font-size:13px;
   }
 }
 
