@@ -450,7 +450,8 @@ h3.box-header {
 #iw-slideshow {
   position: relative;
   float: left;
-  width: 570px; }
+  width: 570px;
+  height: 365px; }
   #iw-slideshow .fadein {
     position: relative;
     width: 570px;
@@ -494,59 +495,11 @@ h3.box-header {
   #iw-avantages .new {
     font-size: 11px;
     font-style: italic; }
-
-#iw-temoignages {
-  width: 590px;
-  float: left; }
-  #iw-temoignages ul {
-    position: relative;
-    list-style-type: none;
-    display: block;
-    width: 376px;
-    float: left; }
-  #iw-temoignages li {
-    background: none;
-    padding-left: 0;
-    display: block;
-    position: relative;
-    overflow: hidden; }
-    #iw-temoignages li img {
-      float: left;
-      display: block;
-      width: 55px; }
-    #iw-temoignages li .bubble {
-      position: absolute;
-      left: 67px;
-      top: 0;
-      width: 302px;
-      z-index: -1;
-      background: #000000;
-      opacity: 0.3;
-      height: 62px;
-      -webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      border-radius: 4px;
-      -webkit-background-clip: padding-box;
-      -moz-background-clip: padding;
-      background-clip: padding-box; }
-    #iw-temoignages li .quote {
-      height: 63px;
-      background: url(../img/ironweb/bubble_arrow.png) no-repeat 0 20px;
-      margin-left: 5px;
-      float: left;
-      width: 302px; }
-      #iw-temoignages li .quote .resume {
-        padding: 7px 0 0 18px;
-        font-size: 13px;
-        margin-bottom: 4px; }
-      #iw-temoignages li .quote .who {
-        padding: 0 0 0 18px;
-        font-size: 11px; }
-  #iw-temoignages .video {
+  #iw-avantages .video {
     float: left;
     width: 214px;
     position: relative; }
-    #iw-temoignages .video img {
+    #iw-avantages .video img {
       width: 214px;
       -webkit-border-radius: 4px;
       -moz-border-radius: 4px;
@@ -554,11 +507,65 @@ h3.box-header {
       -webkit-background-clip: padding-box;
       -moz-background-clip: padding;
       background-clip: padding-box; }
-    #iw-temoignages .video .btn-vox-pop {
+    #iw-avantages .video .btn-vox-pop {
       font-size: 100%;
       padiding: 6px 6px 6px 50px;
       top: 46px;
       left: 28px; }
+
+#iw-participants {
+  width: 590px;
+  float: left; }
+  #iw-participants ul {
+    position: relative;
+    list-style-type: none;
+    display: block;
+    float: left; }
+  #iw-participants li {
+    background: none;
+    padding-left: 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    z-index: 2; }
+    #iw-participants li img {
+      float: left;
+      display: block;
+      width: 55px; }
+    #iw-participants li .participant {
+      height: 63px;
+      background: url(../img/ironweb/bubble_arrow.png) no-repeat 0 20px;
+      margin-left: 5px;
+      float: left;
+      width: 235px; }
+      #iw-participants li .participant .bubble {
+        position: absolute;
+        margin-left: 7px;
+        top: 0;
+        width: 218px;
+        z-index: -1;
+        background: #000000;
+        opacity: 0.3;
+        height: 62px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        -webkit-background-clip: padding-box;
+        -moz-background-clip: padding;
+        background-clip: padding-box; }
+      #iw-participants li .participant .info {
+        position: relative;
+        padding: 7px 0 0 18px;
+        font-size: 11px;
+        margin-bottom: 4px; }
+        #iw-participants li .participant .info .name {
+          display: block;
+          font-weight: bold;
+          font-size: 13px; }
+      #iw-participants li .participant a {
+        padding: 0 0 0 18px;
+        font-size: 11px; }
 
 #btn-candidature:hover {
   top: 17px;
@@ -916,10 +923,12 @@ h3.box-header {
       filter: alpha(opacity=0);
       -moz-opacity: 0;
       opacity: 0;
+      font-family: MisoLight;
+      font-size: 120%;
       display: block;
       position: absolute;
       width: 120px;
-      top: 10px;
+      bottom: 10px;
       left: 10px;
       z-index: 3;
       transition: all 0.2s ease-in-out;
