@@ -12,6 +12,11 @@ There is a few external git submodules that you must get :
     git submodule init
     git submodule update
 
+Configurations files :
+
+    touch app/settings.php
+    cp app/shared/conf.example.php app/shared/conf.php
+
 #### CSS
 
 CSS is made using SASS ruby gem :
@@ -35,6 +40,11 @@ Spacing conventions :
 #### Javascript
 
 * Always uses ; for line ending
+* Start function block { on same line, ex: function(){
+
+#### PHP
+
+* Do not ever user short tags (<? ?>)
 * Start function block { on same line, ex: function(){
   
 Refer to http://jslint.com/ for other questions.
