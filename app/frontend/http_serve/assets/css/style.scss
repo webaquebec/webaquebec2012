@@ -749,6 +749,8 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
 
 #iw-live-videos
 {
+  margin-bottom:25px;
+
   h1, h2, p, div{
     color:#212121;
   }
@@ -814,6 +816,35 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
     padding:26px;
     @include rounded(4px, '');
     @include rounded(4px, '');
+  }
+}
+
+#iw-live-footer
+{
+  overflow:hidden;
+
+  h2{
+    font-size:160%;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .col{
+    float:left;
+    width:290px;
+    margin-right:30px;
+  }
+  .news{
+    margin-bottom:10px;
+    border-bottom: 1px dotted #302f2f;
+
+    h3{
+      font-size:120%;
+    }
+    p{
+      color:#acacac;
+      font-size:13px;
+      margin-bottom:10px;
+    }
   }
 }
 
