@@ -250,7 +250,8 @@ button {
 
 body {
   background: #0087ba;
-  font-family: Arial, sans-serif; }
+  font-family: Arial, sans-serif;
+  overflow-y: scroll; }
 
 a {
   color: white;

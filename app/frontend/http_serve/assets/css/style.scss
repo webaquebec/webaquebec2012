@@ -112,7 +112,11 @@ $main-xlight-gray: #f5f5f5;
 //#########################################################
 //   General     ##########################################
 
-body{background: $main-blue; font-family: Arial, sans-serif;}
+body{
+  background: $main-blue; 
+  font-family: Arial, sans-serif;
+  overflow-y:scroll;
+}
 
 a{color: $link-color; text-decoration: none; outline: none;}
 
