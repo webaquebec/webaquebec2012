@@ -847,6 +847,14 @@ h3.box-header {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px; }
+  #iw-live-videos h2 {
+    margin-bottom: 10px; }
+  #iw-live-videos .video {
+    float: left;
+    width: 680px; }
+  #iw-live-videos .chat {
+    float: left;
+    width: 210px; }
 
 #iw-live-footer {
   overflow: hidden; }
