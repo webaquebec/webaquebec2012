@@ -1,0 +1,255 @@
+//#########################################
+//   Iron Web Header     ##################
+
+#iw-header
+  position: relative
+  margin-right: 18px
+  .rs-content-box
+    margin-bottom: 20px
+    width: 330px
+
+#logo-iw
+  position: relative
+  margin-bottom: 10px
+  h1
+    height: 102px
+    width: 361px
+    background: url(../img/logo-ironweb.png) no-repeat
+  span
+    position: absolute
+    bottom: 5px
+    left: 113px
+    font-family: MisoLight
+    font-size: 90%
+
+#btn-candidature
+  display: block
+  padding: 10px
+  margin-bottom: 20px
+  +border-radius(5px)
+  +box-shadow(0 3px 3px rgba(black, 0.2))
+  background: #006D96
+  width: 270px
+  text-align: center
+  span
+    display: block
+  .date-limite
+    font-size: 120%
+    font-family: Miso
+    @extend .to-caps
+    color: #ffffff
+    padding-top: 8px
+
+#iw-slideshow
+  position: relative
+  float: left
+  width: 570px
+  height: 365px
+  .fadein
+    position: relative
+    width: 570px
+    height: 332px
+    .slide
+      border: 5px solid $main-xlight-gray
+      +border-radius(3px)
+      position: absolute
+      left: 0
+      top: 0
+      height: 342px
+      width: 570px
+      img,
+      div
+        position: absolute
+      .title
+        top: 0
+        font-size: 30px
+        padding: 12px
+      .sub-title
+        top: 34px
+        padding: 12px
+        font-size: 18px
+      .caption
+        bottom: 0
+        left: 0
+        width: 572px
+        font-size: 12px
+        padding: 8px 12px
+
+#iw-avantages
+  width: 370px
+  float: left
+  li
+    line-height: 20px
+  .new
+    font-size: 11px
+    font-style: italic
+  .video
+    float: left
+    width: 214px
+    position: relative
+    img
+      width: 214px
+      +border-radius(4px)
+    .btn-vox-pop
+      font-size: 100%
+      padiding: 6px 6px 6px 50px
+      top: 46px
+      left: 28px
+
+#iw-participants
+  width: 590px
+  float: left
+  ul
+    position: relative
+    list-style-type: none
+    display: block
+    float: left
+  li
+    background: none
+    padding-left: 0
+    display: block
+    position: relative
+    overflow: hidden
+    float: left
+    z-index: 2
+    img
+      float: left
+      display: block
+      width: 55px
+    .participant
+      height: 63px
+      background: url(../img/ironweb/bubble_arrow.png) no-repeat 0 20px
+      margin-left: 5px
+      float: left
+      width: 235px
+      .bubble
+        position: absolute
+        margin-left: 7px
+        top: 0
+        width: 218px
+        z-index: -1
+        background: #000000
+        opacity: 0.3
+        height: 62px
+        +border-radius(4px)
+      .info
+        position: relative
+        padding: 7px 0 0 18px
+        font-size: 11px
+        margin-bottom: 4px
+        .name
+          display: block
+          font-weight: bold
+          font-size: 13px
+      a
+        padding: 0 0 0 18px
+        font-size: 11px
+
+#btn-candidature:hover
+  top: 17px
+  +box-shadow(0 5px 7px rgba(black, 0.1))
+
+//#########################################
+//   Iron Web Inscriptions   ##############
+
+#iw-inscriptions .input
+  margin-bottom: 8px
+
+#iw-inscriptions .input label
+  display: block
+
+#iw-inscriptions .text input,
+#iw-inscriptions .submit input
+  +rounded(2px)
+  +shadow("0 0 0 2px #fff, 0 0 0 3px #f0f0f0")
+  +vgradient(#f5f5f5, white, "", #fafafa)
+  border: 1px solid #e1e1e1
+  margin: 6px 4px
+  padding: 0
+  width: 240px
+
+#iw-inscriptions h2,
+#iw-inscriptions h3
+  clear: both
+
+#iw-inscriptions textarea
+  +rounded(4px)
+  +shadow("0 0 0 3px #fff, 0 0 0 4px #f0f0f0")
+  +vgradient(#f5f5f5, white, "", #fafafa)
+  border: 1px solid #e1e1e1
+  margin: 6px 4px
+  padding: 0
+  width: 70%
+  height: 140px
+  color: #838383
+  font-size: 13px
+
+#iw-inscriptions label .sub
+  display: block
+  font-size: 12px
+
+#iw-inscriptions label .required
+  color: #292929
+
+#iw-inscriptions .col
+  position: relative
+  overflow: hidden
+  float: left
+  margin-right: 16px
+  &.last
+    margin-right: 0
+
+#iw-inscriptions .input
+  margin-bottom: 12px
+  &.short
+    input
+      width: 50px
+  &.medium
+    input
+      width: 150px
+  &.text,
+  &.textarea
+    input
+      color: #838383
+      font-size: 13px
+      height: 26px
+      line-height: 26px
+      text-indent: 5px
+    &.last-before-submit
+      margin-bottom: 13px
+  &.submit
+    input
+      +shadow("inset 0 0 0 1px #fff, 0 0 0 5px #f3f3f3, 0 0 0 6px #eeeeee")
+      +vgradient(white, #e6e6e6, "", #eeeeee)
+      font-size: 16px
+      border: 1px solid #dadada
+  &.submit
+    input
+      color: #838383
+      font-weight: bold
+      height: 30px
+      line-height: 30px
+      text-shadow: 0 1px 0 #fff
+  &.checkbox
+    padding: 10px 0
+    font-size: 14px
+    input
+      width: auto
+    label
+      display: inline-block
+      padding-left: 4px
+  &.error
+    &.text input
+      background: #F3EEC7
+      border: 2px solid #ff0000
+      margin: 5px -1px
+  .error-message
+    background: red
+    display: none
+
+#iw-inscriptions .error
+  color: #292929
+  font-size: 12px
+  line-height: 16px
+  font-weight: bold
+  margin-bottom: 12px

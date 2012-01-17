@@ -1,0 +1,44 @@
+
+//#########################################################
+//   Main Content     #####################################
+
+.ow
+  min-width: 960px
+  background: $main-blue url("../img/back-flare.jpg") no-repeat center top
+
+.ow-stripes
+  min-width: 960px
+  background: url(../img/back-main.png) left top
+
+.wrapper
+  width: 960px
+  margin: 0 auto
+
+#page-content
+  background: url(../img/back-zebre.png) no-repeat top center
+  padding: 25px 0
+
+.page-content-block
+  margin-bottom: 20px
+
+h3.box-header
+  font-size: 180%
+  @extend .to-caps
+  @extend .whitetext-shadow-up
+  margin-bottom: 15px
+
+.btn-more-wrapper
+  a
+    display: block
+    text-align: right
+    font-family: MisoRegular
+    font-size: 110%
+    @extend .to-caps
+    background: url(../img/icone-plus.png) no-repeat center right
+    padding: 1px 25px 0 0
+    min-height: 21px
+    margin-top: 15px
+    opacity: 0.8
+    +transition(opacity 0.1s ease-in-out)
+    &:hover
+      opacity: 1
