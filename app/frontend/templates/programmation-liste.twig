@@ -14,7 +14,7 @@
     <h3 class="box-header">Invités internationaux</h3>
 
  	   <ul class="list-custom list-hori">
-	    {% for row in list %}
+	    {% for row in stars %}
 	        <li>
 	            <a data-original-title="&lt;h3&gt;{{row.presenter_name}}&lt;/h3&gt;&lt;p&gt;{{row.conference_name}}&lt;/p&gt;" href="{{ route(route_single, {'id': row.id, 'name': row.titleSlug}) }}"><img src="/assets/img/conferenciers/147x160/{{row.presenter_image}}" alt="{{row.presenter_name}}"></a>
 	        </li>
@@ -30,95 +30,11 @@
     <h3 class="box-header">Conférenciers du Québec</h3>
 
     <ul class="list-custom list-hori">
-      <li class="first">
-        <a data-original-title="&lt;h3&gt;Charles-Alain Roy&lt;/h3&gt;&lt;p&gt;Les fonctionnalités avancées de Google Analytics à travers des exemples concrets&lt;/p&gt;">
-          <img src="http://webaquebec.org/assets/img/conferenciers/147x160/charles-alain-roy.jpg" alt="Charles-Alain Roy">
-        </a>
-      </li>
-
-      <li>
-        <a data-original-title="&lt;h3&gt;Denis Boudreau&lt;/h3&gt;&lt;p&gt;SEO, Web mobile et accessibilité : Trinité du développement Web inclusif&lt;/p&gt;">
-          <img src="http://webaquebec.org/assets/img/conferenciers/147x160/denis-boudreault.jpg" alt="Denis Boudreau">
-        </a>
-      </li>
-
-      <li>
-        <a data-original-title="&lt;h3&gt;Stéphane Hamel&lt;/h3&gt;&lt;p&gt;Web analytics : êtes-vous sur la bonne voie ?&lt;/p&gt;">
-          <img src="http://webaquebec.org/assets/img/conferenciers/147x160/stephane-hamel.jpg" alt="Stéphane Hamel">
-        </a>
-      </li>
-      <li>
-        <a data-original-title="&lt;h3&gt;François Gaumond&lt;/h3&gt;&lt;p&gt;Savoir engager un véritable dialogue multicanal&lt;/p&gt;">
-          <img src="http://webaquebec.org/assets/img/conferenciers/147x160/francois-gaumond.jpg" alt="François Gaumond">
-        </a>
-      </li>
-      <li>
-        <a data-original-title="&lt;h3&gt;Catherine Morissette&lt;/h3&gt;&lt;p&gt;Le web et les vides juridiques: difficultés d’application&lt;/p&gt;">
-          <img src="http://webaquebec.org/assets/img/conferenciers/147x160/catherine-morissette.jpg" alt="Catherine Morissette">
-        </a>
-      </li>
-      <li class="last">
-        <a data-original-title="&lt;h3&gt;Rémy Savard&lt;/h3&gt;&lt;p&gt;Nouveaux APIs (HTML5/CSS3/JS)&lt;/p&gt;">
-          <img src="http://webaquebec.org/assets/img/conferenciers/147x160/remy-savard.jpg" alt="Rémy Savard">
-        </a>
-      </li>
-
-    </ul>
-    <ul class="list-custom list-hori">
-
-      <li class="first">
-        <a data-original-title="&lt;h3&gt;Daniel Lafrenière&lt;/h3&gt;&lt;p&gt;On veut pas le sawère, on veut le wère !&lt;/p&gt;">
-          <img src="http://webaquebec.org/assets/img/conferenciers/147x160/daniel-lafreniere.jpg" alt="Daniel Lafrenière">
-        </a>
-      </li>
-
-      <li>
-        <a data-original-title="&lt;h3&gt;Nicolas Roberge&lt;/h3&gt;&lt;p&gt;Les ingrédients du Web ubiquitaire&lt;/p&gt;">
-          <img src="http://webaquebec.org/assets/img/conferenciers/147x160/nicolas-roberge.jpg" alt="Nicolas Roberge">
-        </a>
-      </li>
-
-      <li>
-        <a data-original-title="&lt;h3&gt;Isabelle Grenier&lt;/h3&gt;&lt;p&gt;Le Festival d’été de Québec et les médias sociaux : informer et divertir des milliers d’amis&lt;/p&gt;">
-          <img src="http://webaquebec.org/assets/img/conferenciers/147x160/isabelle-grenier.jpg" alt="Isabelle Grenier">
-        </a>
-      </li>
-		
-      <li>
-        <a data-original-title="&lt;h3&gt;Jacques Warren&lt;/h3&gt;&lt;p&gt;Les médias sociaux sont si peu sociaux&lt;/p&gt;">
-          <img src="http://webaquebec.org/assets/img/conferenciers/147x160/jacques-warren.jpg" alt="Jacques Warren">
-        </a>
-      </li>
-		
-      <li>
-        <a data-original-title="&lt;h3&gt;Mario Asselin&lt;/h3&gt;&lt;p&gt;OpenGouv / OpenData : le mode résistance n’a plus sa place!&lt;/p&gt;">
-          <img src="http://webaquebec.org/assets/img/conferenciers/147x160/mario-asselin.jpg" alt="Mario Asselin">
-        </a>
-      </li>
-
-      <li class="last">
-        <a data-original-title="&lt;h3&gt;Michaël Carpentier&lt;/h3&gt;&lt;p&gt;Être accessible c’est bien, être compris c'est mieux : écrire pour le Web&lt;/p&gt;">
-          <img src="http://webaquebec.org/assets/img/conferenciers/147x160/michael-carpentier.jpg" alt="Michaël Carpentier">
-        </a>
-      </li>
-
-     
-
-    </ul>
-    <ul class="list-custom list-hori">
-
-      <li class="first">
-        <a data-original-title="&lt;h3&gt;Rémi Prévost&lt;/h3&gt;&lt;p&gt;Introduction à Ruby&lt;/p&gt;">
-          <img src="http://webaquebec.org/assets/img/conferenciers/147x160/remi-prevost.jpg" alt="Rémi Prévost">
-        </a>
-      </li>
-		
-      <li>
-				<a data-original-title="&lt;h3&gt;Carl-Frédéric de Celles, Sébastien Provencher, Kim Auclair,  Albert Dang Vu&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Panel : &lt;/strong&gt;Entreprendre le Web, à Québec, aujourd'hui.&lt;/p&gt;">
-          <img src="http://webaquebec.org/assets/img/conferenciers/147x160/panel-entrepreneuriat.jpg" alt="Entreprendre le Web, à Québec, aujourd'hui.">
-        </a>
-      </li>
-		
+	    {% for row in list %}
+	        <li>
+	            <a data-original-title="&lt;h3&gt;{{row.presenter_name}}&lt;/h3&gt;&lt;p&gt;{{row.conference_name}}&lt;/p&gt;" href="{{ route(route_single, {'id': row.id, 'name': row.titleSlug}) }}"><img src="/assets/img/conferenciers/147x160/{{row.presenter_image}}" alt="{{row.presenter_name}}"></a>
+	        </li>
+	    {% endfor %}
 		</ul>
 
   </div>

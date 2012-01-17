@@ -16,7 +16,7 @@
 
     <tr>
 
-        <td><a href="{{ route('programmation_edit', {'id': row.id}) }}">{{ row.presenter_name_first }} {{row.presenter_name_last}}</a></td>
+        <td><a href="{{ route('programmation_edit', {'id': row.id}) }}">{{ row.presenter_name }}</a></td>
         <td>
             <a href="{{ route('programmation_edit', {'id': row.id}) }}">Editer</a>
             <a onclick="return confirm('Really?');" href="{{ route('programmation_delete', {'id': row.id}) }}">Supprimer</a>
