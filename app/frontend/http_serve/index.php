@@ -20,7 +20,7 @@ $app->get('/md', function () use ($app) {
 $app->get('/', function () use ($app) {
 	$list = Presentation::getRandomSet(4);
     /** @var Slim $app */
-    $app->render('index.html', array('vedettes'=> $list));
+    $app->render('index.html', array('vedettes'=> $list,'route_single' => Routes::PROGRAMMATION_SINGLE,));
 })->name(Routes::INDEX);
 
 $app->get('/a-propos/', function() use ($app){
