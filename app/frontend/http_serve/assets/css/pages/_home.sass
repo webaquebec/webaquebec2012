@@ -1,0 +1,140 @@
+
+//#########################################################
+//   Home             #####################################
+
+#commanditaires-principaux
+  position: relative
+  padding: 1em 0
+  height: 154px
+  min-height: 154px
+  a
+    text-align: center
+    display: block
+    position: absolute
+    top: 40px
+    left: 0
+    background: white
+    width: 280px
+    img
+      text-align: center
+      margin: 0 auto
+      opacity: 0.8
+      +transition(opacity 0.1s ease-in-out)
+  a:hover img
+    opacity: 1
+
+#important-numbers
+  position: relative
+  .btn-nav
+    display: block
+    height: 180px
+    width: 17px
+    position: absolute
+    span
+      display: block
+      @extend .t-indent
+      height: 24px
+      width: 17px
+      position: absolute
+      top: 60px
+      left: 0
+  #btn-precedent
+    top: 0
+    left: 10px
+    span
+      background: url(../img/sprite.png) no-repeat 2px -136px
+      +transition(all 0.1s ease-in-out)
+  #btn-precedent:hover span
+    background-position: 0 -136px
+  #btn-suivant
+    top: 0
+    right: 0
+    span
+      background: url(../img/sprite.png) no-repeat 3px -101px
+      +transition(all 0.1s ease-in-out)
+  #btn-suivant:hover span
+    background-position: 5px -101px
+
+#numbers-viewport
+  position: relative
+  margin: 0 0 30px 25px
+  width: 561px
+  li
+    display: block
+    width: 186px
+    height: 60px
+    padding-top: 130px
+    position: relative
+    text-align: center
+    span
+      display: block
+      font-family: MisoBold
+      font-size: 700%
+      text-shadow: 0 2px 3px rgba(black, 0.35)
+      height: 120px
+      width: 186px
+      padding-top: 7px
+      color: #ebebeb
+      +transition(all 0.1s ease-in-out)
+      position: absolute
+      top: 0
+      left: 0
+    /*span:hover{
+     *  font-size: 750%;
+     *  text-align: center;text-shadow: 0 4px 5px rgba(#000, 0.20);
+     *  height: 137px;
+     *  padding-top: 0;
+     *  cursor: pointer;
+     *  color: #fff;
+     *}
+    em
+      font: 140% MisoLight
+      @extend .to-caps
+  li:hover
+    span
+      font-size: 750%
+      text-align: center
+      text-shadow: 0px 6px 5px rgba(black, 0.2)
+      height: 127px
+      padding-top: 0
+      color: #fff
+
+
+#conferenciers
+  ul
+    +border-radius(5px)
+    +box-shadow(0 3px 4px rgba(black, 0.2))
+    width: 588px
+    float: right
+    margin-bottom: 10px
+    li
+      display: block
+      height: 160px
+      width: 147px
+      position: relative
+      float: right
+      span
+        +opacity(0)
+        font:
+          family: MisoLight
+          size: 120%
+        display: block
+        position: absolute
+        width: 120px
+        bottom: 10px
+        left: 10px
+        z-index: 3
+        +transition(all 0.2s ease-in-out)
+      img
+        +opacity(1)
+        display: block
+        position: absolute
+        left: 0
+        top: 0
+        z-index: 2
+        +transition(all 0.2s ease-in-out)
+    li:hover
+      img
+        +opacity(0.4)
+      span
+        +opacity(1)
