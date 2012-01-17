@@ -2,8 +2,13 @@
 
 class Presentation extends Model{
 
+    /**
+     * Get all presentation, ordered by ordering, and name.
+     */
     public static function getAll(){
-        return Model::factory(__CLASS__)->order_by_asc('ordering')->find_many();
+        return Model::factory(__CLASS__)
+                    ->order_by_asc('ordering')
+                    ->order_by_asc('conference_name')->find_many();
     }
 
     /**
