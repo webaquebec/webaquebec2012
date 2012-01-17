@@ -1,0 +1,59 @@
+
+//#########################################
+//   a11y     ###########################
+
+.assistive-text, .out, .garde
+  position: absolute
+  clip: rect(1px 1px 1px 1px)
+  /* IE6, IE7
+  clip: rect(1px, 1px, 1px, 1px)
+  left: 0
+
+br
+  content: ""
+  display: block
+  height: 0
+  width: 0
+  overflow: hidden
+  line-height: 0
+  font-size: 0
+
+.bubble-wrap:focus
+  outline: none
+
+a:focus, .bubble-wrap:focus a
+  outline: 2px solid #FF0
+  outline-radius: 10px
+  -moz-outline-radius: 10px
+  -webkit-outline-radius: 10px
+
+a.no-focus:focus, a.no-focus-click:focus
+  outline: none
+
+#page-content h1.no-focus, #page-content h1.no-focus-click
+  outline: none
+
+.link-hidden a, a.link-hidden
+  width: 1px
+  height: 1px
+  overflow: hidden
+  padding: 0 !important
+  text-decoration: none
+  display: block
+
+.link-hidden a:focus, a.link-hidden:focus
+  overflow: visible
+  height: auto
+  width: auto
+  margin-right: 10px
+  padding: 10px 10px !important
+  background: #000
+  color: #fff
+  border-radius: 10px
+  -webkit-border-radius: 10px
+  -moz-border-radius: 10px
+  display: block
+
+a.link-hidden:focus
+  background: #fff
+  color: #000
