@@ -1315,3 +1315,62 @@ h3.box-header {
     padding-left: 16px; }
     .speaker .speaker-text p {
       margin-bottom: 0.6em; }
+a.link-hidden:focus {
+  background: #fff;
+  color: #000; }
+
+
+.fade {
+    -moz-transition: opacity 0.15s linear 0s;
+    opacity: 0;
+}
+.fade.in {
+    opacity: 1;
+}
+
+
+.twipsy {
+    display: block;
+    font-size: 11px;
+    padding: 2px;
+    position: absolute;
+    visibility: visible;
+    z-index: 1000;
+}
+
+.twipsy.right .twipsy-arrow {
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid #005778;
+    border-top: 7px solid transparent;
+    left: -5px;
+    margin-top: -5px;
+    top: 50%;
+}
+
+.twipsy-arrow {
+    height: 0;
+    position: absolute;
+    width: 0;
+}
+
+.twipsy-inner {
+    background-color: #FFFFFF;
+    border: 4px solid #005778;
+    border-radius: 7px 7px 7px 7px;
+    max-width: 200px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.twipsy-inner h3 {
+    color: #005778 !important;
+    font-family: MisoRegular;
+    font-size: 200%;
+    margin-bottom: 5px;
+}
+
+.twipsy-inner p {
+    color: #000000 !important;
+    font-size: 110%;
+}
