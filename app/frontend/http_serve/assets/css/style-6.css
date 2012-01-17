@@ -1278,3 +1278,40 @@ h3.box-header {
   line-height: 16px;
   font-weight: bold;
   margin-bottom: 12px; }
+
+.speaker {
+  *zoom: 1; }
+  .speaker:after {
+    clear: both; }
+  .speaker:before, .speaker:after {
+    content: "";
+    display: table; }
+  .speaker .speaker-photo {
+    float: right;
+    width: 233px; }
+  .speaker .speaker-content {
+    float: right;
+    width: 727px; }
+  .speaker header {
+    text-transform: uppercase;
+    text-shadow: 0 1px black; }
+  .speaker h1, .speaker h2 {
+    padding-left: 16px; }
+  .speaker h1 {
+    margin: 0 0 4px;
+    font: 2.1em/1 MisoBold; }
+  .speaker h2 {
+    margin: 0;
+    padding-bottom: 20px;
+    font-size: 1.5em;
+    font-family: MisoRegular; }
+  .speaker h2, .speaker .speaker-date {
+    border-bottom: 1px dotted #4cabcf; }
+  .speaker .speaker-date {
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font: 1.25em MisoBold; }
+  .speaker .speaker-text {
+    padding-left: 16px; }
+    .speaker .speaker-text p {
+      margin-bottom: 0.6em; }
