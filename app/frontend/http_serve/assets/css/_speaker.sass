@@ -1,0 +1,44 @@
+
+$speaker-gap-width : 16px
+
+.speaker
+  +clearfix
+
+  .speaker-photo
+    float: right
+    width: 233px
+
+  .speaker-content
+    float: right
+    width: 727px
+
+  header
+    text-transform: uppercase
+    text-shadow: 0 1px black
+
+  h1, h2
+    padding-left: $speaker-gap-width
+
+  h1
+    margin: 0 0 4px
+    font: 2.1em/1 MisoBold
+
+  h2
+    margin: 0
+    padding-bottom: 20px
+    font-size: 1.5em
+    font-family: MisoRegular
+
+  h2, .speaker-date
+    border-bottom: 1px dotted $main-light-blue
+
+  .speaker-date
+    padding: 12px $speaker-gap-width
+    margin-bottom: 16px
+    font: 1.25em MisoBold
+
+  .speaker-text
+    padding-left: $speaker-gap-width
+
+    p
+      margin-bottom: 0.6em

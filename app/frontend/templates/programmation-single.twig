@@ -7,36 +7,45 @@
 {% endblock %}
 
 {% block content %}
+
+<article class="speaker">
+	<div class="speaker-content">
+		<header>
+			<h1>{{item.presenter_name}}</h1>
+			<h2>{{item.conference_name}}</h2>
+			<div class="speaker-date">
+				vendredi, 20 janvier de 16:50 à 17:10 – Grand hall
+			</div>
+		</header>
+		<div class="speaker-text">
+			{% if item.presenter_resume %}
+			{{ item.presenter_resume|markdown }}
+			{%endif%}
+			
+			{% if item.conference_resume %}
+			{{ item.conference_resume|markdown }}
+			{%endif%}
+			
+			{% if item.conference_goals %}
+			{{ item.conference_goals|markdown }}
+			{%endif%}
+			
+			{% if item.website %}
+			<p><a href="{{item.website}}">{{item.website}}</a></p>
+			{%endif%}
+
+			{% if item.twitter_handle %}
+			<p><a href="http://www.twitter.com/{{item.twitter_handle}}">@{{item.twitter_handle}}</a></p>
+			{%endif%}
+			
+		</div>
+	</div>
+	<div class="speaker-photo">
+		<img alt="Photo de {{presenter_name_first}} {{presenter_name_last}}" height="240" src="/assets/img/conferenciers/147x160/{{item.presenter_image}}" width="233">
+	</div>
+</article>
+
 <a href="{{ route('programmation') }}">Retour</a>
-
-<img src="/assets/img/conferenciers/147x160/{{item.presenter_image}}"/>
-
-<p>{{item.presenter_name}}</p>
-
-{% if item.website %}
-<p><a href="{{item.website}}">{{item.website}}</a></p>
-{%endif%}
-
-{% if item.twitter_handle %}
-<p><a href="http://www.twitter.com/{{item.twitter_handle}}">@{{item.twitter_handle}}</a></p>
-{%endif%}
-
-{% if item.presenter_resume %}
-{{ item.presenter_resume|markdown }}
-{%endif%}
-
-
-<p>{{item.conference_name}}</p>
-<p class="tags">{{item.tags}}</p>
-
-{% if item.conference_resume %}
-{{ item.conference_resume|markdown }}
-{%endif%}
-{% if item.conference_goals %}
-{{ item.conference_goals|markdown }}
-{%endif%}
-
-<p>Placeholder for date.</p>
 
 
         {% endblock %}
