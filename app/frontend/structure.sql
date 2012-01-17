@@ -11,5 +11,5 @@ CREATE TABLE presentation (
     tags varchar(1024) NOT NULL,
     website varchar(1024) NOT NULL,
     twitter_handle varchar(255) NOT NULL,
-    PRIMARY KEY (uid)
+    PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
