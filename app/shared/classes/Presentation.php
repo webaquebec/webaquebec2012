@@ -3,12 +3,39 @@
 class Presentation extends Model{
 
     /**
+     * Get limited quantity of presentation, randomly selected.
+     * @param $quantity int
+     * @return Presentation[]
+     */
+    public static function getRandomSet($quantity = 1){
+        return Model::factory(__CLASS__)
+                    ->order_by_raw('RAND()')
+                    ->limit($quantity)
+                    ->find_many();
+    }
+
+    /**
+     * Get all presentation according to starred property, ordered by ordering, and name.
+     * @param $starred boolean
+     * @return Presentation[]
+     */
+    public static function getAccordingToStarred($starred = TRUE){
+        return Model::factory(__CLASS__)
+                    ->where('starred', $starred)
+                    ->order_by_asc('ordering')
+                    ->order_by_asc('conference_name')
+                    ->find_many();
+    }
+
+    /**
      * Get all presentation, ordered by ordering, and name.
+     * @return Presentation[]
      */
     public static function getAll(){
         return Model::factory(__CLASS__)
                     ->order_by_asc('ordering')
-                    ->order_by_asc('conference_name')->find_many();
+                    ->order_by_asc('conference_name')
+                    ->find_many();
     }
 
     /**
