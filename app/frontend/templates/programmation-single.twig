@@ -13,29 +13,28 @@
 		<header>
 			<h1>{{item.presenter_name}}</h1>
 			<h2>{{item.conference_name}}</h2>
-			<div class="speaker-date">
-				vendredi, 20 janvier de 16:50 à 17:10 – Grand hall
-			</div>
 		</header>
 		<div class="speaker-text">
-			{% if item.presenter_resume %}
-			{{ item.presenter_resume|markdown }}
-			{%endif%}
-			
 			{% if item.conference_resume %}
 			{{ item.conference_resume|markdown }}
 			{%endif%}
-			
+
+			<h3>Questions centrales</h3>			
 			{% if item.conference_goals %}
 			{{ item.conference_goals|markdown }}
 			{%endif%}
 			
+			<h3>À propos de {{item.presenter_name}}</h3>			
+                        {% if item.presenter_resume %}
+                        {{ item.presenter_resume|markdown }}
+                        {%endif%}
+
 			{% if item.website %}
 			<p><a href="{{item.website}}">{{item.website}}</a></p>
 			{%endif%}
 
 			{% if item.twitter_handle %}
-			<p><a href="http://www.twitter.com/{{item.twitter_handle}}">@{{item.twitter_handle}}</a></p>
+			<p class="twitter"><a href="http://www.twitter.com/{{item.twitter_handle}}">@{{item.twitter_handle}}</a></p>
 			{%endif%}
 			
 		</div>

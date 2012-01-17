@@ -1374,3 +1374,30 @@ a.link-hidden:focus {
     color: #000000 !important;
     font-size: 110%;
 }
+
+.speaker header {
+ height: 125px;
+}
+
+.speaker h3, .speaker .twitter {
+ font-family: MisoRegular;
+ font-size: 1.2em;
+ margin-bottom: 0.8em;
+}
+
+.speaker h3 {
+ font-size: 1.6em;}
+}
+.speaker p {
+ margin-bottom: 1em;
+}
+
+.speaker ol {
+ margin-bottom: 1em;
+}
+
+.speaker ol li {
+ margin-top: 0.4em;
+ font-family: MisoLight;
+ font-size: 1.2em;
+}
