@@ -49,15 +49,13 @@
               </div>
 
               <div id="conferenciers">
-                <ul class="list-custom list-hori clearfix">
-                  <li><a href="/programmation/" target="_blank"><span>Isabelle Grenier</span> <img src="/assets/img/conferenciers/147x160/isabelle-grenier.jpg" alt="Isabelle Grenier" /></a></li>
-
-                  <li><a href="/programmation/" target="_blank"><span>Denis Boudreault</span> <img src="/assets/img/conferenciers/147x160/denis-boudreault.jpg" alt="Denis Boudreault" /></a></li>
-
-                  <li><a href="/programmation/" target="_blank"><span>Rémi Prévost</span> <img src="/assets/img/conferenciers/147x160/remi-prevost.jpg" alt="Rémi Prévost" /></a></li>
-
-                  <li><a href="/programmation/" target="_blank"><span>Peter Morville</span> <img src="/assets/img/conferenciers/147x160/peter-morville_star.jpg" alt="Peter Morville" /></a></li>
-                </ul>
+	
+	
+			 	   <ul class="list-custom list-hori clearfix">
+				    {% for row in vedettes %}
+                  <li><a href="{{ route(route_single, {'id': row.id, 'name': row.titleSlug}) }}"><span>{{row.presenter_name}}</span> <img src="/assets/img/conferenciers/147x160/{{row.presenter_image}}" alt="{{row.presenter_name}}" /></a></li>
+				    {% endfor %}
+				 </ul>
 
                 <div class="btn-more-wrapper">
                   <a href="/programmation/" style="clear: both;">Consulter la programmation</a>
