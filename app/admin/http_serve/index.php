@@ -32,8 +32,14 @@ $app->get('/programmation/', Auth::validateDelegate(Auth::ROLE_MINIMAL_ACCESS), 
     $app->render('programmation/list.twig', array('list'=>Presentation::getAll()));
 })->name(AdminRoutes::PROGRAMMATION_LIST);
 
+$app->get('/plages_horaire/', Auth::validateDelegate(Auth::ROLE_MINIMAL_ACCESS), function () use ($app) {
+    /** @var Slim $app */
+    $app->render('plages_horaire/list.twig', array('list'=>PlageHoraire::getAll()));
+})->name(AdminRoutes::PLAGES_HORAIRE_LIST);
+
 
 include __DIR__."/../includes/programmation_crud.inc.php";
+include __DIR__."/../includes/plages_horaire_crud.inc.php";
 
 $app->run();
 

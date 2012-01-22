@@ -1,0 +1,30 @@
+{% extends "/blocks/base.twig" %}
+
+{% block content %}
+
+<a href="{{ route('admin_index') }}">Retour</a>
+<h1>Plages horaire</h1>
+<p><a href="{{ route('plages_horaire_new') }}">Nouveau</a></p>
+<p>{{ flash.plages_horaire }}</p>
+
+<table>
+    <tr>
+        <th>Titre</th>
+        <th>Actions</th>
+    </tr>
+    {% for row in list %}
+
+    <tr>
+
+        <td><a href="{{ route('plages_horaire_edit', {'id': row.id}) }}">{{ row.presenter_name }}</a></td>
+        <td>
+            <a href="{{ route('plages_horaire_edit', {'id': row.id}) }}">Editer</a>
+            <a onclick="return confirm('Really?');" href="{{ route('plages_horaire_delete', {'id': row.id}) }}">Supprimer</a>
+        </td>
+
+
+    </tr>
+
+    {% endfor %}
+</table>
+{% endblock %}
