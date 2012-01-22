@@ -6,7 +6,7 @@ $app->get('/plages_horaire/edit/:id', Auth::validateDelegate(Auth::ROLE_WRITER),
         array(
             'mode'=>'edit',
             'post_target'=>$app->urlFor(AdminRoutes::PLAGES_HORAIRE_UPDATE, array('id'=>$id)),
-            'item'=>Presentation::getById($id),
+            'item'=>PlageHoraire::getById($id),
         )
     );
 })->name(AdminRoutes::PLAGES_HORAIRE_EDIT);
@@ -17,14 +17,14 @@ $app->get('/plages_horaire/new/', Auth::validateDelegate(Auth::ROLE_WRITER), fun
         array(
             'mode'=>'new',
             'post_target'=>$app->urlFor(AdminRoutes::PLAGES_HORAIRE_CREATE, array()),
-            'item' => Presentation::create()
+            'item' => PlageHoraire::create()
         )
     );
 })->name(AdminRoutes::PLAGES_HORAIRE_NEW);
 
 $app->post('/plages_horaire/create', Auth::validateDelegate(Auth::ROLE_WRITER), function () use ($app) {
     /** @var Slim $app */
-    $p = Presentation::create();
+    $p = PlageHoraire::create();
     foreach($_POST as $k=>$v){
         $p->set($k, $v);
     }
@@ -37,7 +37,7 @@ $app->post('/plages_horaire/create', Auth::validateDelegate(Auth::ROLE_WRITER), 
 
 $app->post('/plages_horaire/update/:id', Auth::validateDelegate(Auth::ROLE_WRITER), function ($id) use ($app) {
     /** @var Slim $app */
-    $p = Presentation::getById($id);
+    $p = PlageHoraire::getById($id);
     foreach($_POST as $k=>$v){
         $p->set($k, $v);
     }
@@ -48,7 +48,7 @@ $app->post('/plages_horaire/update/:id', Auth::validateDelegate(Auth::ROLE_WRITE
 
 $app->get('/plages_horaire/delete/:id', Auth::validateDelegate(Auth::ROLE_WRITER), function ($id) use ($app) {
     /** @var Slim $app */
-    $p = Presentation::getById($id);
+    $p = PlageHoraire::getById($id);
     $p->delete();
 
     $app->flash('plages_horaire', 'Supprimé!');

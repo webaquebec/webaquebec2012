@@ -16,7 +16,11 @@
 
     <tr>
 
-        <td><a href="{{ route('plages_horaire_edit', {'id': row.id}) }}">{{ row.presenter_name }}</a></td>
+        <td>
+            <a href="{{ route('plages_horaire_edit', {'id': row.id}) }}">
+                {{ row.eventDay.name }} - {{ row.start_hour }}:{{ row.start_minute }} @ {{ row.end_hour }}:{{ row.end_minute }}
+            </a>
+        </td>
         <td>
             <a href="{{ route('plages_horaire_edit', {'id': row.id}) }}">Editer</a>
             <a onclick="return confirm('Really?');" href="{{ route('plages_horaire_delete', {'id': row.id}) }}">Supprimer</a>

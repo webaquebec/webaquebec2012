@@ -16,10 +16,21 @@
 <p class="flash">{{ flash.plages_horaire }}</p>
 
 <form action="{{ post_target }}" method="post">
-
     <dl>
-        <dt>ordering</dt>
-        <dd>{{ forms.input('ordering', item.ordering) }}</dd>
+        <dt>event_day_id</dt>
+        <dd>{{ forms.input('event_day_id', item.event_day_id) }}</dd>
+
+        <dt>start_hour</dt>
+        <dd>{{ forms.input('start_hour', item.start_hour) }}</dd>
+
+        <dt>start_minute</dt>
+        <dd>{{ forms.input('start_minute', item.start_minute) }}</dd>
+
+        <dt>end_hour</dt>
+        <dd>{{ forms.input('end_hour', item.end_hour) }}</dd>
+
+        <dt>end_minute</dt>
+        <dd>{{ forms.input('end_minute', item.end_minute) }}</dd>
 
     </dl>
     {{ forms.submit() }}

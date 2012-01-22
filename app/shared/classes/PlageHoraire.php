@@ -29,4 +29,8 @@ class PlageHoraire extends Model{
         return Model::factory(__CLASS__)->create();
     }
 
+    public function getEventDay(){
+        return array('name' => 'placeholder');
+    }
+
 }
