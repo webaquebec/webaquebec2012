@@ -8,10 +8,25 @@ class EventDay extends Model{
      */
     public static function getAll(){
         return Model::factory(__CLASS__)
-//                    ->order_by_asc('ordering')
-//                    ->order_by_asc('conference_name')
+                    ->order_by_asc('date')
                     ->find_many();
     }
+
+    /**
+     * Get all presentation, ordered by ordering, and name.
+     * @return array[]
+     */
+    public static function getAllAssoc(){
+        $assoc = array();
+        $all = self::getAll();
+        foreach($all as $day){
+            $assoc[$day->get('id')] = $day->getName();
+        }
+
+        return $assoc;
+    }
+
+
 
     /**
      * @static

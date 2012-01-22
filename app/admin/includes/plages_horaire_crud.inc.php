@@ -5,6 +5,7 @@ $app->get('/plages_horaire/edit/:id', Auth::validateDelegate(Auth::ROLE_WRITER),
     $app->render('plages_horaire/new_or_edit.twig',
         array(
             'mode'=>'edit',
+            'days'=>EventDay::getAllAssoc(),
             'post_target'=>$app->urlFor(AdminRoutes::PLAGES_HORAIRE_UPDATE, array('id'=>$id)),
             'item'=>PlageHoraire::getById($id),
         )
@@ -16,6 +17,7 @@ $app->get('/plages_horaire/new/', Auth::validateDelegate(Auth::ROLE_WRITER), fun
     $app->render('plages_horaire/new_or_edit.twig',
         array(
             'mode'=>'new',
+            'days'=>EventDay::getAllAssoc(),
             'post_target'=>$app->urlFor(AdminRoutes::PLAGES_HORAIRE_CREATE, array()),
             'item' => PlageHoraire::create()
         )

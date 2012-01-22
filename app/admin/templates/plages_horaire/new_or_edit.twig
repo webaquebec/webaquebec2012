@@ -17,8 +17,8 @@
 
 <form action="{{ post_target }}" method="post">
     <dl>
-        <dt>event_day_id</dt>
-        <dd>{{ forms.input('event_day_id', item.event_day_id) }}</dd>
+        <dt>event_day</dt>
+        <dd>{{ forms.select('event_day_id', days, item.event_day_id) }}</dd>
 
         <dt>start_hour</dt>
         <dd>{{ forms.input('start_hour', item.start_hour) }}</dd>
