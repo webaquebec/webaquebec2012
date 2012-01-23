@@ -24,4 +24,15 @@ class AdminRoutes{
 
     const PLAGES_HORAIRE_DELETE = 'plages_horaire_delete';
 
+
+    const HORAIRE_LIST =    'horaire_list';
+
+    const HORAIRE_EDIT =    'horaire_edit';
+    const HORAIRE_UPDATE =  'horaire_update';
+
+    const HORAIRE_NEW =     'horaire_new';
+    const HORAIRE_CREATE =  'horaire_create';
+
+    const HORAIRE_DELETE =  'horaire_delete';
+
 }
