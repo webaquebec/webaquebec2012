@@ -49,4 +49,6 @@ include __DIR__."/../includes/horaire_crud.inc.php";
 
 $app->run();
 
+$queries = count(ORM::get_query_log());
+echo "<!-- Queries : $queries -->\n";
 

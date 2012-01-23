@@ -1,6 +1,6 @@
 <?php
 
-class Horaire extends Model{
+class Room extends Model{
 
     /**
      * Get all presentation, ordered by ordering, and name.
@@ -27,16 +27,17 @@ class Horaire extends Model{
         return Model::factory(__CLASS__)->create();
     }
 
-    public function getPlageHoraire(){
-        return PlageHoraire::getById($this->get('plage_horaire_id'));
-    }
+    /**
+     * @return array[]
+     */
+    public static function getAllAssoc(){
+        $assoc = array();
+        $all = self::getAll();
+        foreach($all as $room){
+            $assoc[$room->get('id')] = $room->get('name');
+        }
 
-    public function getPresentation(){
-        return Presentation::getById($this->get('presentation_id'));
-    }
-
-    public function getRoom(){
-        return Room::getById($this->get('room_id'));
+        return $assoc;
     }
 
 }

@@ -18,7 +18,7 @@
 
         <td>
             <a href="{{ route('horaire_edit', {'id': row.id}) }}">
-
+                {{row.presentation.conference_name}} @ {{row.plageHoraire.name}} ({{row.room.name}})
             </a>
         </td>
         <td>

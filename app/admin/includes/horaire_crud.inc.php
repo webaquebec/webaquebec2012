@@ -5,6 +5,9 @@ $app->get('/horaire/edit/:id', Auth::validateDelegate(Auth::ROLE_WRITER), functi
     $app->render('horaire/new_or_edit.twig',
         array(
             'mode'=>'edit',
+            'plages'=>PlageHoraire::getAllAssoc(),
+            'rooms'=>Room::getAllAssoc(),
+            'presentations'=>Presentation::getAllAssoc(),
             'post_target'=>$app->urlFor(AdminRoutes::HORAIRE_UPDATE, array('id'=>$id)),
             'item'=>Horaire::getById($id),
         )
@@ -16,6 +19,9 @@ $app->get('/horaire/new/', Auth::validateDelegate(Auth::ROLE_WRITER), function (
     $app->render('horaire/new_or_edit.twig',
         array(
             'mode'=>'new',
+            'plages'=>PlageHoraire::getAllAssoc(),
+            'rooms'=>Room::getAllAssoc(),
+            'presentations'=>Presentation::getAllAssoc(),
             'post_target'=>$app->urlFor(AdminRoutes::HORAIRE_CREATE, array()),
             'item' => Horaire::create()
         )

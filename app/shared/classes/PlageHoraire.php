@@ -34,4 +34,29 @@ class PlageHoraire extends Model{
         return EventDay::getById($this->get('event_day_id'));
     }
 
+    /**
+     * @return array[]
+     */
+    public static function getAllAssoc(){
+        $assoc = array();
+        $all = self::getAll();
+        foreach($all as $plage){
+            $assoc[$plage->get('id')] = $plage->getName();
+        }
+
+        return $assoc;
+    }
+
+    public function getName(){
+        return $this->getEventDay()->getName() . " - " . $this->getStartTime() . " @ " . $this->getEndTime();
+    }
+
+    public function getStartTime(){
+        return $this->get('start_hour') . ":" . $this->get('start_minute');
+    }
+
+    public function getEndTime(){
+        return $this->get('end_hour') . ":" . $this->get('end_minute');
+    }
+
 }

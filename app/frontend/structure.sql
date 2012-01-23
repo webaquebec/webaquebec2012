@@ -53,8 +53,11 @@ CREATE TABLE plage_horaire (
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS horaire;
 CREATE TABLE horaire (
+    id int(11) NOT NULL AUTO_INCREMENT,
     plage_horaire_id int(11) NOT NULL,
     room_id int(11),
-    presentation_id int(11)
+    presentation_id int(11),
+    PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

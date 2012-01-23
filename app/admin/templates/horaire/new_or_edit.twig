@@ -18,7 +18,14 @@
 <form action="{{ post_target }}" method="post">
     <dl>
 
-        here!
+        <dt>plage_horaire</dt>
+        <dd>{{ forms.select('plage_horaire_id', plages, item.plage_horaire_id) }}</dd>
+
+        <dt>room</dt>
+        <dd>{{ forms.select('room_id', rooms, item.room_id) }}</dd>
+
+        <dt>presentation</dt>
+        <dd>{{ forms.select('presentation_id', presentations, item.presentation_id) }}</dd>
 
     </dl>
     {{ forms.submit() }}
