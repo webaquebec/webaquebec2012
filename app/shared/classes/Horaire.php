@@ -19,6 +19,23 @@ class Horaire extends Model{
     public static function getById($id){
         return Model::factory(__CLASS__)->find_one($id);
     }
+
+    /**
+     * @static
+     * @param $day_id
+     * @return bool|Horaire
+     */
+    public static function getByDay($day_id){
+        $plages = PlageHoraire::getByDay($day_id);
+        $plages_id = array();
+        foreach($plages as $p){
+            $plages_id[] = $p->get('id');
+        }
+        return Model::factory(__CLASS__)
+            ->where_in('plage_horaire_id', $plages_id)
+            ->find_many();
+    }
+
     /**
      * @static
      * @return Horaire

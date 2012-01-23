@@ -74,6 +74,14 @@ $app->get('/programmation/:id/?:name?/?', function ($id, $name = NULL) use ($app
 
 })->name(Routes::PROGRAMMATION_SINGLE);
 
+$app->get('/horaire_test/', function() use ($app){
+    /** @var Slim $app */
+
+    $horaires = Horaire::getByDay(2);//Jeudi
+    die(print_r($horaires));
+
+})->name('horaire_test');
+
 $app->notFound(function () use ($app) {
     /** @var Slim $app */
     $app->render('errors/404.html');

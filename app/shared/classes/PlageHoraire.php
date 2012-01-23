@@ -47,6 +47,17 @@ class PlageHoraire extends Model{
         return $assoc;
     }
 
+    /**
+     * @static
+     * @param $day_id
+     * @return PlageHoraire[]
+     */
+    public static function getByDay($day_id){
+        return Model::factory(__CLASS__)
+            ->where('event_day_id', $day_id)
+            ->find_many();
+    }
+
     public function getName(){
         return $this->getEventDay()->getName() . " - " . $this->getStartTime() . " @ " . $this->getEndTime();
     }
