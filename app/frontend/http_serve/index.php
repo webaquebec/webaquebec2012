@@ -11,12 +11,6 @@ SimpleAutoLoader::addPath(PATH_PUBLIC."/classes/");
 global $app;
 bootstrap(PATH_PUBLIC."/templates/");
 
-//      FAKE         ************
-$app->get('/md', function () use ($app) {
-    /** @var Slim $app */
-    $app->render('markdown_test.html');
-});
-
 $app->get('/', function () use ($app) {
 	$list = Presentation::getRandomSet(4);
     /** @var Slim $app */
