@@ -33,9 +33,11 @@
 
     <ul class="list-custom list-hori">
 	    {% for row in list %}
+			{%if not row.ordering %}
 	        <li>
 	            <a data-original-title="&lt;h3&gt;{{row.presenter_name}}&lt;/h3&gt;&lt;p&gt;{{row.conference_name}}&lt;/p&gt;" href="{{ route(route_single, {'id': row.id, 'name': row.titleSlug}) }}"><img src="/assets/img/conferenciers/147x160/{{row.presenter_image}}" alt="{{row.presenter_name}}"></a>
 	        </li>
+			{% endif %}
 	    {% endfor %}
 		</ul>
 
