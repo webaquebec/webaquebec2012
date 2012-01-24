@@ -11,12 +11,6 @@ SimpleAutoLoader::addPath(PATH_PUBLIC."/classes/");
 global $app;
 bootstrap(PATH_PUBLIC."/templates/");
 
-//      FAKE         ************
-$app->get('/md', function () use ($app) {
-    /** @var Slim $app */
-    $app->render('markdown_test.html');
-});
-
 $app->get('/', function () use ($app) {
 	$list = Presentation::getRandomSet(4);
     /** @var Slim $app */
@@ -79,6 +73,14 @@ $app->get('/programmation/:id/?:name?/?', function ($id, $name = NULL) use ($app
     ));
 
 })->name(Routes::PROGRAMMATION_SINGLE);
+
+$app->get('/horaire_test/', function() use ($app){
+    /** @var Slim $app */
+
+    $horaires = Horaire::getByDay(2);//Jeudi
+    die(print_r($horaires));
+
+})->name('horaire_test');
 
 $app->notFound(function () use ($app) {
     /** @var Slim $app */

@@ -129,3 +129,18 @@ Duis pharetra laoreet velit non ultrices. Etiam tempus tellus in tellus eleifend
 )
 
 ;
+
+
+
+INSERT INTO `plage_horaire` (`id`, `event_day_id`, `start_hour`, `start_minute`, `end_hour`, `end_minute`) VALUES
+(1, 1, 10, 0, 11, 15),
+(2, 2, 9, 0, 9, 45),
+(3, 2, 13, 0, 15, 15),
+(4, 2, 15, 15, 18, 0),
+(5, 1, 14, 0, 16, 45);
+
+
+INSERT INTO `horaire` (`id`, `plage_horaire_id`, `room_id`, `presentation_id`) VALUES
+(1, 1, 1, 15),
+(2, 4, 3, 9),
+(3, 2, 4, 1);

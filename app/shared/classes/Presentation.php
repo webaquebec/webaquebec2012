@@ -58,4 +58,17 @@ class Presentation extends Model{
         return Helpers::generateSlug($this->get('conference_name'));
     }
 
+    /**
+     * @return array[]
+     */
+    public static function getAllAssoc(){
+        $assoc = array();
+        $all = self::getAll();
+        foreach($all as $pres){
+            $assoc[$pres->get('id')] = $pres->get('conference_name');
+        }
+
+        return $assoc;
+    }
+
 }

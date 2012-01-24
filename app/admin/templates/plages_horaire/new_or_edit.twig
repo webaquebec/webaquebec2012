@@ -1,0 +1,39 @@
+{% import "/form_fields.twig" as forms %}
+
+{% extends "/blocks/base.twig" %}
+
+{% block content %}
+
+<a href="{{ route('plages_horaire_list') }}">Retour</a>
+<h1>
+    {% if mode == 'new' %}
+        Nouveau
+    {% else %}
+        Editer
+    {% endif %}
+</h1>
+
+<p class="flash">{{ flash.plages_horaire }}</p>
+
+<form action="{{ post_target }}" method="post">
+    <dl>
+        <dt>event_day</dt>
+        <dd>{{ forms.select('event_day_id', days, item.event_day_id) }}</dd>
+
+        <dt>start_hour</dt>
+        <dd>{{ forms.input('start_hour', item.start_hour) }}</dd>
+
+        <dt>start_minute</dt>
+        <dd>{{ forms.input('start_minute', item.start_minute) }}</dd>
+
+        <dt>end_hour</dt>
+        <dd>{{ forms.input('end_hour', item.end_hour) }}</dd>
+
+        <dt>end_minute</dt>
+        <dd>{{ forms.input('end_minute', item.end_minute) }}</dd>
+
+    </dl>
+    {{ forms.submit() }}
+</form>
+
+{% endblock %}
