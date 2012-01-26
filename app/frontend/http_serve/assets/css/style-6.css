@@ -962,6 +962,7 @@ h3.box-header {
 
 .prog-wrapper ul li {
   margin-right: 15px;
+  margin-bottom: 15px;
   height: 160px;
   width: 147px; }
   .prog-wrapper ul li.last {
