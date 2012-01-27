@@ -1475,3 +1475,7 @@ h3.box-header {
     padding-left: 16px; }
     .speaker .speaker-text p {
       margin-bottom: 0.6em; }
+      
+.horaire-tab-content header h5 a {
+color: #0079A2;
+}
