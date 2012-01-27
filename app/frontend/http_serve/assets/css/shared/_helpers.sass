@@ -79,8 +79,6 @@
     zoom: 1
 
 =border-radius($radius)
-  @if unitless($radius)
-    $radius: $radius + px
   -webkit-border-radius: $radius
   -moz-border-radius: $radius
   border-radius: $radius
@@ -89,14 +87,6 @@
   background-clip: padding-box
 
 =border-radius-all($radius_top_left, $radius_top_right, $radius_bottom_right, $radius_bottom_left)
-  @if unitless($radius_top_left)
-    $radius_top_left: $radius_top_left + px
-  @if unitless($radius_top_right)
-    $radius_top_right: $radius_top_right + px
-  @if unitless($radius_bottom_left)
-    $radius_bottom_left: $radius_bottom_left + px
-  @if unitless($radius_bottom_right)
-    $radius_bottom_right: $radius_bottom_right + px
   border-radius: $radius_top_left $radius_top_right $radius_bottom_right $radius_bottom_left
   -moz-border-radius: $radius_top_left $radius_top_right $radius_bottom_right $radius_bottom_left
   -webkit-border-top-right-radius: $radius_top_left
@@ -105,40 +95,30 @@
   -webkit-border-top-left-radius: $radius_top_left
 
 =border-radius-top($radius)
-  @if unitless($radius)
-    $radius: $radius + px
   border-radius: $radius $radius 0 0
   -moz-border-radius: $radius $radius 0 0
   -webkit-border-top-right-radius: $radius
   -webkit-border-top-left-radius: $radius
 
 =border-radius-bottom($radius)
-  @if unitless($radius)
-    $radius: $radius + px
   border-radius: 0 0 $radius $radius
   -moz-border-radius: 0 0 $radius $radius
   -webkit-border-bottom-right-radius: $radius
   -webkit-border-bottom-left-radius: $radius
 
 =border-radius-left($radius)
-  @if unitless($radius)
-    $radius: $radius + px
   border-radius: $radius 0 0 $radius
   -moz-border-radius: $radius 0 0 $radius
   -webkit-border-top-left-radius: $radius
   -webkit-border-bottom-left-radius: $radius
 
 =border-radius-right($radius)
-  @if unitless($radius)
-    $radius: $radius + px
   border-radius: 0 $radius $radius 0
   -moz-border-radius: 0 $radius $radius 0
   -webkit-border-top-right-radius: $radius
   -webkit-border-bottom-right-radius: $radius
 
 =border-radius-top-left($radius)
-  @if unitless($radius)
-    $radius: $radius + px
   -webkit-border-top-left-radius: $radius
   -moz-border-radius-topleft: $radius
   border-top-left-radius: $radius
@@ -147,8 +127,6 @@
   background-clip: padding-box
 
 =border-radius-top-right($radius)
-  @if unitless($radius)
-    $radius: $radius + px
   -webkit-border-top-right-radius: $radius
   -moz-border-radius-topright: $radius
   border-top-right-radius: $radius
@@ -157,8 +135,6 @@
   background-clip: padding-box
 
 =border-radius-bottom-left($radius)
-  @if unitless($radius)
-    $radius: $radius + px
   -webkit-border-bottom-left-radius: $radius
   -moz-border-radius-bottomleft: $radius
   border-bottom-left-radius: $radius
@@ -167,8 +143,6 @@
   background-clip: padding-box
 
 =border-radius-bottom-right($radius)
-  @if unitless($radius)
-    $radius: $radius + px
   -webkit-border-bottom-right-radius: $radius
   -moz-border-radius-bottomright: $radius
   border-bottom-right-radius: $radius

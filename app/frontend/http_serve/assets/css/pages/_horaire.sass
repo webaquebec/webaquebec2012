@@ -1,0 +1,166 @@
+
+#horaire-page
+
+  h1
+    margin-bottom: 30px
+    font: 1.8em MisoRegular, sans-serif
+    text-transform: uppercase
+    text-shadow: 0 -1px $main-blue-10
+
+#horaire-parcours
+  float: right
+  width: 286px
+  padding: 11px
+  background: rgba( black, 0.1 )
+  +border-radius( 5px )
+  visibility: hidden
+
+  h2
+    font: 1.2em MisoRegular, sans-serif
+    text-transform: uppercase
+    text-shadow: 0 1px $main-blue-30
+
+.horaire-tab-standalone
+  float: right
+  width: 620px
+  height: 70px
+  padding: 12px 16px
+  background: image-url( 'horaire-tab-standalone.png' ) no-repeat left top
+  font: 1.25em MisoRegular, sans-serif
+  text-transform: uppercase
+  text-shadow: 0 1px $main-blue-30
+
+  h2
+    font: 1.56em MisoBold, sans-serif
+
+.horaire-tab-wrapper
+  margin: 0 0 0 111px
+  clear: both
+
+.horaire-tab-list
+  margin: 0 0 0 10px
+  font: 2em MisoRegular, sans-serif
+  text-shadow: 0 1px $main-blue-30
+  text-transform: uppercase
+
+  li
+    display: inline-block
+    margin: 0
+    vertical-align: bottom
+    list-style: none
+
+    &.horaire-tab-active
+      font-family: MisoBold, sans-serif
+
+      a
+        margin: 0
+        padding: 4px 10px
+
+  a
+    display: inline-block
+    margin-bottom: 3px
+    padding: 4px 10px 1px
+    background: rgba( black, 0.2 )
+    vertical-align: bottom
+    +border-radius( 5px 5px 0 0 )
+
+.horaire-tab-content
+  display: none
+
+  .horaire-table-wrapper
+    padding: 11px 0
+    background: rgba( black, 0.2 )
+    +border-radius( 5px )
+
+  table
+    margin: 0 0 0 -111px
+    width: 960px
+    border-spacing: 8px 14px
+
+  hr
+    height: 0
+    border: 0 dotted $main-light-blue
+    border-top-width: 1px
+    position: relative
+    top: -15px
+
+  th, td
+    margin: 0
+    padding: 0
+    vertical-align: top
+
+  th
+    width: 100px
+    padding-right: 11px
+    font: bold 2em MisoRegular, sans-serif
+    text-align: right
+    text-transform: uppercase
+    text-shadow: 0 1px $main-blue-30
+
+  td
+    min-width: 202px
+    background: #efefef
+    +border-radius(5px)
+    +box-shadow(0 2px 3px rgba(black, 0.3))
+
+    &.blank
+      background: none
+      +box-shadow( none )
+
+    &.pause
+      background: rgba(#101010, 0.35)
+
+      article
+        color: mix( white, #064c67, 75% )
+
+      h4
+        padding: 6px 0
+        font: 1.3em MisoBold, sans-serif
+        text-transform: uppercase
+        text-align: center
+        letter-spacing: 0.2em
+
+  article
+    color: black
+
+  header
+    color: #0079a2
+
+    h4
+      padding: 2px 8px
+      font: 1em Arial, sans-serif
+
+      background: #d5d5d5
+      color: #5a5a5a
+      +border-radius(5px 5px 0 0)
+
+      &.track1
+        background: #b4d99c
+
+      &.track2
+        background: #98ddea
+
+      &.track3
+        background: #ede185
+
+      &.track4
+        background: #f7ca94
+
+    h5
+      padding: 2px 8px 0
+      font: 1.3em MisoBold, sans-serif
+      text-transform: uppercase
+
+      span
+        font-family: MisoRegular, sans-serif
+
+    h6
+      padding: 0 8px
+      font: 1.3em MisoRegular, sans-serif
+      text-transform: uppercase
+
+  p
+    padding: 0 8px 8px
+
+.horaire-tab-content-active
+  display: block

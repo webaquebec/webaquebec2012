@@ -10,10 +10,8 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
-  color: #fff; }
+  vertical-align: baseline; }
 
 sup, sub {
   height: 0;
@@ -183,6 +181,7 @@ button {
 
 body {
   background: #0087ba;
+  color: white;
   font-family: Arial, sans-serif; }
 
 a {
@@ -403,34 +402,30 @@ a.link-hidden:focus {
   .fade.in {
     opacity: 1; }
 
-header {
+header#header-main {
   height: 164px; }
-
-header .wrapper {
-  position: relative;
-  padding: 36px 0 0 0; }
-
-.logo-princ {
-  width: 254px;
-  height: 87px;
-  background: url(../img/logo-princ.png) no-repeat;
-  float: left; }
-
-.logo-princ span {
-  display: block; }
-
-.logo-accronym {
-  height: 97px; }
-
-.logo-full-text {
-  font-size: 100%;
-  font-family: MisoLight;
-  letter-spacing: 0.1em; }
+  header#header-main .wrapper {
+    position: relative;
+    padding: 36px 0 0 0; }
+  header#header-main .logo {
+    float: left;
+    width: 262px;
+    font: 1em MisoLight, sans-serif;
+    letter-spacing: 0.1em; }
+  header#header-main .logo-princ {
+    display: inline-block;
+    width: 262px;
+    height: 87px;
+    background: url(../img/logo-princ.png) no-repeat; }
+  header#header-main .logo-princ span {
+    display: block; }
+  header#header-main .logo-accronym {
+    height: 97px; }
 
 .event-details {
   float: left;
   width: 200px;
-  margin: 0 286px 0 24px;
+  margin: 0 254px 0 24px;
   position: relative;
   top: -3px; }
   .event-details .lieu {
@@ -466,7 +461,7 @@ nav.top-right {
 
 nav.menu-princ {
   float: left;
-  width: 195px;
+  width: 220px;
   padding-top: 8px; }
   nav.menu-princ ul li {
     margin-bottom: 3px; }
@@ -960,9 +955,173 @@ h3.box-header {
 .ip-wrapper a:link:hover {
   text-decoration: underline; }
 
+#horaire-page h1 {
+  margin-bottom: 30px;
+  font: 1.8em MisoRegular, sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0 -1px #006d96; }
+
+#horaire-parcours {
+  float: right;
+  width: 286px;
+  padding: 11px;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  visibility: hidden; }
+  #horaire-parcours h2 {
+    font: 1.2em MisoRegular, sans-serif;
+    text-transform: uppercase;
+    text-shadow: 0 1px #003d54; }
+
+.horaire-tab-standalone {
+  float: right;
+  width: 620px;
+  height: 70px;
+  padding: 12px 16px;
+  background: image-url("horaire-tab-standalone.png") no-repeat left top;
+  font: 1.25em MisoRegular, sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0 1px #003d54; }
+  .horaire-tab-standalone h2 {
+    font: 1.56em MisoBold, sans-serif; }
+
+.horaire-tab-wrapper {
+  margin: 0 0 0 111px;
+  clear: both; }
+
+.horaire-tab-list {
+  margin: 0 0 0 10px;
+  font: 2em MisoRegular, sans-serif;
+  text-shadow: 0 1px #003d54;
+  text-transform: uppercase; }
+  .horaire-tab-list li {
+    display: inline-block;
+    margin: 0;
+    vertical-align: bottom;
+    list-style: none; }
+    .horaire-tab-list li.horaire-tab-active {
+      font-family: MisoBold, sans-serif; }
+      .horaire-tab-list li.horaire-tab-active a {
+        margin: 0;
+        padding: 4px 10px; }
+  .horaire-tab-list a {
+    display: inline-block;
+    margin-bottom: 3px;
+    padding: 4px 10px 1px;
+    background: rgba(0, 0, 0, 0.2);
+    vertical-align: bottom;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box; }
+
+.horaire-tab-content {
+  display: none; }
+  .horaire-tab-content .horaire-table-wrapper {
+    padding: 11px 0;
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box; }
+  .horaire-tab-content table {
+    margin: 0 0 0 -111px;
+    width: 960px;
+    border-spacing: 8px 14px; }
+  .horaire-tab-content hr {
+    height: 0;
+    border: 0 dotted #4cabcf;
+    border-top-width: 1px;
+    position: relative;
+    top: -15px; }
+  .horaire-tab-content th, .horaire-tab-content td {
+    margin: 0;
+    padding: 0;
+    vertical-align: top; }
+  .horaire-tab-content th {
+    width: 100px;
+    padding-right: 11px;
+    font: bold 2em MisoRegular, sans-serif;
+    text-align: right;
+    text-transform: uppercase;
+    text-shadow: 0 1px #003d54; }
+  .horaire-tab-content td {
+    min-width: 202px;
+    background: #efefef;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); }
+    .horaire-tab-content td.blank {
+      background: none;
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      box-shadow: none; }
+    .horaire-tab-content td.pause {
+      background: rgba(16, 16, 16, 0.35); }
+      .horaire-tab-content td.pause article {
+        color: #c0d2d9; }
+      .horaire-tab-content td.pause h4 {
+        padding: 6px 0;
+        font: 1.3em MisoBold, sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.2em; }
+  .horaire-tab-content article {
+    color: black; }
+  .horaire-tab-content header {
+    color: #0079a2; }
+    .horaire-tab-content header h4 {
+      padding: 2px 8px;
+      font: 1em Arial, sans-serif;
+      background: #d5d5d5;
+      color: #5a5a5a;
+      -webkit-border-radius: 5px 5px 0 0;
+      -moz-border-radius: 5px 5px 0 0;
+      border-radius: 5px 5px 0 0;
+      -webkit-background-clip: padding-box;
+      -moz-background-clip: padding;
+      background-clip: padding-box; }
+      .horaire-tab-content header h4.track1 {
+        background: #b4d99c; }
+      .horaire-tab-content header h4.track2 {
+        background: #98ddea; }
+      .horaire-tab-content header h4.track3 {
+        background: #ede185; }
+      .horaire-tab-content header h4.track4 {
+        background: #f7ca94; }
+    .horaire-tab-content header h5 {
+      padding: 2px 8px 0;
+      font: 1.3em MisoBold, sans-serif;
+      text-transform: uppercase; }
+      .horaire-tab-content header h5 span {
+        font-family: MisoRegular, sans-serif; }
+    .horaire-tab-content header h6 {
+      padding: 0 8px;
+      font: 1.3em MisoRegular, sans-serif;
+      text-transform: uppercase; }
+  .horaire-tab-content p {
+    padding: 0 8px 8px; }
+
+.horaire-tab-content-active {
+  display: block; }
+
 .prog-wrapper ul li {
   margin-right: 15px;
-  margin-bottom: 15px;
   height: 160px;
   width: 147px; }
   .prog-wrapper ul li.last {
@@ -1316,89 +1475,3 @@ h3.box-header {
     padding-left: 16px; }
     .speaker .speaker-text p {
       margin-bottom: 0.6em; }
-a.link-hidden:focus {
-  background: #fff;
-  color: #000; }
-
-
-.fade {
-    -moz-transition: opacity 0.15s linear 0s;
-    opacity: 0;
-}
-.fade.in {
-    opacity: 1;
-}
-
-
-.twipsy {
-    display: block;
-    font-size: 11px;
-    padding: 2px;
-    position: absolute;
-    visibility: visible;
-    z-index: 1000;
-}
-
-.twipsy.right .twipsy-arrow {
-    border-bottom: 7px solid transparent;
-    border-right: 7px solid #005778;
-    border-top: 7px solid transparent;
-    left: -5px;
-    margin-top: -5px;
-    top: 50%;
-}
-
-.twipsy-arrow {
-    height: 0;
-    position: absolute;
-    width: 0;
-}
-
-.twipsy-inner {
-    background-color: #FFFFFF;
-    border: 4px solid #005778;
-    border-radius: 7px 7px 7px 7px;
-    max-width: 200px;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-}
-
-.twipsy-inner h3 {
-    color: #005778 !important;
-    font-family: MisoRegular;
-    font-size: 200%;
-    margin-bottom: 5px;
-}
-
-.twipsy-inner p {
-    color: #000000 !important;
-    font-size: 110%;
-}
-
-.speaker header {
- height: 125px;
-}
-
-.speaker h3, .speaker .twitter {
- font-family: MisoRegular;
- font-size: 1.2em;
- margin-bottom: 0.8em;
-}
-
-.speaker h3 {
- font-size: 1.6em;}
-}
-.speaker p {
- margin-bottom: 1em;
-}
-
-.speaker ol {
- margin-bottom: 1em;
-}
-
-.speaker ol li {
- margin-top: 0.4em;
- font-family: MisoLight;
- font-size: 1.2em;
-}

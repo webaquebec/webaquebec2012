@@ -4,7 +4,7 @@
 
 //#########################################################
 //   Vars    ##############################################
-  
+
 $link-color: #fff;
 $main-blue: #0087ba;
 $main-blue-5: darken($main-blue, 4%);
@@ -51,9 +51,9 @@ $main-xlight-gray: #f5f5f5;
 
 .right-side{
   .left-side, .right-side{width: 290px;}
-} 
+}
 
-.ros-wrapper{ 
+.ros-wrapper{
   .right-side{
     .left-side, .right-side{width: 270px;}
   }
@@ -86,7 +86,7 @@ $main-xlight-gray: #f5f5f5;
 .white-box+.ls-content-box{margin-top: 25px;}
 .ls-content-box+.ls-content-box{margin-top: 15px;}
 
-.btn{position: relative; color: #000; padding: 5px;  @include border-radius-left(5);}
+.btn{position: relative; color: #000; padding: 5px;  @include border-radius-left(5px);}
 .btn-white{/*@extend .light-white-gradient;*/ background: #fff; @include box-shadow(0 0 3px #000)}
 .btn-vox-pop{display: block; background: rgba(#000, 0.6) url(../img/btn-vox-pop.png) no-repeat 10% 50%; position: absolute; padding: 10px 10px 10px 50px; @include border-radius(5px); @include box-shadow(0 2px 3px rgba(#000, 0.3)); @extend .to-caps; font-family: MisoLight; font-size: 130%; line-height: 0.9; @include transition(all 0.3s ease-in-out);
   strong{display: block; font-family: MisoRegular;}
@@ -99,7 +99,7 @@ $main-xlight-gray: #f5f5f5;
 //#########################################################
 //   General     ##########################################
 
-body{background: $main-blue; font-family: Arial, sans-serif;}
+body{background: $main-blue; font-family: Arial, sans-serif; font-size: 100%; color: #fff; }
 
 a{color: $link-color; text-decoration: none; outline: none;}
 
@@ -111,8 +111,8 @@ p{line-height: 1.4;}
 //#########################################################
 //   Header     ###########################################
 
-header{height: 164px;}
-header .wrapper{position: relative; padding: 36px 0 0 0;}
+header#header-main{height: 164px;}
+header#header-main .wrapper{position: relative; padding: 36px 0 0 0;}
 
 .logo-princ{width: 254px; height: 87px; background: url(../img/logo-princ.png) no-repeat; float: left;}
 .logo-princ span{display: block;}
@@ -122,7 +122,7 @@ header .wrapper{position: relative; padding: 36px 0 0 0;}
 .event-details{
   float: left;
   width: 200px;
-  margin: 0 286px 0 24px;
+  margin: 0 254px 0 24px;
   position: relative;
   top: -3px;
 
@@ -149,7 +149,7 @@ nav.top-right{position: absolute; top: 10px; right: 0;
 
 nav.menu-princ{
   float: left;
-  width: 195px;
+  width: 220px;
   padding-top: 8px;
 
   ul li{ margin-bottom: 3px;
@@ -168,7 +168,7 @@ nav.menu-princ{
   padding: 1em 0;
   height:154px;
   min-height:154px;
-  a 
+  a
   {
     text-align: center;
     display: block;
@@ -177,8 +177,8 @@ nav.menu-princ{
     left:0;
     background: white;
     width:280px;
-	
-    img 
+
+    img
     {
       text-align: center;
       margin: 0 auto;
@@ -244,23 +244,23 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
 
 #btn-candidature
 {
-  display: block; 
-  padding: 10px; 
+  display: block;
+  padding: 10px;
   margin-bottom:20px;
-  @include border-radius(5px); 
-  @include box-shadow(0 3px 3px rgba(#000, 0.2)); 
+  @include border-radius(5px);
+  @include box-shadow(0 3px 3px rgba(#000, 0.2));
   background:#006D96;
-  width: 270px; 
+  width: 270px;
   text-align: center;
-  
+
   span
   {
     display: block;
   }
   .date-limite{
-    font-size: 120%; 
-    font-family: Miso; 
-    @extend .to-caps; 
+    font-size: 120%;
+    font-family: Miso;
+    @extend .to-caps;
     color: #ffffff;
     padding-top:8px;
   }
@@ -272,15 +272,15 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
   float:left;
   width:570px;
   .fadein {
-    position:relative; 
+    position:relative;
     width:570px;
     height:332px;
-    .slide 
-    { 
+    .slide
+    {
       border: 5px solid $main-xlight-gray;
       @include border-radius(3px);
-      position:absolute; 
-      left:0; 
+      position:absolute;
+      left:0;
       top:0;
       height:342px;
       width:570px;
@@ -310,7 +310,7 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
         padding:8px 12px;
       }
       img
-      {      
+      {
       }
     }
   }
@@ -332,7 +332,7 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
   }
 }
 
-#iw-temoignages 
+#iw-temoignages
 {
   width:590px;
   float:left;
@@ -367,7 +367,7 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
       background:#000000;
       opacity:0.3;
       height:62px;
-      @include border-radius(4px); 
+      @include border-radius(4px);
     }
     .quote
     {
@@ -397,7 +397,7 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
     img
     {
       width:214px;
-      @include border-radius(4px); 
+      @include border-radius(4px);
     }
     .btn-vox-pop
     {
@@ -456,8 +456,8 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
 	padding: 0;
 	width:70%;
 	height:140px;
-	
-	
+
+
 	color: #838383;
 	font-size: 13px;
 }
@@ -550,7 +550,7 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
 	{
 		padding:10px 0;
 		font-size:14px;
-	
+
 		input
 		{
 			width: auto;
@@ -635,13 +635,13 @@ h3.box-header{font-size: 180%; @extend .to-caps; @extend .whitetext-shadow-up; m
       a.read-more{font-size: 80%;padding: 0 10px; margin-left: 10px; background: $main-blue-20; color: #fff; @include border-radius(5px); @include transition(all 0.2s ease-in-out); text-decoration: none;}
       a.read-more:hover{background: $main-blue-10; }
     }
-    a { 
+    a {
       text-decoration: underline;
     }
   }
 
 }
- 
+
 #newsletter-box{padding: 5px; @include border-radius(5px); background: rgba($main-blue-10, 0.5); width: 320px;
   h3{font-size: 110%; @extend .to-caps; @extend .whitetext-shadow-down; margin-bottom: 3px; @extend .clearfix;
     span{float: right; display: block; height: 16px; width: 16px; background: url(../img/sprite.png) no-repeat 0 -33px;}
@@ -865,9 +865,9 @@ a.link-hidden:focus{
 
 #news-box a, .white-box a, footer a {
     display: inline-block;
-} 
+}
 
-#page-content a:focus, nav.menu-princ a:hover, nav.menu-princ a:focus { 
+#page-content a:focus, nav.menu-princ a:hover, nav.menu-princ a:focus {
     @include transition (all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550));
     @include transform( scale(1.1)) ;
 }

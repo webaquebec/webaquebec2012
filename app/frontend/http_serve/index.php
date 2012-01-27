@@ -55,13 +55,14 @@ $app->get('/inscription/', function() use ($app){
 
 $app->get('/programmation/', function () use ($app) {
     /** @var Slim $app */
-    $list = Presentation::getAccordingToStarred(FALSE);
+    $app->render('horaire.html');
+    /*$list = Presentation::getAccordingToStarred(FALSE);
 	$star_list = Presentation::getAccordingToStarred();
     $app->render('programmation-liste.twig', array(
         'list' => $list,
 		'stars'=>$star_list,
         'route_single' => Routes::PROGRAMMATION_SINGLE,
-    ));
+    ));*/
 
 })->name(Routes::PROGRAMMATION);
 

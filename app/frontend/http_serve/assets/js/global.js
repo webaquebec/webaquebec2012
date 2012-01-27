@@ -1,3 +1,32 @@
+(function() {
+
+  jQuery(function($) {
+    var $tabs, $tabs_content;
+    $tabs = $('.horaire-tab-list li');
+    $tabs_content = $('.horaire-tab-content');
+    $tabs.each(function() {
+      var $tab;
+      $tab = $(this);
+      $tab.find('a').click(function(e) {
+        var $content, content_id;
+        e.preventDefault();
+        e.stopPropagation();
+        $tabs.removeClass('horaire-tab-active');
+        $tab.addClass('horaire-tab-active');
+        content_id = $(this).attr('data-tab');
+        $content = $('#' + content_id);
+        $tabs_content.removeClass('horaire-tab-content-active');
+        $content.addClass('horaire-tab-content-active');
+        $content.attr('id', '');
+        window.location.hash = content_id;
+        $content.attr('id', content_id);
+      });
+    });
+  });
+
+}).call(this);
+
+
 var lat_e400 = 46.817411;
 var lng_e400 = -71.205399;
 
@@ -212,7 +241,7 @@ $(function(){
       $slideshow.find('.fadein .slide:eq(0)').fadeOut()
       .next('.slide').fadeIn()
       .end().appendTo('.fadein');
-    }, 
+    },
     10000);
   }
 
@@ -230,7 +259,7 @@ $(function(){
   });
 
   function crossfade($elem) {
-    $elem.siblings().css('z-index',10); 
+    $elem.siblings().css('z-index',10);
     $elem.delay(4000).css('z-index',15).fadeIn(
       700,
       function() {
