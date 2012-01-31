@@ -17,6 +17,14 @@ Configurations files :
     touch app/settings.php
     cp app/shared/conf.example.php app/shared/conf.php
 
+Database structure :
+
+    app/frontend/structure.sql
+
+Database test data :
+
+    app/frontend/test_data.sql
+
 #### CSS
 
 CSS is made using SASS ruby gem :
