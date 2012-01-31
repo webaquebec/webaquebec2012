@@ -1108,6 +1108,8 @@ h3.box-header {
       padding: 2px 8px 0;
       font: 1.3em MisoBold, sans-serif;
       text-transform: uppercase; }
+      .horaire-tab-content header h5 a {
+        color: #0079a2; }
       .horaire-tab-content header h5 span {
         font-family: MisoRegular, sans-serif; }
     .horaire-tab-content header h6 {
