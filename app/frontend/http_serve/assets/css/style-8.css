@@ -1467,6 +1467,12 @@ h3.box-header {
     font-family: MisoRegular; }
   .speaker h2, .speaker .speaker-date {
     border-bottom: 1px dotted #4cabcf; }
+  .speaker ol {
+    margin-left: 1em;
+    margin-bottom: 1em; }
+    .speaker ol li {
+      margin-bottom: 0.3em;
+      list-style-type: square; }
   .speaker .speaker-date {
     padding: 12px 16px;
     margin-bottom: 16px;
@@ -1474,8 +1480,4 @@ h3.box-header {
   .speaker .speaker-text {
     padding-left: 16px; }
     .speaker .speaker-text p {
-      margin-bottom: 0.6em; }
-      
-.horaire-tab-content header h5 a {
-color: #0079A2;
-}
+      margin-bottom: 1em; }
