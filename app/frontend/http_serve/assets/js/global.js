@@ -116,6 +116,22 @@ function initialize_ip() {
   });
 
 
+  // Hotel Germain Dominion #####################################################
+
+  var latlng_gd = new google.maps.LatLng(46.816743, -71.203208);
+
+  var map_gd = new google.maps.Map(document.getElementById("map-hotelgd"), {
+    zoom: 15,
+    center: latlng_gd,
+    scrollwheel: false,
+    disableDefaultUI: true,
+    mapTypeControl: false,
+    navigationControl: true,
+    mapTypeControlOptions: {
+      mapTypeIds: 'waq'
+    }
+  });
+
   // Hotel Saint-Paul  #####################################################
 
   var latlng_sp = new google.maps.LatLng(46.81686, -71.20932);
@@ -199,6 +215,18 @@ function initialize_ip() {
       title:"Web à Québec"
   });
   marker_e400.setMap(map_e400);
+
+
+  // Hotel Germain Dominion  ###################
+
+  map_gd.mapTypes.set('waq', styledMapType);
+  map_gd.setMapTypeId('waq');
+
+  var marker_gd = new google.maps.Marker({
+    position: latlng_gd,
+      title:"Hôtel Le Germain-Dominion"
+  });
+  marker_gd.setMap(map_gd);
 
 
   // Hotel Saint-Paul  ###################
