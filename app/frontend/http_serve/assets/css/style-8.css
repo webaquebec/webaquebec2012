@@ -1097,9 +1097,9 @@ h3.box-header {
       -moz-background-clip: padding;
       background-clip: padding-box; }
       .horaire-tab-content header h4.track1 {
-        background: #b4d99c; }
-      .horaire-tab-content header h4.track2 {
         background: #98ddea; }
+      .horaire-tab-content header h4.track2 {
+        background: #b4d99c; }
       .horaire-tab-content header h4.track3 {
         background: #ede185; }
       .horaire-tab-content header h4.track4 {
