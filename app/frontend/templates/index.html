@@ -53,7 +53,7 @@
 	
 			 	   <ul class="list-custom list-hori clearfix">
 				    {% for row in vedettes %}
-                  <li><a href="{{ route(route_single, {'id': row.id, 'name': row.titleSlug}) }}"><span>{{row.presenter_name}}</span> <img src="/assets/img/conferenciers/147x160/{{row.presenter_image}}" alt="{{row.presenter_name}}" /></a></li>
+                  <li><a href="{{ route(route_single, {'id': row.id, 'name': row.titleSlug}) }}"><span>{{row.presenter_name}}</span> <img src="/assets/img/conferenciers/147x160/{{row.presenter_image}}" width="147" height="160px" alt="{{row.presenter_name}}" /></a></li>
 				    {% endfor %}
 				 </ul>
 
