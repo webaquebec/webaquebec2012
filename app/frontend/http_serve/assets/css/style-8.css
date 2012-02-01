@@ -981,7 +981,7 @@ h3.box-header {
 .horaire-tab-standalone {
   float: right;
   width: 620px;
-  height: 70px;
+  height: 110px;
   padding: 12px 16px;
   background: url("../img/horaire-tab-standalone.png") no-repeat left top;
   font: 1.25em MisoRegular, sans-serif;
@@ -989,6 +989,9 @@ h3.box-header {
   text-shadow: 0 1px #003d54; }
   .horaire-tab-standalone h2 {
     font: 1.56em MisoBold, sans-serif; }
+  .horaire-tab-standalone p.cocktail {
+    font-size: 20px;
+    font-style: italic; }
 
 .horaire-tab-wrapper {
   margin: 0 0 0 111px;
@@ -1081,6 +1084,13 @@ h3.box-header {
         text-transform: uppercase;
         text-align: center;
         letter-spacing: 0.2em; }
+        .horaire-tab-content td.pause h4 .sponsor {
+          font-family: arial;
+          font-size: 12px;
+          text-transform: none;
+          letter-spacing: 1px;
+          line-height: 22px;
+          vertical-align: bottom; }
   .horaire-tab-content article {
     color: black; }
   .horaire-tab-content header {
