@@ -3,7 +3,7 @@
   jQuery(function($) {
     var $tabs, $tabs_content;
     $tabs = $('.horaire-tab-list li');
-    $tabs_content = $('.horaire-tab-content');
+    $tabs_content = $('.horaire-tab-content:not(#launch-talk)');
     $tabs.each(function() {
       var $tab;
       $tab = $(this);
