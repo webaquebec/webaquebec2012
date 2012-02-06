@@ -978,10 +978,28 @@ h3.box-header {
     text-transform: uppercase;
     text-shadow: 0 1px #003d54; }
 
+#launch-talk {
+  background: #efefef;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  margin: 12px 0; }
+  #launch-talk p {
+    font-family: arial;
+    font-size: 14px;
+    text-transform: none;
+    text-shadow: none; }
+
 .horaire-tab-standalone {
   float: right;
   width: 620px;
-  height: 110px;
+  height: 170px;
   padding: 12px 16px;
   background: url("../img/horaire-tab-standalone.png") no-repeat left top;
   font: 1.25em MisoRegular, sans-serif;
