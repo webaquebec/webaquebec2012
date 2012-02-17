@@ -1266,6 +1266,19 @@ h3.box-header {
 #iw-avantages {
   width: 370px;
   float: left; }
+  #iw-avantages .judge {
+    overflow: hidden;
+    margin-bottom: 12px; }
+    #iw-avantages .judge img {
+      float: left;
+      margin-right: 12px; }
+    #iw-avantages .judge .desc {
+      float: left;
+      width: 265px; }
+    #iw-avantages .judge h4 {
+      margin-bottom: 0px; }
+    #iw-avantages .judge h5 {
+      margin-bottom: 12px; }
   #iw-avantages li {
     line-height: 20px; }
   #iw-avantages .new {
