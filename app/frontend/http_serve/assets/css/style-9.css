@@ -1318,6 +1318,16 @@ h3.box-header {
     overflow: hidden;
     float: left;
     z-index: 2; }
+    #iw-participants li .play-pause {
+      width: 55px;
+      height: 55px;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+      position: absolute;
+      background: url(../img/ironweb/media-play.png) no-repeat 38px 40px; }
+      #iw-participants li .play-pause.playing {
+        background: url(../img/ironweb/media-pause.png) no-repeat 38px 40px; }
     #iw-participants li img {
       float: left;
       display: block;

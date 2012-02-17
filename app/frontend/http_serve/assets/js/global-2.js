@@ -1,6 +1,23 @@
 (function() {
 
   jQuery(function($) {
+    $players = $('.play-pause')
+    $players.click(playPauseClick)
+    if($players.length > 0) {
+      $('#jquery_jplayer').jPlayer({
+        pause: function(event) {
+          $players.removeClass('playing');
+        },
+        ended: function(event) {
+          $players.removeClass('playing');
+        },
+        supplied: "mp3",
+        wmode: "window",
+        volume: 1,
+        swfPath: '/assets/js/libs/'
+      });
+    }
+    
     var $tabs, $tabs_content;
     $tabs = $('.horaire-tab-list li');
     $tabs_content = $('.horaire-tab-content:not(#launch-talk)');
@@ -26,6 +43,19 @@
 
 }).call(this);
 
+function playPauseClick() {
+  var $elem = $(this)
+  if($elem.hasClass('playing')){
+    $('#jquery_jplayer').jPlayer("stop")
+    return
+  }
+  $players.removeClass('playing');
+  file = '/assets/ironweb/'+$elem.attr('data-source');
+  $('#jquery_jplayer').jPlayer("setMedia", {
+    mp3: file
+  }).jPlayer('play');
+  $elem.addClass('playing');
+}
 
 var lat_e400 = 46.817411;
 var lng_e400 = -71.205399;
