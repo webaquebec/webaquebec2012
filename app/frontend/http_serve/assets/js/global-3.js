@@ -361,5 +361,9 @@ $(function(){
     $(this).removeClass('summit');
     $(this).find('div').hide();
   });*/
+    
+  if(window.location.hash) {
+    $('.horaire-tab-list a[data-tab="'+window.location.hash.replace('#', '')+'"]').trigger('click')
+  }
 
 });
