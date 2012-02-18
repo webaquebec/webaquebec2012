@@ -217,6 +217,8 @@
 header#header-main {
   .ironweb-live & {
     height: 84px;
+    overflow:hidden;
+    position:relative;
   }
 }
 
@@ -250,8 +252,9 @@ nav.menu-princ {
   .ironweb-live & {
     width: auto;
     position: absolute;
+    
     right: 0;
-    bottom: -24px;
+    top: 40px;
     span.long {
       display:none;
     }

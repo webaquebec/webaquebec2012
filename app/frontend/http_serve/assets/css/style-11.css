@@ -1679,7 +1679,9 @@ h3.box-header {
       margin-bottom: 10px; }
 
 .ironweb-live header#header-main {
-  height: 84px; }
+  height: 84px;
+  overflow: hidden;
+  position: relative; }
 
 .ironweb-live header#header-main .wrapper {
   padding: 10px 0 0 0; }
@@ -1699,7 +1701,7 @@ h3.box-header {
   width: auto;
   position: absolute;
   right: 0;
-  bottom: -24px; }
+  top: 40px; }
   .ironweb-live nav.menu-princ span.long {
     display: none; }
   .ironweb-live nav.menu-princ span.short {
