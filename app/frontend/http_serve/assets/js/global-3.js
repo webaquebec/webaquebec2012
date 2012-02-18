@@ -297,18 +297,23 @@ function initialize_ip() {
 }
 
 function iwLiveOptionsClick() {
-  $iwLiveOptions.removeClass('active')
-  var channel = $(this).addClass('active').data('channel')
+  $iwLiveOptions.removeClass('active');
+  var channel = $(this).addClass('active').data('channel');
   var url = 'http://cdn.livestream.com/embed/{1}?layout=3&autoPlay=true&width=904&height=400'
-    .replace('{1}', channel)
-  $('#iw-live-videos iframe').attr('src', url)
+    .replace('{1}', channel);
+  $('#iw-live-videos iframe').attr('src', url);
+  window.location = '#' + channel;
 }
 
 function initialize_ironweb_live() {
-  $iwLiveOptions = $('#iw-live-videos .options li')
-  $iwLiveOptions.click(iwLiveOptionsClick)
+  $iwLiveOptions = $('#iw-live-videos .options li');
+  $iwLiveOptions.click(iwLiveOptionsClick);
   if(window.location.hash) {
-    $('#iw-live-videos data-channel="' + window.location.hash.replace('#', '') + '"').trigger('click')
+    var channel = window.location.hash.replace('#', '');
+    window.location = '#page-content';
+    $('#iw-live-videos li[data-channel="' + channel + '"]').trigger('click');
+  } else {
+    window.location = '#' + $iwLiveOptions.filter('.active').data('channel');
   }
 }
 
