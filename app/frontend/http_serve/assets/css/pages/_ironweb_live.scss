@@ -1,0 +1,282 @@
+//#########################################
+//   Iron Web Header     ##################
+
+#iw-header{
+  position: relative;
+  margin-right:18px;
+  .rs-content-box
+  {
+    margin-bottom:20px;
+    width:330px;
+  }
+}
+
+#logo-iw{
+  position: relative;
+  margin-bottom:10px;
+  h1
+  {
+    height: 102px;
+    width: 361px;
+    background: url(../img/logo-ironweb.png) no-repeat;
+  }
+  span{
+    position: absolute;
+    bottom: 5px;
+    left: 113px;
+    font-family: MisoLight;
+    font-size: 90%;
+  }
+}
+
+#iw-live-header{
+  overflow:hidden;
+}
+
+#iw-logo-live{
+  position: relative;
+  overflow:hidden;
+  margin-bottom:10px;
+  width:470px;
+  float:left;
+  .icon {
+    float:left;
+  }
+  .info {
+    float:left;
+    width:231px;
+    margin-left:5px;
+    time
+    {
+      display:block;
+    }
+    .lieu{
+      display: block;
+      font-family: MisoLight;
+      font-size: 120%;
+    }
+    .dates{
+      display: block; 
+      font-family: MisoRegular; 
+      font-size: 160%; 
+      @extend .whitetext-shadow-up;
+    }
+  }
+}
+
+#iw-desc-live{
+  margin-bottom:30px;
+  overflow:hidden;
+  width:440px;
+
+  h1{
+      font-family: MisoLight;
+      font-size: 200%;
+      text-transform:uppercase;
+      margin-bottom:0;
+      span{
+        font-family: MisoRegular; 
+      }
+  }
+  p{
+    color:#acacac;
+    font-weight:normal;
+    font-size:14px;
+    margin-bottom:0;
+  }
+  .more{
+    font-size:13px;
+  }
+}
+
+.iw-live-content {
+  padding:40px 0 30px 0;
+  background: url(../img/ironweb/live/background.jpg) repeat center #0d0f10;
+}
+
+//#########################################
+// Iron Web live streaming page ###########
+
+#iw-live-videos
+{
+  margin-bottom:25px;
+
+  h1, h2, p, div{
+    color:#212121;
+  }
+  h2{
+    font-size:24px;
+  }
+  .options{
+    display:block;
+    padding:0 15px;
+    overflow:hidden;
+    li{
+        @include rounded(4px, '-top-left');
+        @include rounded(4px, '-top-right');
+        display:block;
+        cursor:pointer;
+        float:left;
+        width:268px;
+        height:45px;
+        margin:0 15px;
+        background-image:url(/assets/img/ironweb/live/video-bg-inactive.png);
+        line-height:45px;
+        color:#222020;
+        font-size:18px;
+        font-weight:bold;
+        font-family:verdana;
+        text-align:center;
+        text-transform:uppercase;
+        &.active{
+          background-image:url(/assets/img/ironweb/live/video-bg.png);
+        }
+        .corner{
+          color:#222020;
+          background-repeat:no-repeat;
+          background-position:top left;
+        }
+    }
+    .tab-1{
+      width:270px;
+      background-position:-30px 0;
+      .corner{
+        @include rounded(4px, '-top-left');
+        background-image:url(/assets/img/ironweb/live/tab-yellow-corner.png);
+      }
+    }
+    .tab-2{
+      width:270px;
+      background-position:-328px 0;
+      .corner{
+        @include rounded(4px, '-top-left');
+        background-image:url(/assets/img/ironweb/live/tab-red-corner.png);
+      }
+    }
+    .tab-3{
+      width:300px;
+      background-position:-626px 0;
+    }
+  }
+  .swap{
+    @include box-shadow(0 -2px 2px rgba(#000, 0.2));
+    overflow:hidden;
+    background-image:url(/assets/img/ironweb/live/video-bg.png);
+    background-position: 0 -45px;
+    padding:26px;
+    @include rounded(4px, '');
+    @include rounded(4px, '');
+  }
+  h2{
+    margin-bottom:10px;
+  }
+  .video{
+    float:left;
+    width:680px;
+  }
+  .chat{
+    float:left;
+    width:210px;
+  }
+}
+
+#iw-live-footer
+{
+  overflow:hidden;
+
+  h2{
+    font-size:160%;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .col{
+    float:left;
+    width:290px;
+    margin-right:30px;
+  }
+  .news{
+    margin-bottom:10px;
+    border-bottom: 1px dotted #302f2f;
+
+    h3{
+      font-size:120%;
+    }
+    p{
+      color:#acacac;
+      font-size:13px;
+      margin-bottom:10px;
+    }
+  }
+}
+
+//#########################################
+//   Iron Web Special WAQ Header     ######
+
+header#header-main {
+  .ironweb-live & {
+    height: 84px;
+  }
+}
+
+header#header-main .wrapper {
+  .ironweb-live & {
+    padding: 10px 0 0 0;
+  }
+}
+
+header#header-main .logo-princ {
+  .ironweb-live & {
+    width: 126px; 
+    height: 42px;
+    background: url(../img/ironweb/live/waq-logo.png) no-repeat; 
+  }
+}
+
+header#header-main .logo-accronym {
+  .ironweb-live & {
+    height: 50px;
+  }
+}
+
+.event-details {
+  .ironweb-live & {
+    display: none;
+  }
+}
+
+nav.menu-princ {
+  .ironweb-live & {
+    width: auto;
+    position: absolute;
+    right: 0;
+    bottom: -24px;
+    span.long {
+      display:none;
+    }
+    span.short {
+      display:inline;
+    }
+    ul li {
+      float: left;
+      margin-left: 10px;
+      a {
+        width: 195px;
+      }
+    }
+  }
+}
+
+#page-content{
+  .ironweb-live & {
+    padding:0;
+  }
+}
+
+.ironweb-live #page-content .wrapper {
+  width: 100%;
+  overflow:hidden;
+}
+
+.ironweb-live #page-content .wrapper .wrapper {
+  width: 960px;
+}
