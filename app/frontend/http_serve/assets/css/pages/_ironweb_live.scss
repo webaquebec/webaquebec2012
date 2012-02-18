@@ -21,11 +21,13 @@
     background: url(../img/logo-ironweb.png) no-repeat;
   }
   span{
-    position: absolute;
-    bottom: 5px;
-    left: 113px;
-    font-family: MisoLight;
-    font-size: 90%;
+    &.ironweb-live{
+      position: absolute;
+      bottom: 5px;
+      left: 113px;
+      font-family: MisoLight;
+      font-size: 90%;
+    }
   }
 }
 

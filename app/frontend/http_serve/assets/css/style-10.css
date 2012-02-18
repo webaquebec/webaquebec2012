@@ -1522,7 +1522,7 @@ h3.box-header {
     height: 102px;
     width: 361px;
     background: url(../img/logo-ironweb.png) no-repeat; }
-  #logo-iw span {
+  #logo-iw span.ironweb-live {
     position: absolute;
     bottom: 5px;
     left: 113px;
