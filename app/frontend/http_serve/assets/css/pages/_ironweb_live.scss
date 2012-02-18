@@ -279,3 +279,12 @@ nav.menu-princ {
 .ironweb-live #page-content .wrapper .wrapper {
   width: 960px;
 }
+
+// Homepage with livestream preview
+
+.iw-live-home-preview{
+  a.live{
+    color:red;
+    text-decoration:none;
+  }
+}

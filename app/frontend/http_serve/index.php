@@ -94,6 +94,8 @@ $app->notFound(function () use ($app) {
     $app->render('errors/404.html');
 });
 
+$app->view()->setData('ironweb_live',  Config::get('ironweb_live'));
+$app->view()->setData('ironweb_live_channel',  rand(1,2) ==1 ? 'ironweb_jaunes' : 'ironweb_rouges'); 
 
 $app->view()->setData('menu', array(
     'primary' => array(

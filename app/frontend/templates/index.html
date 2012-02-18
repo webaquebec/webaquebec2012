@@ -5,6 +5,20 @@
           <div class="page-content-block clearfix">
             <div class="left-side main">
               <div id="vox-pop" class="white-box">
+                {% if ironweb_live %}
+                  <div class="iw-live-home-preview">
+                    <div class="thumb">
+                      <a href="/iron-web/live">
+                        <img id="iw-live-thumbnail" src="http://thumbnail.api.livestream.com/thumbnail?name={{ ironweb_live_channel }}" style="width:330px;height:185px;">
+                      </a>
+                    </div>
+                    <div class="content">
+                      <h3>Suivez le Iron Web <a href="/iron-web/live" class="live">en direct!</a></h3>
+                      <p>Suivez les deux équipes durant leur périple de 48 heures pour produire leur projet web!</p>
+                      <p><a href="/iron-web/live">Découvrez ce qu'ils font en ce moment!</a></p>
+                    </div>
+                  </div>
+                {% else %}
                 <div class="thumb"><a class="btn-vox-pop" href="http://vimeo.com/29752446">Écoutez<strong>le Vox Pop</strong></a> <img src="/assets/img/vox-pop-preview.jpg" alt="Apercu du Vox Pop" /></div>
 
                 <div class="content">
@@ -12,6 +26,7 @@
 
                   <p>Pour les gens de Québec comme ailleurs, le web est devenu partie intégrante de nos vies. C’est un outil de travail, une industrie florissante, une mine de renseignements et un mode de vie.</p>
                 </div>
+                {% endif %}
 
                 <h2 class="social-bar-title">Suivez-nous</h2>
                 <ul class="social-bar list-custom list-hori clearfix">

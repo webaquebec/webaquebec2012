@@ -153,6 +153,9 @@ button {
   .white-box p {
     color: #4cabcf;
     margin-bottom: 10px; }
+  .white-box p a {
+    color: #4cabcf;
+    text-decoration: underline; }
 
 .white-box + .white-box {
   margin-top: 15px; }
@@ -1709,6 +1712,10 @@ h3.box-header {
 
 .ironweb-live #page-content .wrapper .wrapper {
   width: 960px; }
+
+.iw-live-home-preview a.live {
+  color: red;
+  text-decoration: none; }
 
 .speaker {
   *zoom: 1; }

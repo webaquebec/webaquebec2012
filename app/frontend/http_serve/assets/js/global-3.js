@@ -18,6 +18,12 @@
       });
     }
     
+    $liveThumb = $('#iw-live-thumbnail');
+    if($liveThumb.length) {
+      $liveThumb.data('default-src', $liveThumb.attr('src'));
+      setInterval("updateIwLiveThumbnail()", 10000);
+    }
+    
     var $tabs, $tabs_content;
     $tabs = $('.horaire-tab-list li');
     $tabs_content = $('.horaire-tab-content:not(#launch-talk)');
@@ -42,6 +48,10 @@
   });
 
 }).call(this);
+
+function updateIwLiveThumbnail() {
+  $liveThumb.attr('src', $liveThumb.data('default-src') + '&t=' + new Date().valueOf());
+}
 
 function playPauseClick() {
   var $elem = $(this)

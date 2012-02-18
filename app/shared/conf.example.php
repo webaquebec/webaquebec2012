@@ -20,6 +20,7 @@ $config = array(
         'password' => 'pwd',
         'database' => 'dbname',
     ),
+    'ironweb_live' => FALSE,
     'cache' => TRUE,
     'debug' => FALSE,
 );
