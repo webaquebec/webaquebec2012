@@ -814,6 +814,12 @@ h3.box-header {
   #commanditaires-principaux a:hover img {
     opacity: 1; }
 
+#commanditaires-principaux.iron-web a {
+  color: #434343;
+  font-size: 12px; }
+  #commanditaires-principaux.iron-web a img {
+    opacity: 1; }
+
 #important-numbers {
   position: relative; }
   #important-numbers .btn-nav {
