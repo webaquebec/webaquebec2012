@@ -299,7 +299,7 @@ function initialize_ip() {
 function iwLiveOptionsClick() {
   $iwLiveOptions.removeClass('active')
   var channel = $(this).addClass('active').data('channel')
-  var url = 'http://cdn.livestream.com/embed/{1}?layout=3&autoPlay=false&width=904&height=400'
+  var url = 'http://cdn.livestream.com/embed/{1}?layout=3&autoPlay=true&width=904&height=400'
     .replace('{1}', channel)
   $('#iw-live-videos iframe').attr('src', url)
 }
