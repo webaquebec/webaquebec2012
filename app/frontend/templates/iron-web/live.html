@@ -28,9 +28,9 @@
         <div id="iw-live-videos">
           <div class="options">
             <ul>
-              <li class="tab-1 active"><div class="corner">Équipe Jaune</div></li>
-              <li class="tab-2"><div class="corner">Équipe Rouge</div></li>
-              <li class="tab-3">Événements spéciaux</li>
+              <li data-channel="ironweb_jaunes" class="tab-1{% if ironweb_live_channel == 'ironweb_jaunes' %} active{% endif %}"><div class="corner">Équipe Jaune</div></li>
+              <li data-channel="ironweb_rouges" class="tab-2{% if ironweb_live_channel == 'ironweb_rouges' %} active{% endif %}"><div class="corner">Équipe Rouge</div></li>
+              <li data-channel="ironweb" class="tab-3{% if ironweb_live_channel == 'ironweb' %} active{% endif %}">Lancement, entrevues et +</li>
             </ul>
           </div>
           <div class="swap">
@@ -40,7 +40,7 @@
             <div class="chat">
               <h2>Commentez la compétition</h2>
             </div>
-            <iframe src="http://cdn.livestream.com/embed/ironweb?layout=3&autoPlay=false&width=906&height=340" width="906" height="340" style="border:0;outline:0" frameborder=0 scrolling=no></iframe>
+            <iframe src="http://cdn.livestream.com/embed/{{ ironweb_live_channel }}?layout=3&autoPlay=false&width=904&height=400" width="904" height="400" style="border:0;outline:0" frameborder=0 scrolling=no></iframe>
           </div>
         </div>
         <div id="iw-live-footer">

@@ -296,10 +296,27 @@ function initialize_ip() {
 
 }
 
+function iwLiveOptionsClick() {
+  $iwLiveOptions.removeClass('active')
+  var channel = $(this).addClass('active').data('channel')
+  var url = 'http://cdn.livestream.com/embed/{1}?layout=3&autoPlay=false&width=904&height=400'
+    .replace('{1}', channel)
+  $('#iw-live-videos iframe').attr('src', url)
+}
+
+function initialize_ironweb_live() {
+  $iwLiveOptions = $('#iw-live-videos .options li')
+  $iwLiveOptions.click(iwLiveOptionsClick)
+  if(window.location.hash) {
+    $('#iw-live-videos data-channel="' + window.location.hash.replace('#', '') + '"').trigger('click')
+  }
+}
+
 $(function(){
   initialize();
 
   if($('.ip-wrapper').length > 0){initialize_ip();}
+  if($('.ironweb-live').length > 0){initialize_ironweb_live();}
 
   var $slideshow = $('#iw-slideshow');
   if($slideshow.length >0)

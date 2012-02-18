@@ -1627,7 +1627,8 @@ h3.box-header {
         background-image: url(/assets/img/ironweb/live/tab-red-corner.png); }
     #iw-live-videos .options .tab-3 {
       width: 300px;
-      background-position: -626px 0; }
+      background-position: -626px 0;
+      font-size: 14px; }
   #iw-live-videos .swap {
     -moz-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.2);
     -webkit-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.2);
