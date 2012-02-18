@@ -54,6 +54,7 @@ $app->get('/iron-web/', function() use ($app){
 
 $app->get('/iron-web/live', function() use ($app){
     /** @var Slim $app */
+    $app->view()->setData('ironweb_iframe', isset($_GET['iframe']) ? $_GET['iframe'] : false);
     $app->render('iron-web/live.html');
 
 })->name(Routes::IRON_WEB_LIVE);
@@ -100,7 +101,7 @@ $app->notFound(function () use ($app) {
 });
 
 $app->view()->setData('ironweb_live',  Config::get('ironweb_live'));
-$app->view()->setData('ironweb_live_channel',  rand(1,2) ==1 ? 'ironweb_jaunes' : 'ironweb_rouges'); 
+$app->view()->setData('ironweb_live_channel',  rand(1,2) ==1 ? 'ironweb_jaunes' : 'ironweb_rouges');
 
 $app->view()->setData('menu', array(
     'primary' => array(

@@ -15,6 +15,7 @@
 <body>
   <div class="{% block specialclass %}ow{% endblock %}"><div class="ow-stripes">
     <div id="page">
+      {% if not ironweb_iframe %}
       <header id="header-main">
         <div class="wrapper clearfix">
           <h1 class="logo"><a href="/" class="no-focus no-focus-click logo-princ"><span class="logo-accronym t-indent">WAQ</span> <span class="logo-full-text to-caps">Le Web à Québec</span></a></h1>
@@ -51,7 +52,7 @@
           </nav>
         </div>
       </header>
-
+      {% endif %}
       <div id="page-content">
         <div class="wrapper clearfix">
 
@@ -60,7 +61,7 @@
         </div>
       </div>
     </div>
-
+    {% if not ironweb_iframe %}
     <footer>
       <div class="wrapper clearfix">
         <div class="google-map">
@@ -105,6 +106,7 @@
         </div>
       </div>
     </footer>
+    {% endif %}
   </div></div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
