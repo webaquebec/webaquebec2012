@@ -1,19 +1,46 @@
 {% extends "blocks/base.html" %}
 
-{% block title %}Liste des présentations{% endblock %}
+{% block title %}Programmation complète 2012{% endblock %}
 
 {% block head %}
     {{ parent() }}
 {% endblock %}
 
 {% block content %}
-    <h1>Liste des présentations</h1>
-    <ul>
-    {% for row in list %}
-        <li>
-            <a href="{{ route(route_single, {'id': row.id, 'name': row.titleSlug}) }}">{{ row.conference_name }}</a>
-        </li>
-    {% endfor %}
-    </ul>
+<div class="prog-wrapper">
 
+  <div class="page-content-block clearfix">
+
+    <h3 class="box-header">Invités internationaux</h3>
+
+ 	   <ul class="list-custom list-hori">
+	    {% for row in stars %}
+			{%if not row.ordering %}
+	        <li>
+	            <a data-original-title="&lt;h3&gt;{{row.presenter_name}}&lt;/h3&gt;&lt;p&gt;{{row.conference_name}}&lt;/p&gt;" href="{{ route(route_single, {'id': row.id, 'name': row.titleSlug}) }}"><img src="/assets/img/conferenciers/147x160/{{row.presenter_image}}" alt="{{row.presenter_name}}"></a>
+	        </li>
+			{% endif %}
+	    {% endfor %}
+	 </ul>
+
+  </div>
+
+  <div class="sep-shadow"></div>
+
+  <div class="page-content-block clearfix">
+
+    <h3 class="box-header">Conférenciers du Québec</h3>
+
+    <ul class="list-custom list-hori">
+	    {% for row in list %}
+			{%if not row.ordering %}
+	        <li>
+	            <a data-original-title="&lt;h3&gt;{{row.presenter_name}}&lt;/h3&gt;&lt;p&gt;{{row.conference_name}}&lt;/p&gt;" href="{{ route(route_single, {'id': row.id, 'name': row.titleSlug}) }}"><img src="/assets/img/conferenciers/147x160/{{row.presenter_image}}" alt="{{row.presenter_name}}"></a>
+	        </li>
+			{% endif %}
+	    {% endfor %}
+		</ul>
+
+  </div>
+</div>
 {% endblock %}

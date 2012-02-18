@@ -14,8 +14,53 @@ CREATE TABLE presentation (
     PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+DROP TABLE IF EXISTS event_day;
+CREATE TABLE event_day (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    date DATE,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+INSERT INTO event_day (id, date) VALUES
+(1, '2012-02-23'),
+(2, '2012-02-24');
 
+DROP TABLE IF EXISTS room;
+CREATE TABLE room (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    name varchar(255),
+    color varchar(7),
+    ordering int(11),
+    overlaps_all bool,
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO room (id, name, color, overlaps_all, ordering) VALUES
+(1, 'Grand Hall', '#3e3e3e', 1, 0),
+(2, 'Libéo', '#ff0000', 0, 1),
+(3, 'iXmédia', '#ffff00', 0, 2),
+(4, 'VETIQ', '#ff00ff', 0, 3),
+(5, 'Korem', '#ff4488', 0, 4);
+
+DROP TABLE IF EXISTS plage_horaire;
+CREATE TABLE plage_horaire (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    event_day_id int(11),
+    start_hour int(11),
+    start_minute int(11),
+    end_hour int(11),
+    end_minute int(11),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS horaire;
+CREATE TABLE horaire (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    plage_horaire_id int(11) NOT NULL,
+    room_id int(11),
+    presentation_id int(11),
+    PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `iw_teams` (
   `ID` int(2) NOT NULL AUTO_INCREMENT,
@@ -25,7 +70,6 @@ CREATE TABLE `iw_teams` (
   `hashtag` varchar(30) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 
 CREATE TABLE `iw_team_members` (
   `ID` int(5) NOT NULL AUTO_INCREMENT,
@@ -37,12 +81,10 @@ CREATE TABLE `iw_team_members` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
 ALTER TABLE `iw_team_members` ADD INDEX `fk_iw_team_members__iw_teams__ID` (iw_teamsID), 
   ADD CONSTRAINT `fk_iw_team_members__iw_teams__ID` 
     FOREIGN KEY (iw_teamsID) 
     REFERENCES iw_teams (ID);
-
 
 CREATE TABLE `iw_event` (
   `ID` int(10) NOT NULL AUTO_INCREMENT,
@@ -51,7 +93,6 @@ CREATE TABLE `iw_event` (
   `text` text NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 
 CREATE TABLE `iw_remote_users` (
   `ID` int(10) NOT NULL AUTO_INCREMENT,
@@ -73,8 +114,6 @@ ALTER TABLE `iw_remote_users` ADD INDEX `fk_iw_remote_users__iw_teams_members__I
     REFERENCES `iw_team_members` (`ID`) 
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
-
-
 CREATE TABLE `iw_ballots` (
   `ID` int(5) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
@@ -85,15 +124,12 @@ CREATE TABLE `iw_ballots` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-
 CREATE TABLE `iw_ballots_results` (
   `iw_ballotsID` int(5) NOT NULL,
   `iw_teamsID` int(2) NOT NULL,
   `votes_count` int(10) NOT NULL,
   PRIMARY KEY (`iw_ballotsID`,`iw_teamsID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
 
 ALTER TABLE `iw_ballots_results` ADD INDEX `fk_iw_ballots_results__iw_teams__ID` (iw_teamsID), 
   ADD CONSTRAINT `fk_iw_ballots_results__iw_teams__ID` 
@@ -104,8 +140,6 @@ ALTER TABLE `iw_ballots_results` ADD INDEX `fk_iw_ballots_results__iw_ballots__I
   ADD CONSTRAINT `fk_iw_ballots_results__iw_ballots__ID` 
     FOREIGN KEY (`iw_ballotsID`) 
     REFERENCES `iw_ballots` (`ID`);
-
-
 
 CREATE TABLE `iw_ballots_votes` (
   `iw_ballotsID` int(5) NOT NULL,
@@ -130,8 +164,6 @@ ALTER TABLE `iw_ballots_votes` ADD INDEX `fk_iw_ballots_votes__iw_remote_users__
     FOREIGN KEY (`iw_remote_usersID`) 
     REFERENCES `iw_remote_users` (`ID`);
 
-
-
 CREATE TABLE `iw_chatroom` (
   `ID` INT(5) NOT NULL AUTO_INCREMENT,
   `iw_teamsID` int(2) DEFAULT NULL,
@@ -144,8 +176,6 @@ ALTER TABLE `iw_chatroom` ADD INDEX `fk_iw_chatroom__iw_teams__ID` (iw_teamsID),
     FOREIGN KEY (`iw_teamsID`) 
     REFERENCES `iw_teams` (`ID`) 
     ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-
 
 CREATE TABLE `iw_chatroom_message` (
   `ID` int(15) NOT NULL AUTO_INCREMENT,

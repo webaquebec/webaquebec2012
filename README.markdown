@@ -17,6 +17,14 @@ Configurations files :
     touch app/settings.php
     cp app/shared/conf.example.php app/shared/conf.php
 
+Database structure :
+
+    app/frontend/structure.sql
+
+Database test data :
+
+    app/frontend/test_data.sql
+
 #### CSS
 
 CSS is made using SASS ruby gem :
@@ -25,7 +33,7 @@ CSS is made using SASS ruby gem :
 
 To compile your sass file into css as you modifiy it run this command (*watch for increments in filename used in base.html) :
 
-    sass --watch app/frontend/http_serve/assets/css/style.scss:app/frontend/http_serve/assets/css/style-6.css
+    sass --watch app/frontend/http_serve/assets/css/style.sass:app/frontend/http_serve/assets/css/style-9.css
 
 ### Coding conventions
 

@@ -1,0 +1,65 @@
+
+
+//#########################################
+//   Voxpop        ########################
+
+#vox-pop
+  .thumb
+    position: relative
+    margin-bottom: 10px
+    .btn-vox-pop
+      bottom: 45px
+      left: 90px
+      padding: 10px 20px 10px 60px
+  .content
+    padding: 10px
+    p
+      font-size: 90%
+  .social-bar-title
+    float: left
+    margin-right: 15px
+    padding: 0 15px 0 10px
+    border-right: 2px dotted $main-light-gray
+    font-family: MisoRegular
+    font-size: 120%
+    color: $main-blue-10
+    @extend .to-caps
+  .social-bar
+    font-family: MisoRegular
+    li
+      margin-right: 15px
+    a
+      background: $main-blue-10 url(../img/sprite.png) no-repeat
+      padding: 3px 7px 3px 20px
+      font-size: 90%
+      +border-radius(3px)
+      @extend .to-caps
+    a:hover
+      background-color: $main-blue-5
+    .btn-facebook
+      background-position: 5px 4px
+      padding-left: 18px
+    .btn-twitter
+      background-position: 5px -14px
+      padding-left: 25px
+
+.btn-vox-pop
+  display: block
+  background: rgba(black, 0.6) url(../img/btn-vox-pop.png) no-repeat 10% 50%
+  position: absolute
+  padding: 10px 10px 10px 50px
+  +border-radius(5px)
+  +box-shadow(0 2px 3px rgba(black, 0.3))
+  @extend .to-caps
+  font-family: MisoLight
+  font-size: 130%
+  line-height: 0.9
+  +transition(all 0.3s ease-in-out)
+
+  &:hover
+    background-color: rgba(black, 0.8)
+    cursor: pointer
+
+  strong
+    display: block
+    font-family: MisoRegular

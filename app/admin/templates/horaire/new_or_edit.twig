@@ -1,0 +1,34 @@
+{% import "/form_fields.twig" as forms %}
+
+{% extends "/blocks/base.twig" %}
+
+{% block content %}
+
+<a href="{{ route('horaire_list') }}">Retour</a>
+<h1>
+    {% if mode == 'new' %}
+        Nouveau
+    {% else %}
+        Editer
+    {% endif %}
+</h1>
+
+<p class="flash">{{ flash.horaire }}</p>
+
+<form action="{{ post_target }}" method="post">
+    <dl>
+
+        <dt>plage_horaire</dt>
+        <dd>{{ forms.select('plage_horaire_id', plages, item.plage_horaire_id) }}</dd>
+
+        <dt>room</dt>
+        <dd>{{ forms.select('room_id', rooms, item.room_id) }}</dd>
+
+        <dt>presentation</dt>
+        <dd>{{ forms.select('presentation_id', presentations, item.presentation_id) }}</dd>
+
+    </dl>
+    {{ forms.submit() }}
+</form>
+
+{% endblock %}

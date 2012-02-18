@@ -2,8 +2,40 @@
 
 class Presentation extends Model{
 
+    /**
+     * Get limited quantity of presentation, randomly selected.
+     * @param $quantity int
+     * @return Presentation[]
+     */
+    public static function getRandomSet($quantity = 1){
+        return Model::factory(__CLASS__)
+                    ->order_by_raw('RAND()')
+                    ->limit($quantity)
+                    ->find_many();
+    }
+
+    /**
+     * Get all presentation according to starred property, ordered by ordering, and name.
+     * @param $starred boolean
+     * @return Presentation[]
+     */
+    public static function getAccordingToStarred($starred = TRUE){
+        return Model::factory(__CLASS__)
+                    ->where('starred', $starred)
+                    ->order_by_asc('ordering')
+                    ->order_by_asc('conference_name')
+                    ->find_many();
+    }
+
+    /**
+     * Get all presentation, ordered by ordering, and name.
+     * @return Presentation[]
+     */
     public static function getAll(){
-        return Model::factory(__CLASS__)->order_by_asc('ordering')->find_many();
+        return Model::factory(__CLASS__)
+                    ->order_by_asc('ordering')
+                    ->order_by_asc('conference_name')
+                    ->find_many();
     }
 
     /**
@@ -24,6 +56,19 @@ class Presentation extends Model{
 
     public function getTitleSlug(){
         return Helpers::generateSlug($this->get('conference_name'));
+    }
+
+    /**
+     * @return array[]
+     */
+    public static function getAllAssoc(){
+        $assoc = array();
+        $all = self::getAll();
+        foreach($all as $pres){
+            $assoc[$pres->get('id')] = $pres->get('conference_name');
+        }
+
+        return $assoc;
     }
 
 }

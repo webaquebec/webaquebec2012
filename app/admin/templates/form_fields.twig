@@ -12,6 +12,18 @@
     <textarea name="{{ name }}" rows="{{ rows|default(6) }}" cols="{{ cols|default(45) }}">{{ value|e }}</textarea>
 {% endmacro %}
 
+{% macro select(name, options, selected) %}
+    <select name="{{ name }}">
+        {% for key,value in options %}
+        {% if key == selected%}
+            <option selected="selected" value="{{key}}">{{value}}</option>
+        {% else %}
+            <option value="{{key}}">{{value}}</option>
+        {% endif %}
+        {% endfor %}
+    </select>
+{% endmacro %}
+
 {% macro submit() %}
 <input type="submit"/>
 {% endmacro %}

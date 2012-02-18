@@ -9,7 +9,7 @@
     <div id="iw-header" class="left-side main">
       <div id="logo-iw">
         <h1 class="t-indent">Iron Web</h1>
-        <span class="to-cap"></span>
+        <span class="to-cap">Une présentation de <strong>Deloitte</strong></span>
       </div>
     
       <div class="rs-content-box">
@@ -21,40 +21,58 @@
     <div id="iw-slideshow">
       <div class="fadein">
         <div class="slide">
-          <img src="/assets/img/ironweb/slide1.jpg">
-          <div class="title">Jour 1</div>
-          <div class="sub-title">Découvrez votre équipe</div>
-          <div class="caption">Les caméras tournent, formation des équipes, planification et exécution du projet.</div>
+          <img src="/assets/img/ironweb/montage-01.jpg">
         </div>
         <div class="slide">
-          <img src="/assets/img/ironweb/slide2.jpg">
-          <div class="title">Jour 2</div>
-          <div class="sub-title">Concentration!</div>
-          <div class="caption">C'est le temps de tout donner, tirer le maximum et le meilleur de chacun.</div>
+          <img src="/assets/img/ironweb/montage-02.jpg">
         </div>
         <div class="slide">
-          <img src="/assets/img/ironweb/slide3.jpg">
-          <div class="title">Jour 3</div>
-          <div class="sub-title">Présentez votre projet au public</div>
-          <div class="caption">Présentation des projets, vote du public, délibérations du jury, annonce des gagnants.</div>
+          <img src="/assets/img/ironweb/montage-03.jpg">
+        </div>
+        <div class="slide">
+          <img src="/assets/img/ironweb/montage-04.jpg">
+        </div>
+        <div class="slide">
+          <img src="/assets/img/ironweb/montage-05.jpg">
         </div>
       </div>
     </div>      
     <div class="clearfix"></div>
     <div class="sep-shadow"></div>
     <div id="iw-avantages" class="rs-content-box">
-      <h3 class="box-header">Édition précédente</h3>
-      <div class="video">
-        {% include 'blocks/iron-web_voxpop.html' %}
+      <h3 class="box-header">Les juges officiels</h3>
+      <div class="judge">
+        <img src="/assets/img/ironweb/jury/jmlacroix.jpg" alt="Jean-Michel Lacroix" />
+        <div class="desc">
+          <h4>Jean-Michel Lacroix</h4>
+          <h5>Développeur, Ubisoft</h5>
+        </div>
       </div>
+      <div class="judge">
+        <img src="/assets/img/ironweb/jury/douellet.jpg" alt="Daniel Ouellet" />
+        <div class="desc">
+          <h4>Daniel Ouellet</h4>
+          <h5>Directeur de création, Cossette</h5>
+        </div>
+      </div>
+      <div class="judge">
+        <img src="/assets/img/ironweb/jury/arobillard.jpg" alt="Alain Robillard-Bastien" />
+        <div class="desc">
+          <h4>Alain Robillard-Bastien</h4>
+          <h5>Consultant senior en expérience utilisateur, président d’Ergoweb</h5>
+        </div>
+      </div>
+      <p>*Il y aura bien aussi un vote du public cette année!</p>
     </div>
     <div id="iw-participants" class="rs-content-box">
       <h3 class="box-header">Découvrez les participants 2012!</h3>
-      <p>Nous sommes fiers de vous présenter les participants à la 2e édition du Iron Web. 
+      <p>Nous sommes fiers de vous présenter les 10 participants à la 2e édition du Iron Web. 
         Apprenez en plus sur ces courageux professionnels et étudiants du Web à Québec ayant survécu à notre rigoureux processus de sélection. 
         Découvrez leur personnalité, leur visage et tentez de deviner quel heureux jumelage nous avons concocté!</p>
-      <ul>
+      <div id="jquery_jplayer"></div>
+      <ul id="playlist">
         <li>
+          <div class="play-pause" data-source="p-l-bab.mp3"></div>
           <img src="/assets/img/ironweb/participants/plbabin.jpg" alt="Pierre-Luc Babin" />
           <div class="participant">
             <div class="bubble"></div>
@@ -63,6 +81,7 @@
           </div>
         </li>
         <li>
+          <div class="play-pause" data-source="dom.mp3"></div>
           <img src="/assets/img/ironweb/participants/d_blain.jpg" alt="Dominic Blain" />
           <div class="participant">
             <div class="bubble"></div>
@@ -71,6 +90,7 @@
           </div>
         </li>
         <li>
+          <div class="play-pause" data-source="syl.mp3"></div>
           <img src="/assets/img/ironweb/participants/bouchardsyl.jpg" alt="Sylvain Bouchard" />
           <div class="participant">
             <div class="bubble"></div>
@@ -79,6 +99,7 @@
           </div>
         </li>
         <li>
+          <div class="play-pause" data-source="jim.mp3"></div>
           <img src="/assets/img/ironweb/participants/jimmybourassa.jpg" alt="Jimmy Bourassa" />
           <div class="participant">
             <div class="bubble"></div>
@@ -87,6 +108,7 @@
           </div>
         </li>
         <li>
+          <div class="play-pause" data-source="alex.mp3"></div>
           <img src="/assets/img/ironweb/participants/bourgetalexndre.jpg" alt="Alexandre Bourget" />
           <div class="participant">
             <div class="bubble"></div>
@@ -95,6 +117,7 @@
           </div>
         </li>
         <li>
+          <div class="play-pause" data-source="louis-mich.mp3"></div>
           <img src="/assets/img/ironweb/participants/louim.jpg" alt="Louis-Michel Couture" />
           <div class="participant">
             <div class="bubble"></div>
@@ -103,6 +126,7 @@
           </div>
         </li>
         <li>
+          <div class="play-pause" data-source="fred.mp3"></div>
           <img src="/assets/img/ironweb/participants/fredDemers.jpg" alt="Frédéric Demers" />
           <div class="participant">
             <div class="bubble"></div>
@@ -111,6 +135,7 @@
           </div>
         </li>
         <li>
+          <div class="play-pause" data-source="p-l-gag.mp3"></div>
           <img src="/assets/img/ironweb/participants/pl_gagnon.jpg" alt="Pierre-Luc Gagnon" />
           <div class="participant">
             <div class="bubble"></div>
@@ -119,6 +144,7 @@
           </div>
         </li>
         <li>
+          <div class="play-pause" data-source="steph.mp3"></div>
           <img src="/assets/img/ironweb/participants/ssalman.jpg" alt="Stéphanie Salman" />
             <div class="participant">
             <div class="bubble"></div>
@@ -126,6 +152,7 @@
           </div>
         </li>
         <li>
+          <div class="play-pause" data-source="greg.mp3"></div>
           <img src="/assets/img/ironweb/participants/gelendir.jpg" alt="Gregory Eric Sanderson" />
           <div class="participant">
             <div class="bubble"></div>

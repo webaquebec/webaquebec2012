@@ -1,0 +1,89 @@
+
+//#########################################################
+//   Header     ###########################################
+
+header#header-main
+  height: 164px
+
+  .wrapper
+    position: relative
+    padding: 36px 0 0 0
+
+  .logo
+    float: left
+    width: 262px
+    font: 1em MisoLight, sans-serif
+    letter-spacing: 0.1em
+
+  .logo-princ
+    display: inline-block
+    width: 262px
+    height: 87px
+    background: url(../img/logo-princ.png) no-repeat
+
+  .logo-princ span
+    display: block
+
+  .logo-accronym
+    height: 97px
+
+.event-details
+  float: left
+  width: 200px
+  margin: 0 254px 0 24px
+  position: relative
+  top: -3px
+  .lieu
+    display: block
+    color: $main-gray
+    font-family: MisoRegular
+    font-size: 120%
+    text-shadow: 1px 1px 0 $main-light-blue
+  .lieu *
+    color: $main-gray
+  .dates
+    display: block
+    font-family: MisoRegular
+    font-size: 160%
+    @extend .whitetext-shadow-up
+  .btn-inscription
+    display: inline-block
+    height: 34px
+    width: 114px
+    margin-top: 5px
+    background: url(../img/btn-insc.png) no-repeat left top
+  .btn-inscription:hover
+    background-position: 0px -38px
+
+nav.top-right
+  position: absolute
+  top: 10px
+  right: 0
+  ul li
+    font-family: MisoLight
+    @extend .to-caps
+    margin-left: 10px
+  ul li a:link:hover
+    text-decoration: underline
+
+nav.menu-princ
+  float: left
+  width: 220px
+  padding-top: 8px
+  ul li
+    margin-bottom: 3px
+    a
+      background: $main-blue-10
+      +border-radius(5px)
+      display: block
+      padding: 3px 10px
+      @extend .to-caps
+      font-size: 130%
+      font-family: MisoRegular
+      text-shadow: 0 -1px $main-blue-20
+      +transition(all 0.2s ease-in-out)
+    a:hover
+      background: $main-blue-5
+    a.disabled, a.disabled:hover
+      opacity: 0.5
+      background: $main-blue + 5

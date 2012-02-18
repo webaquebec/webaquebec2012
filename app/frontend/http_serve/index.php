@@ -11,15 +11,10 @@ SimpleAutoLoader::addPath(PATH_PUBLIC."/classes/");
 global $app;
 bootstrap(PATH_PUBLIC."/templates/");
 
-//      FAKE         ************
-$app->get('/md', function () use ($app) {
-    /** @var Slim $app */
-    $app->render('markdown_test.html');
-});
-
 $app->get('/', function () use ($app) {
+	$list = Presentation::getRandomSet(4);
     /** @var Slim $app */
-    $app->render('index.html');
+    $app->render('index.html', array('vedettes'=> $list,'route_single' => Routes::PROGRAMMATION_SINGLE,));
 })->name(Routes::INDEX);
 
 $app->get('/a-propos/', function() use ($app){
@@ -66,11 +61,14 @@ $app->get('/inscription/', function() use ($app){
 
 $app->get('/programmation/', function () use ($app) {
     /** @var Slim $app */
-    $list = Presentation::getAll();
+    $app->render('horaire.html');
+    /*$list = Presentation::getAccordingToStarred(FALSE);
+	$star_list = Presentation::getAccordingToStarred();
     $app->render('programmation-liste.twig', array(
         'list' => $list,
+		'stars'=>$star_list,
         'route_single' => Routes::PROGRAMMATION_SINGLE,
-    ));
+    ));*/
 
 })->name(Routes::PROGRAMMATION);
 
@@ -82,6 +80,14 @@ $app->get('/programmation/:id/?:name?/?', function ($id, $name = NULL) use ($app
     ));
 
 })->name(Routes::PROGRAMMATION_SINGLE);
+
+$app->get('/horaire_test/', function() use ($app){
+    /** @var Slim $app */
+
+    $horaires = Horaire::getByDay(2);//Jeudi
+    die(print_r($horaires));
+
+})->name('horaire_test');
 
 $app->notFound(function () use ($app) {
     /** @var Slim $app */
