@@ -54,12 +54,11 @@
       display: block;
       font-family: MisoLight;
       font-size: 120%;
-    }
-    .dates{
-      display: block; 
-      font-family: MisoRegular; 
-      font-size: 160%; 
-      @extend .whitetext-shadow-up;
+      padding:5px 2px;
+      line-height:26px;
+      img {
+        vertical-align: text-top;
+      }
     }
   }
 }

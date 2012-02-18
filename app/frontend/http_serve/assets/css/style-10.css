@@ -95,7 +95,7 @@ button {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffffff', EndColorStr='#ffe9e9e9');
   zoom: 1; }
 
-.whitetext-shadow-up, .event-details .dates, h3.box-header, #iw-logo-live .info .dates {
+.whitetext-shadow-up, .event-details .dates, h3.box-header {
   text-shadow: 0 -1px #005778; }
 
 .whitetext-shadow-down, #newsletter-box h3 {
@@ -1540,11 +1540,11 @@ h3.box-header {
     #iw-logo-live .info .lieu {
       display: block;
       font-family: MisoLight;
-      font-size: 120%; }
-    #iw-logo-live .info .dates {
-      display: block;
-      font-family: MisoRegular;
-      font-size: 160%; }
+      font-size: 120%;
+      padding: 5px 2px;
+      line-height: 26px; }
+      #iw-logo-live .info .lieu img {
+        vertical-align: text-top; }
 
 #iw-desc-live {
   margin-bottom: 30px;
