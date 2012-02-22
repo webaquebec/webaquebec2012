@@ -1,0 +1,53 @@
+{% extends "/blocks/base.twig" %}
+
+{% block content %}
+
+<p class="topNav">
+<a href="{{ route('admin_index') }}">Accueil</a>
+</p>
+
+<h1>Articles</h1>
+
+<p><a href="{{ route('ironweb_article_new') }}">Nouveau</a></p>
+
+{% if ( flash.article ) %}
+<div class="FlashWrp clearfix"><div class="flash clearfix">{{ flash.article }}</div></div>
+{% endif %}
+
+<table class="items_list">
+    <tr>
+        <th>Titre</th>
+        <th class="period">Période</th>
+        <th class="act">Actions</th>
+        <th class="arch">Arch.</th>
+    </tr>
+    {% for row in list %}
+
+    <tr>
+
+        <td>{{ row.title }}</td>
+        <td class="period clearfix">
+          <div class="clearfix"><span class="key">De</span><span class="value">{{ row.ts_publication|date('d/m/Y H:i:s') }}</span></div>
+          <div class="clearfix"><span class="key">à</span><span class="value">{{ row.ts_end_publication|date('d/m/Y H:i:s') }}</span></div>
+        </td>
+        <!--td>
+        {% if row.ts_start <= now and row.ts_end >= now %}
+          en cours
+        {% elseif row.ts_end < now %}
+          terminé
+        {% else %}
+          à venir
+        {% endif %}
+        </td-->
+        <td class="act">
+            <a href="{{ route('ironweb_article_edit', {'id': row.ID}) }}">Editer</a>
+            <a onclick="return confirm('Really?');" href="{{ route('ironweb_article_delete', {'id': row.ID}) }}">Supprimer</a>
+        </td>
+        <td class="arch">{{ row.archived==1 ? 'O' : 'N' }}</td>
+
+    </tr>
+
+    {% endfor %}
+</table>
+
+{% endblock %}

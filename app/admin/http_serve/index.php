@@ -34,6 +34,9 @@ $app->get('/programmation/', Auth::validateDelegate(Auth::ROLE_MINIMAL_ACCESS), 
 
 
 include __DIR__."/../includes/programmation_crud.inc.php";
+include __DIR__."/../includes/iw_ballot_crud.inc.php";
+include __DIR__."/../includes/iw_article_crud.inc.php";
+include __DIR__."/../includes/iw_news.inc.php";
 
 $app->run();
 

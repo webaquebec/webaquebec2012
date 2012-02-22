@@ -1,0 +1,71 @@
+{% import "/form_fields.twig" as forms %}
+
+{% extends "/blocks/base.twig" %}
+
+{% block content %}
+
+<p class="topNav">
+<a href="{{ route('admin_index') }}">Accueil</a>
+<span class="sep"> > </span>
+<a href="{{ route('ironweb_ballot_list') }}">Votes</a>
+</p>
+
+<h1>
+    {% if mode == 'new' %}
+        Nouveau
+    {% else %}
+        Editer
+    {% endif %}
+</h1>
+
+{% if ( flash.ballots ) %}
+<div class="FlashWrp clearfix"><div class="flash clearfix">{{ flash.ballots }}</div></div>
+{% endif %}
+
+
+<form action="{{ post_target }}" method="post" id="FrmBallot">
+    <p class="clearfix">
+			{{ forms.label('name', 'Titre du vote') }}
+			{{ forms.input('name',item.name, 'text','','name') }}
+	</p>
+	<p class="ername error">Champ Requis</p>
+    <p class="clearfix">
+        {{ forms.label('date_start', 'Début') }}
+        {{ forms.input('date_start', item.ts_start|date('d-m-Y'),'text','','date_start') }}
+		{{ forms.label('time_start', '-','small') }} {{ forms.input('time_start', item.ts_start|date('G:i'),'text','','time_start') }}
+	</p>
+	<p class="erstart error">Champs Requis</p>
+    <p class="clearfix">
+        {{ forms.label('date_end', 'Fin') }}
+        {{ forms.input('date_end', item.ts_end|date('d-m-Y'),'text','','date_end') }}
+			 {{ forms.label('time_end', '-','small') }} {{ forms.input('time_end', item.ts_end|date('G:i'),'text','','time_end') }}
+	</p>
+	<p class="erend error">Champs Requis</p>
+	<p class="erdate error">Dates de début et de fin identiques</p>
+	
+    <p class="clearfix">
+        {{ forms.label('display_results', 'Affichage des résultats') }}
+        {{ forms.checkbox('display_results', '1','0', item.display_results==1 ? 'checked' : '') }}
+	</p>
+
+    <p class="clearfix">
+        {{ forms.label('display_results_realtime', 'Temps réel') }}
+	    {% if mode == 'new' %}
+	        {{ forms.checkbox('display_results_realtime', '1','0','checked' ) }}
+		{% else %}
+	        {{ forms.checkbox('display_results_realtime', '1','0', item.display_results_realtime==1 ? 'checked' : '') }}
+		{% endif %}
+	</p>
+
+    <p class="clearfix">
+        {{ forms.label('archived', 'Archivé') }}
+        {{ forms.checkbox('archived', '1','0', item.archived==1 ? 'checked' : '') }}
+	</p>
+
+	
+    <p class="clearfix">
+		{{ forms.label('', '.') }}{{ forms.submit() }}
+	</p>
+</form>
+</div>
+{% endblock %}

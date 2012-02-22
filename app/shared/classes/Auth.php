@@ -3,6 +3,7 @@
 class Auth {
 
     const ROLE_MINIMAL_ACCESS = 1000;
+    const ROLE_IRONWEB = 999;
     const ROLE_WRITER = 999;
     const ROLE_ADMIN = 0;
 

@@ -12,5 +12,6 @@ class Routes{
     const INFORMATIONS_PRATIQUES = 'informations-pratiques';
     const IRON_WEB = 'iron-web';
     const IRON_WEB_LIVE = 'iron-web_live';
+    const IRON_WEB_TEAM_VOTE = 'iron-team_vote';
 
 }

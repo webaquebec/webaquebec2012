@@ -1,0 +1,60 @@
+{% import "/form_fields.twig" as forms %}
+
+{% extends "/blocks/base.twig" %}
+
+{% block content %}
+
+<p class="topNav">
+<a href="{{ route('admin_index') }}">Accueil</a>
+<span class="sep"> > </span>
+<a href="{{ route('ironweb_article_list') }}">Articles</a>
+</p>
+
+<h1>
+    {% if mode == 'new' %}
+        Nouveau
+    {% else %}
+        Editer
+    {% endif %}
+</h1>
+
+{% if ( flash.article ) %}
+<div class="FlashWrp clearfix"><div class="flash clearfix">{{ flash.article }}</div></div>
+{% endif %}
+
+
+<form action="{{ post_target }}" method="post" id="FrmArticle">
+    <p class="clearfix">
+			{{ forms.label('title', 'Titre de l\'article') }}
+			{{ forms.input('title', item.title) }}
+	</p>
+	<p class="ername error">Champ Requis</p>
+    <p class="clearfix">
+        {{ forms.label('date_start', 'Début') }}
+        {{ forms.input('date_start', item.ts_publication|date('d-m-Y'),'text','','date_start') }}
+		{{ forms.label('time_start', '-','small') }} {{ forms.input('time_start', item.ts_publication|date('G:i'),'text','','time_start') }}
+	</p>
+	<p class="erstart error">Champs Requis</p>
+    <p class="clearfix">
+        {{ forms.label('date_end', 'Fin') }}
+        {{ forms.input('date_end', item.ts_end_publication|date('d-m-Y'),'text','','date_end') }}
+			 {{ forms.label('time_end', '-','small') }} {{ forms.input('time_end', item.ts_end_publication|date('G:i'),'text','','time_end') }}
+	</p>
+	<p class="erend error">Champs Requis</p>
+	<p class="erdate error">Dates de début et de fin identiques</p>
+    <p class="clearfix">
+        {{ forms.label('text', 'Texte de l\'article') }}
+        {{ forms.textarea('text', item.text,'35','10') }}
+	</p>
+	<p class="ertxt error">Champs Requis</p>
+    <p class="clearfix">
+        {{ forms.label('archived', 'Archivé') }}
+        {{ forms.checkbox('archived', '1','0', item.archived==1 ? 'checked' : '') }}
+	</p>
+	
+    <p class="clearfix">
+		{{ forms.label('', '.') }}{{ forms.submit() }}
+	</p>
+</form>
+</div>
+{% endblock %}
