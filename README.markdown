@@ -33,7 +33,7 @@ CSS is made using SASS ruby gem :
 
 To compile your sass file into css as you modifiy it run this command (*watch for increments in filename used in base.html) :
 
-    sass --watch app/frontend/http_serve/assets/css/style.sass:app/frontend/http_serve/assets/css/style-9.css
+    sass --watch app/frontend/http_serve/assets/css/style.sass:app/frontend/http_serve/assets/css/style-12.css
 
 ### Coding conventions
 
