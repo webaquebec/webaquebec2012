@@ -5,3 +5,4 @@
 /app/shared/conf_*.php
 /.sass-cache
 .sass-cache
+/app/frontend/http_serve/assets/js/news.json

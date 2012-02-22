@@ -95,6 +95,54 @@ $app->get('/horaire_test/', function() use ($app){
 
 })->name('horaire_test');
 
+// Record vote on ajax call
+$app->post('/iron-web/teamvote', function () use ($app) {
+    /** @var Slim $app */
+	if( sizeof($_POST) < 3 ) // direct access, redirect. Does not work but at least prevent post treatment code to run
+	{ 
+	   $app->redirect($app->urlFor(Routes::IRON_WEB_LIVE));
+	}else{
+	  $v = iw_ballots_votes::create();
+	  
+	  $b  = iw_ballots::create();
+	  $lst  = $b->getActive();
+	  
+	  // make sure the posted hidden field has correct ballot ID
+	  $z=0; $cheatVote =0;
+	  foreach( $lst as $e )
+	  {
+	  	if( $z == 0 ){
+			if ( $e->id != $_POST['iw_b'] ) {$cheatVote = 1 ;}
+		}
+		$z++;
+	  }
+
+	  $hasVoted = $v->hasVoted( $_POST['iw_b'], $_POST['email'] );
+	  
+		if( $hasVoted == 1 )
+		{
+			echo '1'; // Error Already Voted
+		}elseif ( $cheatVote == 1) {
+			echo '2'; // post value does not correspond to correct vote value
+		}else{
+			$v->set('iw_ballotsID', $_POST['iw_b']);
+			$v->set('email', $_POST['email']);
+			$v->set('iw_teamsID', $_POST['iw_team']);
+			//
+			if ( isset($_SERVER["REMOTE_ADDR"]) )    { 
+				$v->set('IP',$_SERVER["REMOTE_ADDR"] ); 
+			} else if ( isset($_SERVER["HTTP_X_FORWARDED_FOR"]) )    { 
+				$v->set('IP',$_SERVER["HTTP_X_FORWARDED_FOR"]); 
+			} else if ( isset($_SERVER["HTTP_CLIENT_IP"]) )    { 
+				$v->set('IP',$_SERVER["HTTP_CLIENT_IP"]); 
+			} 
+			//
+			$v->save();
+			echo(0);
+		}
+	}
+})->name(Routes::IRON_WEB_TEAM_VOTE);
+
 $app->notFound(function () use ($app) {
     /** @var Slim $app */
     $app->render('errors/404.html');
@@ -127,3 +175,4 @@ if(Config::get('debug') === TRUE){
     echo "<!-- Memory Used : $memory_used -->\n";
     echo "<!-- Queries : $queries -->\n";
 }
+

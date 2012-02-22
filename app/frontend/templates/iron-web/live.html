@@ -46,37 +46,76 @@
           </div>
         </div>
         {% if not ironweb_iframe or ironweb_iframe >= 3 %}
+
+        
+        <div id="iw-live-votes">
+          <div id="iw-live-votes-encours">
+      <h2>Vote en cours</h2>
+            <div class="clearfix vote_en_cours">
+              <div class="vote_question">
+          <div class="qst"><img src="/assets/img/loader-votes.gif" alt="chargement"   width="16" height="16"/></div>
+                  <div class="vote_boutons_wrp">
+                        <div class="vote_boutons clearfix">
+                                <a href="#" data-teams="1" class="v_jaune">Voter Jaune</a>
+                                <a href="#" data-teams="2" class="v_rouge">Voter Rouge</a>
+              </div>
+                            <div class="vote_form clearfix">
+                                <form id="" method="post">
+                                  <p class="clearfix">
+                                      <label for="email">Courriel</label>
+                                        <input type="text" id="email" name="email"/><input type="submit" value="Voter" class="btn_envoyer"/>
+                                        <input type="hidden" id="iw_b" name="iw_b" value=""/>
+                                        <input type="hidden" id="iw_real" name="iw_real" value=""/>
+                                        <input type="hidden" name="iw_team" id="iw_team" value=""/>
+                                    </p>
+                                    <p class="err ermail">Courriel non valide</p>
+                                </form>
+                            </div>
+                          <p class="voteRetour">&nbsp;</p>
+                    </div>
+                </div>
+                <div class="vote_result_live">
+                  <div class="e_rouge">
+                      <div class="live_res_txt">&nbsp;</div>
+                        <div class="live_res_bar"><span>&nbsp;</span></div>
+                   </div>
+                  <div class="e_jaune">
+                      <div class="live_res_txt">&nbsp;</div>
+                        <div class="live_res_bar"><span>&nbsp;</span></div>
+                   </div>
+                </div>
+            </div><!-- / vote_en_cour -->
+            </div><!-- / iw-live-votes-encours-->
+            
+           <div id="iw-live-votes-precedent">
+           <h2>Vote précédent</h2>
+           <div class="clearfix vote_precedent">
+              <div class="vote_question">
+                    <div class="qst"><img src="/assets/img/loader-votes.gif" alt="chargement"   width="16" height="16"/></div>
+                    <div class="res">
+                        <div class="e_rouge">75%</div>
+                        <div class="e_jaune">25%</div>
+                    </div>
+        </div>
+      </div>
+    </div>        
+        </div><!-- / iw-live-votes-precedent -->
         <div id="iw-live-footer">
           <div class="col activities">
-            <h2>À venir...</h2>
-            <div class="news">
-              <h3>La pizza arrive!</h3>
-              <p>Num num num</p>
-            </div>
-            <div class="news">
-              <h3>La pizza arrive!</h3>
-              <p>Num num num</p>
-            </div>
-            <div class="news">
-              <h3>La pizza arrive!</h3>
-              <p>Num num num</p>
-            </div>
+          <h2>À venir...</h2>
+            <div class="nfeed">  
+                    <p class="nloader"><img src="/assets/img/loader.gif" alt="chargement"   width="16" height="16"/></p>
+              </div>
           </div>
           <div class="col activities">
-            <h2>Ce qui s’est passé...</h2>
-            <div class="news">
-              <h3>La pizza est froide</h3>
-              <p>Ark ark ark</p>
-            </div>
-            <div class="news">
-              <h3>La pizza est froide</h3>
-              <p>Ark ark ark</p>
-            </div>
-            <div class="news">
-              <h3>La pizza est froide</h3>
-              <p>Ark ark ark</p>
-            </div>
+                <h2>Ce qui s’est passé...</h2>
+              <div class="nfeed">
+                    <p class="nloader"><img src="/assets/img/loader.gif" alt="chargement"   width="16" height="16"/></p>
+                </div>
           </div>
+
+
+
           <div class="col sponsors">
             <h2>Nos commanditaires</h2>
             <div id="commanditaires-principaux" class="white-thumb commanditaires-principaux iron-web">

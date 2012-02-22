@@ -1,0 +1,81 @@
+ 
+ 
+ 
+/* RDO stream live votes */
+  #iw-live-votes {
+    -moz-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    background-image: url(/assets/img/ironweb/live/video-bg.png);
+    background-position: 0 -45px;
+    padding: 26px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px; 
+	margin-bottom:25px;
+}
+ 
+#iw-live-votes h2 { margin-bottom: 10px; font-size: 24px;  color:#212121; }
+ 
+.vote_en_cours{ color:#212121; margin-bottom:20px;}
+	.vote_en_cours .vote_question{ width:500px; float:left; background:#fff; padding:10px 15px;
+		-moz-border-radius-bottomleft: 4px;
+		border-bottom-left-radius: 4px;
+		-moz-border-radius-topleft: 4px;
+		border-top-left-radius: 4px;
+		min-height:56px; height:auto !important; height:56px;
+	 }
+		.vote_en_cours .vote_question .qst{color:#212121; line-height:26px; margin-bottom:4px;}
+ 
+		.vote_form{ display:none;}
+			.vote_form label{ float:left; height:26px; line-height:26px; font-size:13px; color:#212121; padding-right:15px; width:50px;}
+			.vote_form input#email{ float:left; height:24px; line-height:24px; font-size:13px; border:1px solid #ccc; margin-right:15px;
+									 color:#212121; padding:0 5px; width:200px;}
+			
+			.btn_envoyer{width:83px; height:26px; line-height:26px; text-align:center; border:0;display:block; margin-left:15px; cursor:pointer;
+							 text-transform:uppercase; font-size:13px;
+							 background:transparent url(/assets/img/ironweb/live/bg-vote-buttons.png) 0 -52px  no-repeat}
+		.vote_boutons{ display:none}
+		.vote_boutons a{ float:left; margin-right:15px;color:#212121; text-decoration:none; line-height:26px; height:26px;
+					display:block;background-image: url(/assets/img/ironweb/live/bg-vote-buttons.png);
+					padding-left:5px; text-transform:uppercase; font-size:13px;}
+		.vote_boutons a.v_jaune{ width:126px; background-position:0 0;}
+		.vote_boutons a.v_rouge{ width:130px; background-position:0 -26px;}
+		.voteRetour { display:none; color:#212121; line-height:26px; font-size:13px;}
+		.err{ display:none; color:#f30; font-size:11px; padding-left:65px;}
+ 
+ 
+	.vote_result_live{width:375px; float:right; background:#fff; padding:10px 0 6px 0;
+		-moz-border-radius-bottomright: 4px;
+		border-bottom-right-radius: 4px;
+		-moz-border-radius-topright: 4px;
+		border-top-right-radius: 4px;
+	 }
+		
+		.live_res_txt{ color:#212121; float:left; width:60px; padding-right:10px; text-align:right;line-height:26px;}
+		.live_res_bar{ width:300px; float:left; margin-bottom:4px; }
+		.e_rouge .live_res_bar span { background:#f00; font-size:0; line-height:26px; display:block; float:left; width:0%;}
+		.e_jaune .live_res_bar span { background:#ff0; font-size:0; line-height:26px; display:block; float:left;width:0%;}
+ 
+	.vote_precedent .vote_question .qst{color:#212121; width:500px; float:left; background:#b0b0b0; padding:10px 15px;
+		-moz-border-radius-bottomleft: 4px;
+		border-bottom-left-radius: 4px;
+		-moz-border-radius-topleft: 4px;
+		border-top-left-radius: 4px;
+		min-height:20px; height:auto !important; height:20px;
+		}
+	.vote_precedent .res{width:345px; float:right; background:#b0b0b0; padding:10px 15px;
+		-moz-border-radius-bottomright: 4px;
+		border-bottom-right-radius: 4px;
+		-moz-border-radius-topright: 4px;
+		border-top-right-radius: 4px;}
+		
+		
+		.vote_precedent .res div{ float:left; padding-right:25px; font-size:13px; line-height:20px;}
+		.vote_precedent .res div span{ padding:0 10px; font-size:14px; line-height:18px; margin-left:5px; background:#ff0 }
+		.vote_precedent .res div.e_rouge span{background:#f00}
+/* -- */
+
+
+#iw-live-footer p.nloader {padding-top:25px; padding-left:50px;}

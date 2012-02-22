@@ -197,3 +197,22 @@ ALTER TABLE `iw_chatroom_message` ADD INDEX `fk_iw_chatroom_message__iw_chatroom
     FOREIGN KEY (`iw_chatroomID`) 
     REFERENCES `iw_chatroom` (`ID`) 
     ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+
+
+
+ALTER TABLE `iw_ballots` CHANGE `ID` `id` INT(5) NOT NULL AUTO_INCREMENT  ;
+
+ALTER TABLE `iw_event` CHANGE `ID` `id` INT(10) NOT NULL AUTO_INCREMENT  ;
+ALTER TABLE `iw_event` ADD `ts_end_publication` INT(10) NOT NULL AFTER `ts_publication` ;
+ALTER TABLE `iw_event` ADD `archived` ENUM('0','1') DEFAULT '0' NULL AFTER `text` ;
+
+
+ALTER TABLE `iw_ballots` ADD `archived` ENUM('0','1') DEFAULT '0' NULL AFTER `display_results` ;
+ALTER TABLE `iw_ballots_votes` ADD `email` VARCHAR(100)  NOT NULL  DEFAULT ''  AFTER `iw_teamsID`;
+ALTER TABLE `iw_ballots_votes` ADD `IP` VARCHAR(16)  NOT NULL  DEFAULT ''  AFTER `email`;
+ALTER TABLE `iw_ballots_votes` DROP FOREIGN KEY `fk_iw_ballots_votes__iw_remote_users__ID`;
+ALTER TABLE `iw_ballots_votes` DROP INDEX `fk_iw_ballots_votes__iw_remote_users__ID`;
+ALTER TABLE `iw_ballots_votes` DROP PRIMARY KEY;
+ALTER TABLE `iw_ballots_votes` ADD PRIMARY KEY (`iw_ballotsID`, `email`);

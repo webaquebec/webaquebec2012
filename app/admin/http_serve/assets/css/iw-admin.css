@@ -1,0 +1,49 @@
+html {  font-family: Arial, helvetica, sans-serif; }
+
+/* Micro ClearFix : http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after {content:"";display:table;}
+.clearfix:after {clear:both;}
+.clearfix{zoom:1;}
+
+/* communs */
+.wrapper { width:960px; margin: 0 auto; font-size:14px; line-height:22px;}
+
+a{  color:#00c; text-decoration:none;}
+	a:hover{ color: #F00; text-decoration:none;}
+
+.topNav{ border-bottom:1px solid #ccc; padding-bottom:10px; color:00s}
+
+
+
+
+/* */
+table.items_list {  width: 100%; border-spacing: 0; }
+  table.items_list th, table.items_list td {  border-bottom: solid #000 1px; padding:5px 2px;}
+
+table.items_list th.period,table.items_list  td.period{ width:225px; text-align:left; padding-left:25px;}
+	td.period span{float:left;}
+	td.period span.key{width:15px; padding-right:15px;}
+
+th.act, td.act{ width:150px; text-align:center;}
+ td.act a{ padding:0 5px;}
+th.arch, td.arch{ width:50px; text-align:center}
+
+th.status, td.status{ width:120px; text-align:center}
+table.items_list th.presenter, table.items_list td.presenter{ width:300px; text-align:left; padding-left:25px;}
+
+
+/* flash feedback */
+.FlashWrp{ padding-left:90px; margin:15px 0}
+.flash{ border:1px solid #333; background:#6C0; color:#333; padding:5px 15px; float:left; moz-border-radius:5px;border-radius:5px;}
+
+/* forms*/
+	form { width:600px; margin:0 auto; background:#f7f7f7; border:1px solid #ddd; padding:25px;}
+	form p {padding:0; margin:0; margin-top:10px;}
+	label,  input{ float:left;}
+	label{ width:150px; font-size:14px; line-height:22px; text-align:right; padding-right:10px;}
+	label.small{ width:20px; font-size:14px; line-height:22px; text-align:center;padding-right:0}
+	.error {color:#f00; display:none;font-size:10px; margin:0; padding:0; padding-left:160px; padding-bottom:10px;}
+	input#time_start, input#time_end { width:40px;}
+	input#date_start, input#date_end { width:80px;}
+	
+	

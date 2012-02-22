@@ -46,6 +46,9 @@ $app->get('/horaire/', Auth::validateDelegate(Auth::ROLE_MINIMAL_ACCESS), functi
 include __DIR__."/../includes/programmation_crud.inc.php";
 include __DIR__."/../includes/plages_horaire_crud.inc.php";
 include __DIR__."/../includes/horaire_crud.inc.php";
+include __DIR__."/../includes/iw_ballot_crud.inc.php";
+include __DIR__."/../includes/iw_article_crud.inc.php";
+include __DIR__."/../includes/iw_news.inc.php";
 
 $app->run();
 
