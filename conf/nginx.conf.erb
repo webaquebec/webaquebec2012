@@ -52,12 +52,6 @@ http {
       log_not_found   off;
     }
 
-    # Deny /favicon.ico
-    location = /favicon.ico {
-      access_log      off;
-      log_not_found   off;
-    }
-
     # Deny /robots.txt
     location = /robots.txt {
       allow           all;
@@ -65,27 +59,19 @@ http {
       access_log      off;
     }
 
-    #site root is redirected to the app boot script
-    location = / {
-      try_files @site @site;
-    }
+    try_files $uri $uri/ index.php?$request_uri;
 
-    #all other locations try other files first and go to our front controller if none of them exists
-    location / {
-      try_files $uri $uri/ @site;
+    location ~ index.php$ {
+      limit_conn  phplimit 5; # limit to 5 concurrent users to PHP per IP.
+      include         fastcgi_params;
+      fastcgi_param   HTTPS $my_https if_not_empty;
+      fastcgi_pass    php_fpm;
+      fastcgi_param   SCRIPT_FILENAME $document_root/index.php$request_uri;
     }
 
     #return 404 for all php files as we do have a front controller
     location ~ \.php$ {
         return 404;
-    }
-
-    location @site {
-      limit_conn phplimit 5; # limit to 5 concurrent users to PHP per IP.
-      include         fastcgi_params;
-      fastcgi_param   HTTPS $my_https if_not_empty;
-      fastcgi_pass    php_fpm;
-      fastcgi_param   SCRIPT_FILENAME $document_root/index.php;
     }
 
     include /app/conf/nginx.d/*.conf;
