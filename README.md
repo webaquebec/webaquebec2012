@@ -4,24 +4,12 @@
 
 ## Contributing to WAQ
 
-### Setup instructions
-
-There is a few external git submodules that you must get :
+### Quick start
 
     git submodule update --init
-
-Configurations files :
-
     touch app/settings.php
     cp app/shared/conf.example.php app/shared/conf.php
-
-Database structure :
-
-    app/frontend/structure.sql
-
-Database test data :
-
-    app/frontend/test_data.sql
+    php -S localhost:8000 -t app/frontend/http_serve/
 
 ### MySQL to Sqlite for archive deployment
 
