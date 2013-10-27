@@ -9,7 +9,6 @@ class Presentation extends Model{
      */
     public static function getRandomSet($quantity = 1){
         return Model::factory(__CLASS__)
-                    ->order_by_raw('RAND()')
                     ->limit($quantity)
                     ->find_many();
     }
