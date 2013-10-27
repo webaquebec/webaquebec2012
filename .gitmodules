@@ -1,18 +1,18 @@
 [submodule "externs/slim"]
 	path = externs/slim
-	url = git://github.com/raphael-riel/Slim.git
+	url = git://github.com/codeguy/Slim.git
 [submodule "externs/slim-extras"]
 	path = externs/slim-extras
-	url = git://github.com/raphael-riel/Slim-Extras.git
+	url = git://github.com/codeguy/Slim-Extras.git
 [submodule "externs/twig"]
 	path = externs/twig
-	url = git://github.com/raphael-riel/Twig.git
+	url = git://github.com/fabpot/Twig.git
 [submodule "externs/php-markdown"]
 	path = externs/php-markdown
-	url = git://github.com/raphael-riel/php-markdown.git
+	url = git://github.com/michelf/php-markdown.git
 [submodule "externs/paris"]
 	path = externs/paris
-	url = git://github.com/raphael-riel/paris.git
+	url = git@github.com:j4mie/paris.git
 [submodule "externs/idiorm"]
 	path = externs/idiorm
-	url = git://github.com/raphael-riel/idiorm.git
+	url = git://github.com/j4mie/idiorm.git
