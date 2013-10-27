@@ -10,6 +10,7 @@ class Presentation extends Model{
     public static function getRandomSet($quantity = 1){
         return Model::factory(__CLASS__)
                     ->limit($quantity)
+                    ->order_by_expr('RANDOM()')
                     ->find_many();
     }
 
