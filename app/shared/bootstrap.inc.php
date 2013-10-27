@@ -36,14 +36,7 @@ function bootstrap($templates_path){
 
 function init_orm(){
     $db = Config::get("db");
-
-    $db_host = $db["host"];
-    $db_port = $db["port"];
-    $db_name = $db["database"];
-
-    ORM::configure("mysql:host=$db_host;port=$db_port;dbname=$db_name;charset=utf8");
-    ORM::configure('username', $db["user"]);
-    ORM::configure('password', $db["password"]);
+    ORM::configure(sprintf('sqlite:%s/db.sqlite', PROJECT_ROOT));
 
     if(Config::get('debug') === TRUE){
         ORM::configure('logging', TRUE);

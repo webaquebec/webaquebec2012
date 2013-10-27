@@ -1,7 +1,6 @@
-Woot! Le site du WAQ 2012
-=========================
+# Woot! Le site du WAQ 2012
 
-C'est comme du custom de A à Z (yé pour les geeks). L'objectif est d'offrir un admin rapidement au gens du WAQ afin qu'ils puissent travailler à mettre en ligne l'horaire, ainsi que de permettre la navigation du beau site de l'événement. 
+> C'est comme du custom de A à Z (yé pour les geeks). L'objectif est d'offrir un admin rapidement au gens du WAQ afin qu'ils puissent travailler à mettre en ligne l'horaire, ainsi que de permettre la navigation du beau site de l'événement.
 
 ## Contributing to WAQ
 
@@ -9,8 +8,7 @@ C'est comme du custom de A à Z (yé pour les geeks). L'objectif est d'offrir un
 
 There is a few external git submodules that you must get :
 
-    git submodule init
-    git submodule update
+    git submodule update --init
 
 Configurations files :
 
@@ -24,6 +22,11 @@ Database structure :
 Database test data :
 
     app/frontend/test_data.sql
+
+### MySQL to Sqlite for archive deployment
+
+    gem install mysql2 sqlite3 sequel
+    sequel mysql2://root:@localhost/webaquebec2012 -C sqlite://db.sqlite
 
 #### CSS
 
@@ -54,7 +57,7 @@ Spacing conventions :
 
 * Do not ever user short tags (<? ?>)
 * Start function block { on same line, ex: function(){
-  
+
 Refer to http://jslint.com/ for other questions.
 
 
@@ -63,8 +66,8 @@ Refer to http://jslint.com/ for other questions.
 To create a user in the admin panel:
 
 * Enable the debug mode in config file
-* Go to domain.com/hash/password-to-hash (replace password-to-hash with the password you whant to hash). 
+* Go to domain.com/hash/password-to-hash (replace password-to-hash with the password you whant to hash).
 Example : domain.com/hash/my-secret-password
 * Add the user to the users array in config.php
 
- 
+
