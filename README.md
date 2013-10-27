@@ -28,6 +28,21 @@ Database test data :
     gem install mysql2 sqlite3 sequel
     sequel mysql2://root:@localhost/webaquebec2012 -C sqlite://db.sqlite
 
+## Deployment
+
+Setup :
+
+    git remote add heroku git@heroku.com:webaquebec2012.git
+    heroku config:push
+
+Deployment :
+
+    git push heroku master
+
+1. http://webaquebec2012.herokuapp.com
+2. http://d287qcq154aswz.cloudfront.net
+3. http://2012.webaquebec.org
+
 #### CSS
 
 CSS is made using SASS ruby gem :
