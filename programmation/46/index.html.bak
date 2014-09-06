@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="no-js ie7" lang="fr-CA"><![endif]-->
+<!--[if IE 8]><html class="no-js ie8" lang="fr-CA"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="fr-CA"><!--<![endif]-->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>Les dessous d’un réseau social pour adultes (Étude de cas)</title>
+  <link rel="icon" href="../../favicon.ico" />
+  <link rel="stylesheet" href="../../assets/css/style-12.css" type="text/css" />
+  <script src="../../assets/js/libs/modernizr-html5-shim.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div class="ow"><div class="ow-stripes">
+    <div id="page">
+            <header id="header-main">
+        <div class="wrapper clearfix">
+          <h1 class="logo"><a href="../../index.html" class="no-focus no-focus-click logo-princ"><span class="logo-accronym t-indent">WAQ</span> <span class="logo-full-text to-caps">Le Web à Québec</span></a></h1>
+
+          <div class="event-details">
+            <span class="lieu">Espace 400<sup>e</sup> Bell. Québec</span>
+            <time class="dates" datetime="2012-02-22">22-24 février 2012</time>
+            <a class="btn-inscription t-indent" href="../../inscription/index.html">Inscription</a>
+          </div>
+
+          <nav class="top-right" role="navigation">
+			<h2 class="assistive-text">Menu secondaire</h2>
+            <ul class="list-custom list-hori">
+				<li class="link-hidden">
+					<a href="index.html#" class="no-focus-click">Passer au contenu</a>
+			    </li>
+              <li><a href="../../a-propos/index.html">À propos</a></li>
+
+              <li><a href="../../partenaires/index.html">Partenaires</a></li>
+
+              <li><a href="../../contact/index.html">Contact</a></li>
+            </ul>
+          </nav>
+
+          <nav class="menu-princ" role="navigation">
+			<h2 class="assistive-text">Menu principal</h2>
+            <ul class="list-custom">
+              <li><a href="../index.html"><span class="long">Horaire et programmation</span><span class="short">Programmation</span></a></li>
+
+              <li><a href="../../iron-web/index.html">Compétition Iron Web</a></li>
+
+              <li><a href="../../informations-pratiques/index.html">Informations pratiques</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+            <div id="page-content">
+        <div class="wrapper clearfix">
+
+
+<article class="speaker">
+	<div class="speaker-content">
+		<header>
+			<h1>Simon Vaillancourt</h1>
+			<h2>Les dessous d’un réseau social pour adultes (Étude de cas)</h2>
+		</header>
+		<div class="speaker-text">
+						<p>Pourtesfesses.com est un site de rencontres pour adultes, développé par QVSolutions Inc., actif depuis maintenant 5 ans.
+Le réseau pour adultes compte maintenant plus de 95 000 membres francophones à travers la province de Québec, qui nécessite un environnement fort complexe basé sur plusieurs technologies de virtualisation, programmation et sécurité... La gestion d'un tel environnement vient avec plusieurs complexités, compte tenu du champs d'activité du portail: fournisseurs de services de transaction électronique, publicité, partenariat et positionnement d'une entreprise de divertissement pour adultes sur Internet.</p>
+
+			
+			<h3>Questions centrales</h3>			
+						<ol>
+<li><p>Quels sont quelques facteurs de succès d’un site pour adultes?</p></li>
+<li><p>À quelles contraintes fait-on face lorsqu’on exploite un site pour adultes?</p></li>
+<li><p>Quels sont les moyens technologiques employés?</p></li>
+</ol>
+
+						
+			<h3>À propos de Simon Vaillancourt</h3>			
+                                                <p>Simon Vaillancourt travaille en technologie de l'information depuis 1997, se spécialisant en virtualisation depuis les 5 dernières années. Son associé au projet, Evans Quirion, est développeur Microsoft depuis les toutes premières versions de Basic.
+Ensemble, ils unissent leurs forces afin de mettre en place un portail sensuel. Leur union et leur savoir-faire combiné résulte d'un important bagage professionnel en TI, mais leur champ d'activité les oblige aussi à sortir des sentiers battus afin de bien positionner leur produit sur le Web. Référencement, transactions bancaires, publicité, sécurité, haute disponibilité ne sont que quelques aspects de la gestion d'un portail pour adulte. Leur mission est d'offrir un réseau pour adultes d'une qualité inégalée  qui rivalise avec les plus grands de l'industrie, basé sur le respect et la discrétion.</p>
+
+                        
+						<p><a href="http://www.pourtesfesses.com">http://www.pourtesfesses.com</a></p>
+			
+						<p class="twitter"><a href="http://www.twitter.com/PourTesFesses">@PourTesFesses</a></p>
+						
+		</div>
+	</div>
+	<div class="speaker-photo">
+		<img alt="Photo de " src="../../assets/img/conferenciers/147x160/simon-vaillancourt.jpg" />
+	</div>
+</article>
+
+<a href="programmation/index.html">Retour</a>
+
+
+        
+        </div>
+      </div>
+    </div>
+        <footer>
+      <div class="wrapper clearfix">
+        <div class="google-map">
+          <div id="googlemaps-footer"></div>
+        </div>
+
+        <h2 class="t-indent">WAQ</h2>
+
+        <address id="main-address">
+          <strong>Adresse de l'événement</strong> <a target="_blank" href="http://maps.google.com/maps?q=100,+Quai+St-Andr%C3%A9,+Qu%C3%A9bec,+Qc&amp;hl=en&amp;ie=UTF8&amp;ll=46.816995,-71.205463&amp;spn=0.017504,0.026693&amp;sll=46.817167,-71.205487&amp;sspn=0.006295,0.006295&amp;layer=c&amp;cbp=12,7.27,,0,2.66&amp;cbll=46.816995,-71.205463&amp;hnear=100+Quai+Saint-Andr%C3%A9,+Qu%C3%A9bec,+G1K+9E6,+Canada&amp;t=m&amp;vpsrc=0&amp;panoid=2XJ6Vj1HXbMg7M-kCcAMsA&amp;z=16">100 rue Quai St-André<br />
+          Québec (Qc) G1K 3Y2</a>
+        </address>
+
+        <div class="footer-box">
+          <address>
+            <strong>Siège social</strong> 305 Charest Est, bureau 901<br />
+            Québec (Qc) G1K 3H3<br />
+            418 647-3877
+          </address>
+        </div>
+
+        <div class="footer-box">
+          <ul class="list-custom">
+            <li><a href="../../a-propos/index.html">À propos</a></li>
+
+            <li><a href="../../partenaires/index.html">Partenaires</a></li>
+
+            <li><a href="../../contact/index.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-box">
+          <ul class="list-custom">
+            <li><a href="../index.html">Horaire et programmation</a></li>
+
+            <li><a href="../../iron-web/index.html">Compétition Iron Web</a></li>
+
+            <li><a href="../../informations-pratiques/index.html">Informations pratiques</a></li>
+
+            <li><a href="../../inscription/index.html">Inscription</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+      </div></div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/js/twipsy.js" type="text/javascript"></script>
+<script src="../../assets/js/popover.js" type="text/javascript"></script>
+<script src="../../assets/js/libs/jquery.jplayer.min.js" type="text/javascript"></script>
+<script src="../../assets/js/jquery.cookie.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+  window.jQuery || document.write("<"+"script src='/assets/js/libs/jquery-1.6.4.min.js'><"+"\/script>")
+  //]]>
+</script>
+<script src="http://maps.google.com/maps/api/js?sensor=false&amp;language=fr_ca" type="text/javascript"></script>
+<script src="../../assets/js/global-4.js" type="text/javascript"></script>
+<script src="../../assets/js/news.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+  var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-20043510-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+  //]]>
+</script>
+
+</body>
+</html>
